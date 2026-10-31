@@ -58,52 +58,52 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-lg space-y-7 bg-white p-8 sm:p-10 rounded-2xl border border-orange-100 shadow-2xs">
+    <div className="min-h-[85vh] flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-lg space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-2xs">
         
-        <div className="text-center space-y-1.5">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="px-2.5 py-1 rounded-xl bg-orange-600 text-white font-black text-xs tracking-tight shadow-xs">
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center gap-2 mb-1">
+            <span className="px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold text-[11px] tracking-tight">
               vitap
             </span>
-            <span className="text-2xl font-black tracking-tight text-slate-900">
-              eve<span className="text-orange-600">Reg</span>
+            <span className="text-xl font-normal tracking-tight text-slate-900">
+              eve<span className="text-orange-600 font-semibold">Reg</span>
             </span>
           </div>
-          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">
-            Campus Registration
+          <h2 className="text-2xl font-normal text-slate-900 tracking-tight">
+            Create Account
           </h2>
-          <p className="text-xs text-slate-500">
-            VIT-AP University Student & Faculty Chapter Enrollment
+          <p className="text-xs text-slate-400">
+            VIT-AP University Student & Organiser Registry
           </p>
         </div>
 
         {/* Role Selector Tabs */}
-        <div className="flex p-1 bg-orange-50 rounded-2xl border border-orange-200/80">
+        <div className="flex p-1 bg-[#F8F9FA] rounded-2xl border border-slate-100">
           <button
             type="button"
             onClick={() => setRole('student')}
-            className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all ${
-              role === 'student' ? 'bg-white text-orange-600 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+            className={`flex-1 py-2 text-xs font-semibold rounded-xl transition-all ${
+              role === 'student' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-400 hover:text-slate-900'
             }`}
           >
-            I am a Student
+            Student Member
           </button>
           <button
             type="button"
             onClick={() => setRole('organizer')}
-            className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all ${
-              role === 'organizer' ? 'bg-white text-orange-600 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+            className={`flex-1 py-2 text-xs font-semibold rounded-xl transition-all ${
+              role === 'organizer' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-400 hover:text-slate-900'
             }`}
           >
-            I am an Event Organizer
+            Event Organiser
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Full Name *
               </label>
               <div className="relative">
@@ -114,13 +114,13 @@ export default function SignupPage() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="e.g. Alex Chen"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Campus Email *
               </label>
               <div className="relative">
@@ -131,7 +131,7 @@ export default function SignupPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@campus.edu"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function SignupPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Password *
               </label>
               <div className="relative">
@@ -150,13 +150,13 @@ export default function SignupPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Department
               </label>
               <div className="relative">
@@ -165,8 +165,8 @@ export default function SignupPage() {
                   type="text"
                   value={department}
                   onChange={(e) => setDepartment(e.target.value)}
-                  placeholder="e.g. Electrical Eng."
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="e.g. Computer Science"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function SignupPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Student ID / Roll No.
               </label>
               <div className="relative">
@@ -183,14 +183,14 @@ export default function SignupPage() {
                   type="text"
                   value={studentId}
                   onChange={(e) => setStudentId(e.target.value)}
-                  placeholder="e.g. CS-2024-001"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="e.g. 23BCE1001"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                 Contact Phone
               </label>
               <div className="relative">
@@ -199,8 +199,8 @@ export default function SignupPage() {
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+1 (555) 000-0000"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="+91 98765 43210"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
                 />
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function SignupPage() {
 
           {/* Interests selection */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-2">
               Select Your Interests (for Smart Recommendations)
             </label>
             <div className="flex flex-wrap gap-2">
@@ -219,10 +219,10 @@ export default function SignupPage() {
                     type="button"
                     key={interest}
                     onClick={() => toggleInterest(interest)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                    className={`px-3 py-1.5 rounded-full text-xs transition-all ${
                       selected
-                        ? 'bg-orange-600 text-white shadow-xs'
-                        : 'bg-orange-50 text-slate-600 hover:bg-orange-100 border border-orange-200/60'
+                        ? 'bg-slate-900 text-white font-medium shadow-2xs'
+                        : 'bg-[#F8F9FA] text-slate-600 hover:text-slate-900 border border-slate-200/60'
                     }`}
                   >
                     {interest}
@@ -235,15 +235,15 @@ export default function SignupPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl font-bold text-sm text-white bg-orange-600 hover:bg-orange-700 transition-all shadow-md shadow-orange-500/25 flex items-center justify-center gap-2 active:scale-[0.99]"
+            className="w-full py-3.5 rounded-xl font-bold uppercase text-xs tracking-widest text-white bg-slate-900 hover:bg-orange-600 transition-all shadow-xs flex items-center justify-center gap-2 active:scale-[0.99]"
           >
             {loading ? 'Creating Account...' : 'Complete Registration'} <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
-        <div className="text-center text-xs text-slate-500 pt-2 border-t border-orange-100">
+        <div className="text-center text-xs text-slate-400 pt-3 border-t border-slate-100">
           Already registered?{' '}
-          <Link to="/login" className="font-bold text-orange-600 hover:underline">
+          <Link to="/login" className="font-semibold text-slate-900 hover:text-orange-600 underline">
             Sign In here
           </Link>
         </div>

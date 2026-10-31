@@ -46,53 +46,53 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md space-y-7 bg-white p-8 sm:p-10 rounded-2xl border border-orange-100 shadow-2xs">
+    <div className="min-h-[80vh] flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-2xs">
         
         {/* Header */}
-        <div className="text-center space-y-1.5">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="px-2.5 py-1 rounded-xl bg-orange-600 text-white font-black text-xs tracking-tight shadow-xs">
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center gap-2 mb-1">
+            <span className="px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold text-[11px] tracking-tight">
               vitap
             </span>
-            <span className="text-2xl font-black tracking-tight text-slate-900">
-              eve<span className="text-orange-600">Reg</span>
+            <span className="text-xl font-normal tracking-tight text-slate-900">
+              eve<span className="text-orange-600 font-semibold">Reg</span>
             </span>
           </div>
-          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">
-            Campus Sign In
+          <h2 className="text-2xl font-normal text-slate-900 tracking-tight">
+            Account Sign In
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             VIT-AP University Student, Faculty & Board Access
           </p>
         </div>
 
-        {/* Demo Quick-Fill Bar (Crucial for viva demonstration) */}
-        <div className="p-3 bg-orange-50/70 rounded-2xl border border-orange-200/70">
-          <div className="text-[11px] font-bold text-orange-950 uppercase tracking-wider text-center mb-2">
-            One-Click Demo Credentials
+        {/* Demo Quick-Fill Bar (Viva demonstration helper) */}
+        <div className="p-3.5 bg-[#F8F9FA] rounded-2xl border border-slate-100">
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center mb-2.5">
+            Quick-Fill Role Credentials
           </div>
           <div className="grid grid-cols-3 gap-2">
             <button
               type="button"
               onClick={() => handleDemoFill('student')}
-              className="py-1.5 px-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:text-orange-600 hover:border-orange-300 border border-orange-100 transition-colors shadow-2xs flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
             >
-              <UserCheck className="w-3.5 h-3.5 text-orange-500" /> Student
+              <UserCheck className="w-3.5 h-3.5 text-slate-500" /> Student
             </button>
             <button
               type="button"
               onClick={() => handleDemoFill('organizer')}
-              className="py-1.5 px-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:text-orange-600 hover:border-orange-300 border border-orange-100 transition-colors shadow-2xs flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
             >
-              <Briefcase className="w-3.5 h-3.5 text-orange-500" /> Organizer
+              <Briefcase className="w-3.5 h-3.5 text-slate-500" /> Organiser
             </button>
             <button
               type="button"
               onClick={() => handleDemoFill('admin')}
-              className="py-1.5 px-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:text-orange-600 hover:border-orange-300 border border-orange-100 transition-colors shadow-2xs flex items-center justify-center gap-1"
+              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-orange-500" /> Admin
+              <ShieldCheck className="w-3.5 h-3.5 text-slate-500" /> Admin
             </button>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function LoginPage() {
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
               Email Address
             </label>
             <div className="relative">
@@ -111,13 +111,13 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@campus.edu"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-orange-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
               Password
             </label>
             <div className="relative">
@@ -128,7 +128,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-orange-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-slate-900 shadow-2xs"
               />
             </div>
           </div>
@@ -136,17 +136,17 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl font-bold text-sm text-white bg-orange-600 hover:bg-orange-700 transition-all shadow-md shadow-orange-500/25 flex items-center justify-center gap-2 active:scale-[0.99]"
+            className="w-full py-3.5 rounded-xl font-bold uppercase text-xs tracking-widest text-white bg-slate-900 hover:bg-orange-600 transition-all shadow-xs flex items-center justify-center gap-2 active:scale-[0.99]"
           >
             {loading ? 'Authenticating...' : 'Sign In'} <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
         {/* Footer Link */}
-        <div className="text-center text-xs text-slate-500 pt-2 border-t border-orange-100">
+        <div className="text-center text-xs text-slate-400 pt-3 border-t border-slate-100">
           Don't have an account?{' '}
-          <Link to="/signup" className="font-bold text-orange-600 hover:underline">
-            Register as a Student or Organizer
+          <Link to="/signup" className="font-semibold text-slate-900 hover:text-orange-600 underline">
+            Register as Student or Organiser
           </Link>
         </div>
 

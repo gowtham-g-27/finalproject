@@ -154,186 +154,65 @@ export default function AdminDashboard() {
   const COLORS = ['#F97316', '#EA580C', '#2563EB', '#059669', '#7C3AED', '#DB2777', '#475569'];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-10 text-left">
       
-      {/* 1. MUI DASHBOARD TOP APP BAR */}
-      <div className="bg-white rounded-2xl border border-orange-100 p-5 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-1">
-            <span>VIT-AP University</span>
-            <span>/</span>
-            <span className="text-orange-700 font-bold">Board Review Console</span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight flex items-center gap-2.5">
-            <ShieldCheck className="w-7 h-7 text-orange-600" />
-            Directorate of Student Welfare Console
+      {/* 1. Header (Minimalist Editorial Style from Image 2) */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-2 border-b border-slate-100">
+        <div className="space-y-1">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block">
+            DIRECTORATE OF STUDENT WELFARE
+          </span>
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Administrative Console
           </h1>
-          <p className="text-xs text-slate-500 mt-1">
-            Executive oversight, event approval queue, RBAC user directory, and immutable compliance audit logs.
+          <p className="text-xs text-slate-500">
+            Platform analytics, proposal approvals, organizer assignments, and audit logs.
           </p>
         </div>
 
-        {/* Action Toolbar */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={loadAllAdminData}
             disabled={loading}
-            className="p-2.5 rounded-xl border border-orange-200 bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors shadow-2xs"
+            className="p-3 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 transition-colors"
             title="Refresh All Records"
           >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-orange-600' : ''}`} />
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-slate-900' : ''}`} />
           </button>
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-orange-600 hover:bg-orange-700 shadow-xs transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-none font-bold text-xs uppercase tracking-widest text-white bg-slate-900 hover:bg-orange-600 shadow-xs transition-colors"
           >
-            <Download className="w-4 h-4" /> Export Audit CSV
+            <Download className="w-4 h-4" /> Export CSV
           </button>
         </div>
       </div>
 
-      {/* 2. MUI-STYLE DRAWER / SIDEBAR & CANVAS LAYOUT */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
-        {/* Left Drawer Navigation (lg:col-span-3) */}
-        <div className="lg:col-span-3 space-y-4">
-          <div className="bg-white rounded-2xl border border-orange-100 p-3 shadow-2xs space-y-1">
-            <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              Admin Navigation
-            </div>
+      {/* 2. Centered Navigation Tabs (Matching Image 2) */}
+      <div className="flex items-center justify-center gap-6 sm:gap-8 text-xs font-semibold tracking-wide border-b border-slate-100 pb-2 overflow-x-auto no-scrollbar">
+        {[
+          { id: 'analytics', label: 'Platform Analytics' },
+          { id: 'approvals', label: `Event Proposals (${pendingEvents.length})` },
+          { id: 'monitor', label: `Monitor All (${allCampusEvents.length})` },
+          { id: 'users', label: `User Directory (${usersList.length})` },
+          { id: 'audit', label: `Audit Trail (${auditLogs.length})` },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`pb-2 transition-all whitespace-nowrap ${
+              activeTab === tab.id
+                ? 'text-slate-900 font-black border-b-2 border-slate-900'
+                : 'text-slate-400 hover:text-slate-700'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
 
-            {/* Nav Item 1: Analytics */}
-            <button
-              onClick={() => setActiveTab('analytics')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'analytics'
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
-              }`}
-            >
-              <span className="flex items-center gap-2.5">
-                <BarChart3 className="w-4 h-4" />
-                <span>Overview & Analytics</span>
-              </span>
-              <Activity className={`w-3.5 h-3.5 ${activeTab === 'analytics' ? 'text-white' : 'text-slate-400'}`} />
-            </button>
-
-            {/* Nav Item 2: Approvals Queue */}
-            <button
-              onClick={() => setActiveTab('approvals')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'approvals'
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
-              }`}
-            >
-              <span className="flex items-center gap-2.5">
-                <Calendar className="w-4 h-4" />
-                <span>Event Proposals</span>
-              </span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-mono ${
-                activeTab === 'approvals'
-                  ? 'bg-white text-orange-700'
-                  : pendingEvents.length > 0 
-                  ? 'bg-orange-100 text-orange-900' 
-                  : 'bg-slate-100 text-slate-600'
-              }`}>
-                {pendingEvents.length}
-              </span>
-            </button>
-
-            {/* Nav Item: Monitor All Events (Fixed Admin Role Permission) */}
-            <button
-              onClick={() => setActiveTab('monitor')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'monitor'
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
-              }`}
-            >
-              <span className="flex items-center gap-2.5">
-                <FileText className="w-4 h-4" />
-                <span>Monitor All Events</span>
-              </span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-mono ${
-                activeTab === 'monitor' ? 'bg-white text-orange-700' : 'bg-slate-100 text-slate-600'
-              }`}>
-                {allCampusEvents.length}
-              </span>
-            </button>
-
-            {/* Nav Item 3: Users */}
-            <button
-              onClick={() => setActiveTab('users')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'users'
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
-              }`}
-            >
-              <span className="flex items-center gap-2.5">
-                <Users className="w-4 h-4" />
-                <span>Campus User Directory</span>
-              </span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-mono ${
-                activeTab === 'users' ? 'bg-white text-orange-700' : 'bg-slate-100 text-slate-600'
-              }`}>
-                {usersList.length}
-              </span>
-            </button>
-
-            {/* Nav Item 4: Audit */}
-            <button
-              onClick={() => setActiveTab('audit')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'audit'
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
-              }`}
-            >
-              <span className="flex items-center gap-2.5">
-                <ShieldAlert className="w-4 h-4" />
-                <span>Audit & Compliance</span>
-              </span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-mono ${
-                activeTab === 'audit' ? 'bg-white text-orange-700' : 'bg-slate-100 text-slate-600'
-              }`}>
-                {auditLogs.length}
-              </span>
-            </button>
-          </div>
-
-          {/* System Health Card (MUI Sidebar Footer) */}
-          <div className="bg-orange-50/60 rounded-2xl border border-orange-200/80 p-4 space-y-3 text-xs">
-            <div className="flex items-center justify-between">
-              <span className="font-bold text-slate-900 flex items-center gap-1.5">
-                <Database className="w-3.5 h-3.5 text-orange-600" />
-                Core System Status
-              </span>
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
-                Online
-              </span>
-            </div>
-            <div className="space-y-1 text-[11px] text-slate-600">
-              <div className="flex justify-between">
-                <span>FastAPI Backend:</span>
-                <strong className="text-slate-800">Port 8000</strong>
-              </div>
-              <div className="flex justify-between">
-                <span>Database Engine:</span>
-                <strong className="text-slate-800">Thread-safe RLock</strong>
-              </div>
-              <div className="flex justify-between">
-                <span>Accreditation:</span>
-                <strong className="text-emerald-700">Verifiable PDF</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Main Content Canvas (lg:col-span-9) */}
-        <div className="lg:col-span-9 space-y-6">
+      {/* 3. Main Content Area */}
+      <div className="space-y-8">
           
           {/* TAB 1: ANALYTICS & UTILIZATION */}
           {activeTab === 'analytics' && analytics && (
@@ -798,7 +677,6 @@ export default function AdminDashboard() {
           )}
 
         </div>
-      </div>
 
       {/* Reject Event Modal */}
       <Modal

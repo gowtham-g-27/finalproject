@@ -149,22 +149,22 @@ export default function EventDetailPage() {
 
   if (loading) {
     return (
-      <div className="max-w-5xl mx-auto px-4 py-16 text-center animate-pulse">
-        <div className="h-64 bg-orange-100/60 rounded-3xl mb-8" />
-        <div className="h-8 bg-orange-100 rounded-lg w-1/2 mx-auto mb-4" />
-        <div className="h-4 bg-orange-50 rounded-lg w-3/4 mx-auto" />
+      <div className="max-w-6xl mx-auto px-4 py-20 text-center animate-pulse">
+        <div className="h-96 bg-slate-100 rounded-3xl mb-8" />
+        <div className="h-8 bg-slate-100 rounded-lg w-1/3 mx-auto mb-4" />
+        <div className="h-4 bg-slate-50 rounded-lg w-1/2 mx-auto" />
       </div>
     );
   }
 
   if (!event) {
     return (
-      <div className="max-w-md mx-auto my-20 p-8 text-center bg-white rounded-3xl border border-orange-100 shadow-sm">
-        <AlertCircle className="w-12 h-12 text-rose-500 mx-auto mb-3" />
-        <h2 className="text-xl font-bold text-slate-900">Event Not Found</h2>
-        <p className="text-sm text-slate-500 mt-2">The requested event does not exist or may have been unlisted.</p>
-        <Link to="/events" className="mt-6 inline-block text-sm font-semibold text-orange-600 hover:underline">
-          Return to Browse Events
+      <div className="max-w-md mx-auto my-24 p-10 text-center bg-white rounded-3xl border border-slate-100 shadow-2xs">
+        <AlertCircle className="w-12 h-12 text-slate-400 mx-auto mb-3" />
+        <h2 className="text-xl font-medium tracking-tight text-slate-900">Event Not Found</h2>
+        <p className="text-sm text-slate-400 mt-2">The requested event does not exist or may have been unlisted.</p>
+        <Link to="/events" className="mt-6 inline-block text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-orange-600 border-b border-slate-900 pb-0.5">
+          Return to Events
         </Link>
       </div>
     );
@@ -175,54 +175,61 @@ export default function EventDetailPage() {
   const percentFilled = Math.min(100, Math.round((event.registered_count / event.capacity) * 100));
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
       
       {/* Back link */}
-      <button
-        onClick={() => navigate(-1)}
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-orange-600 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" /> Back to events
-      </button>
-
-      {/* Main Event Card */}
-      <div className="bg-white rounded-3xl border border-orange-100 shadow-sm overflow-hidden">
-        {/* Banner */}
-        <div className="relative h-72 sm:h-96 w-full bg-slate-900">
-          <img
-            src={event.poster_url || "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"}
-            alt={event.title}
-            className="w-full h-full object-cover opacity-85"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
-
-          {/* Top badges */}
-          <div className="absolute top-4 left-4 flex gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm">
-              {event.category}
-            </span>
-            <StatusBadge status={event.status} />
-          </div>
-
-          {/* Banner bottom info */}
-          <div className="absolute bottom-6 left-6 right-6 text-white">
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-              {event.title}
-            </h1>
-            <p className="mt-2 text-xs sm:text-sm text-orange-200">
-              Organized by <span className="font-semibold text-white">{event.organizer_name}</span>
-            </p>
-          </div>
+      <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+        <button
+          onClick={() => navigate(-1)}
+          className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-slate-400 hover:text-slate-900 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" /> Back to catalogue
+        </button>
+        <div className="text-[11px] uppercase tracking-widest text-slate-400">
+          Ref #{event.id?.slice(0, 8)}
         </div>
+      </div>
 
-        {/* Content Body */}
-        <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
-          
-          {/* Left Column: Details */}
-          <div className="lg:col-span-2 space-y-8">
+      {/* Main Grid: Left image showcase, Right details */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        {/* Left column: Visual showcase with circular badges */}
+        <div className="lg:col-span-7 space-y-6">
+          <div className="relative bg-[#F8F9FA] rounded-3xl p-4 sm:p-6 border border-slate-100 overflow-hidden group">
+            <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-slate-100">
+              <img
+                src={event.poster_url || "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"}
+                alt={event.title}
+                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Circular badge chips matching Lezada */}
+            <div className="absolute top-8 left-8 flex flex-col gap-2">
+              <span className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold tracking-tight shadow-sm">
+                {event.category?.slice(0, 4)?.toUpperCase() || 'EVT'}
+              </span>
+              {isFull ? (
+                <span className="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center text-[10px] font-bold tracking-tight shadow-sm">
+                  WAIT
+                </span>
+              ) : (
+                <span className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold tracking-tight shadow-sm">
+                  OPEN
+                </span>
+              )}
+            </div>
+
+            <div className="absolute top-8 right-8">
+              <StatusBadge status={event.status} />
+            </div>
+          </div>
+
+          {/* About description */}
+          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 space-y-6">
             <div>
-              <h2 className="text-lg font-bold text-slate-900">About this Event</h2>
-              <p className="mt-3 text-slate-700 leading-relaxed whitespace-pre-line text-sm sm:text-base">
+              <h2 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-3">About this Event</h2>
+              <p className="text-slate-600 leading-relaxed whitespace-pre-line text-sm sm:text-base font-normal">
                 {event.description}
               </p>
             </div>
@@ -230,12 +237,12 @@ export default function EventDetailPage() {
             {/* Tags */}
             {event.tags?.length > 0 && (
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Topic Tags</h3>
+                <h3 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Topic Tags</h3>
                 <div className="flex flex-wrap gap-2">
                   {event.tags.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 rounded-lg text-xs font-semibold bg-orange-50 text-orange-700 border border-orange-100"
+                      className="px-3 py-1 rounded-full text-xs text-slate-600 bg-[#F8F9FA] border border-slate-200/60"
                     >
                       #{t}
                     </span>
@@ -245,153 +252,168 @@ export default function EventDetailPage() {
             )}
 
             {/* Eligibility */}
-            <div className="p-4 rounded-2xl bg-orange-50/40 border border-orange-100">
-              <h3 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+            <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-slate-100">
+              <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest mb-1">
                 Eligibility & Prerequisites
               </h3>
-              <p className="text-sm text-slate-600">
+              <p className="text-xs text-slate-500">
                 {event.eligibility || 'Open to all registered university students.'}
               </p>
             </div>
 
-            {/* Calendar & Share actions */}
-            <div className="flex flex-wrap gap-3 pt-4 border-t border-orange-50">
+            {/* Action buttons */}
+            <div className="flex flex-wrap gap-3 pt-4 border-t border-slate-100">
               <button
                 onClick={handleDownloadCalendar}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-orange-200 hover:bg-orange-50 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-900 transition-colors shadow-2xs"
               >
-                <Calendar className="w-4 h-4 text-orange-600" /> Add to Calendar (.ics)
+                <Calendar className="w-3.5 h-3.5 text-slate-900" /> Add to Calendar (.ics)
               </button>
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(window.location.href);
                   addToast('Event link copied to clipboard!', 'info');
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-orange-200 hover:bg-orange-50 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-900 transition-colors shadow-2xs"
               >
-                <Share2 className="w-4 h-4 text-orange-600" /> Share Event
+                <Share2 className="w-3.5 h-3.5 text-slate-900" /> Share Event
               </button>
             </div>
           </div>
-
-          {/* Right Column: Registration Card */}
-          <div className="space-y-6">
-            <div className="bg-orange-50/50 rounded-2xl p-6 border border-orange-200/80 shadow-xs space-y-6">
-              <h3 className="font-bold text-slate-900 text-base">Date & Venue</h3>
-
-              <div className="space-y-3.5 text-xs text-slate-700">
-                <div className="flex items-start gap-3">
-                  <Calendar className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold">{event.date}</div>
-                    <div className="text-slate-500">Event Date</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold">{event.start_time} - {event.end_time}</div>
-                    <div className="text-slate-500">Time Duration</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold">{event.venue}</div>
-                    <div className="text-slate-500">Campus Location</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Capacity status */}
-              <div className="pt-4 border-t border-orange-200/60">
-                <div className="flex justify-between items-center text-xs mb-1.5 font-semibold">
-                  <span className="text-slate-600 flex items-center gap-1">
-                    <Users className="w-3.5 h-3.5 text-slate-500" /> Seating Capacity
-                  </span>
-                  <span>{event.registered_count} / {event.capacity}</span>
-                </div>
-
-                <div className="w-full bg-orange-100 rounded-full h-2 overflow-hidden">
-                  <div
-                    className={`h-full rounded-full ${isFull ? 'bg-amber-500' : 'bg-orange-500'}`}
-                    style={{ width: `${percentFilled}%` }}
-                  />
-                </div>
-
-                {isFull && (
-                  <p className="text-[11px] text-amber-700 font-semibold mt-2">
-                    Event is currently full. Registrations will join the priority waitlist.
-                  </p>
-                )}
-              </div>
-
-              {/* Registration CTA Button */}
-              {myRegistration ? (
-                <div className="p-4 rounded-xl bg-white border border-emerald-200 space-y-3 text-center">
-                  <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-700">
-                    <CheckCircle2 className="w-4 h-4" />
-                    You are registered!
-                  </div>
-                  <div className="text-xs text-slate-600">
-                    Status: <span className="font-bold uppercase text-slate-800">{myRegistration.status}</span>
-                  </div>
-                  <div className="flex flex-col gap-2 pt-2">
-                    <Link
-                      to="/dashboard"
-                      className="w-full py-2 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-700 text-white transition-colors"
-                    >
-                      View QR Ticket
-                    </Link>
-                    <button
-                      onClick={() => setShowCancelModal(true)}
-                      className="text-xs text-rose-600 hover:underline font-medium"
-                    >
-                      Cancel Registration
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <button
-                  onClick={handleRegister}
-                  disabled={submitting}
-                  className={`w-full py-3.5 rounded-xl font-bold text-sm text-white transition-all shadow-md active:scale-[0.98] ${
-                    isFull
-                      ? 'bg-amber-600 hover:bg-amber-700 shadow-amber-500/25'
-                      : 'bg-orange-600 hover:bg-orange-700 shadow-orange-500/25'
-                  }`}
-                >
-                  {submitting
-                    ? 'Processing...'
-                    : isFull
-                    ? `Join Waitlist (${event.waitlist_count} waiting)`
-                    : 'Register for Free'}
-                </button>
-              )}
-            </div>
-          </div>
         </div>
+
+        {/* Right column: Registration & Schedule Details */}
+        <div className="lg:col-span-5 space-y-6">
+          
+          <div className="bg-[#F8F9FA] rounded-3xl p-6 sm:p-8 border border-slate-100 space-y-6">
+            <div>
+              <div className="text-[11px] uppercase tracking-widest text-slate-400 font-semibold mb-1">
+                {event.category}
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-normal text-slate-900 tracking-tight leading-snug">
+                {event.title}
+              </h1>
+              <div className="mt-2 text-xs text-slate-500">
+                Organized by <span className="font-semibold text-slate-900">{event.organizer_name}</span>
+              </div>
+            </div>
+
+            {/* Meta specification list */}
+            <div className="space-y-4 pt-4 border-t border-slate-200/60 text-xs text-slate-700">
+              <div className="flex items-start justify-between py-1 border-b border-slate-200/40">
+                <span className="text-slate-400 flex items-center gap-2">
+                  <Calendar className="w-3.5 h-3.5" /> Date
+                </span>
+                <span className="font-semibold text-slate-900">{event.date}</span>
+              </div>
+
+              <div className="flex items-start justify-between py-1 border-b border-slate-200/40">
+                <span className="text-slate-400 flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5" /> Duration
+                </span>
+                <span className="font-semibold text-slate-900">{event.start_time} - {event.end_time}</span>
+              </div>
+
+              <div className="flex items-start justify-between py-1 border-b border-slate-200/40">
+                <span className="text-slate-400 flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5" /> Campus Location
+                </span>
+                <span className="font-semibold text-slate-900 text-right">{event.venue}</span>
+              </div>
+
+              <div className="flex items-start justify-between py-1 border-b border-slate-200/40">
+                <span className="text-slate-400 flex items-center gap-2">
+                  <Users className="w-3.5 h-3.5" /> Seats Taken
+                </span>
+                <span className="font-semibold text-slate-900">{event.registered_count} / {event.capacity}</span>
+              </div>
+            </div>
+
+            {/* Progress bar */}
+            <div>
+              <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                <div
+                  className={`h-full ${isFull ? 'bg-rose-500' : 'bg-slate-900'} transition-all duration-500`}
+                  style={{ width: `${percentFilled}%` }}
+                />
+              </div>
+              <div className="mt-2 flex justify-between text-[11px] text-slate-400">
+                <span>{spotsLeft > 0 ? `${spotsLeft} seats remaining` : 'Capacity reached'}</span>
+                <span>{percentFilled}% full</span>
+              </div>
+            </div>
+
+            {/* Registration CTA Button */}
+            {myRegistration ? (
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-3 text-center">
+                <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-emerald-700">
+                  <CheckCircle2 className="w-4 h-4" />
+                  Registration confirmed
+                </div>
+                <div className="text-xs text-slate-500">
+                  Access Status: <span className="font-bold uppercase text-slate-900">{myRegistration.status}</span>
+                </div>
+                <div className="flex flex-col gap-2 pt-2">
+                  <Link
+                    to="/dashboard"
+                    className="w-full py-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-slate-900 hover:bg-orange-600 text-white transition-colors"
+                  >
+                    View QR Access Pass
+                  </Link>
+                  <button
+                    onClick={() => setShowCancelModal(true)}
+                    className="text-xs text-slate-400 hover:text-rose-600 transition-colors"
+                  >
+                    Cancel Registration
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                onClick={handleRegister}
+                disabled={submitting}
+                className={`w-full py-3.5 rounded-xl font-bold uppercase text-xs tracking-widest text-white transition-all shadow-xs active:scale-[0.99] ${
+                  isFull
+                    ? 'bg-amber-600 hover:bg-amber-700'
+                    : 'bg-slate-900 hover:bg-orange-600'
+                }`}
+              >
+                {submitting
+                  ? 'Processing...'
+                  : isFull
+                  ? `Join Priority Waitlist (${event.waitlist_count} ahead)`
+                  : 'Register for Access'}
+              </button>
+            )}
+          </div>
+
+          {/* Quick Security & Eligibility badge */}
+          <div className="p-4 rounded-2xl bg-white border border-slate-100 flex items-center gap-3 text-xs text-slate-500">
+            <Award className="w-4 h-4 text-slate-400 shrink-0" />
+            <span>Digital attendance badge & verified certificate issued upon check-in.</span>
+          </div>
+
+        </div>
+
       </div>
 
       {/* Reviews & Feedback Section */}
-      <div className="bg-white rounded-3xl border border-orange-100 p-6 sm:p-10 shadow-sm space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-orange-100">
+      <div className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-10 space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
           <div>
-            <h2 className="text-xl font-bold text-slate-900">Attendee Reviews & Feedback</h2>
-            <p className="text-xs text-slate-500 mt-1">Verified reviews from participating campus students</p>
+            <h2 className="text-lg font-normal text-slate-900 tracking-tight">Attendee Feedback & Reviews</h2>
+            <p className="text-xs text-slate-400 mt-1">Verified reviews from participating students</p>
           </div>
 
           {feedbackData && (
-            <div className="flex items-center gap-3 bg-orange-50 px-4 py-2 rounded-2xl border border-orange-100">
-              <Star className="w-6 h-6 text-amber-500 fill-amber-500" />
+            <div className="flex items-center gap-3 bg-[#F8F9FA] px-4 py-2.5 rounded-2xl border border-slate-100">
+              <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
               <div>
-                <div className="text-lg font-extrabold text-slate-900 leading-none">
+                <div className="text-base font-bold text-slate-900 leading-none">
                   {feedbackData.average_rating > 0 ? feedbackData.average_rating : '5.0'}
-                  <span className="text-xs text-slate-500 font-normal"> / 5.0</span>
+                  <span className="text-xs text-slate-400 font-normal"> / 5.0</span>
                 </div>
-                <div className="text-[10px] text-slate-500">{feedbackData.total_reviews} total reviews</div>
+                <div className="text-[10px] text-slate-400">{feedbackData.total_reviews} reviews</div>
               </div>
             </div>
           )}
@@ -399,11 +421,11 @@ export default function EventDetailPage() {
 
         {/* Submit feedback if registered or attended */}
         {user && (
-          <form onSubmit={handleSubmitFeedback} className="bg-orange-50/40 p-5 rounded-2xl border border-orange-100 space-y-4">
-            <h3 className="text-sm font-bold text-slate-900">Leave Your Rating & Feedback</h3>
+          <form onSubmit={handleSubmitFeedback} className="bg-[#F8F9FA] p-6 rounded-2xl border border-slate-100 space-y-4">
+            <h3 className="text-xs uppercase tracking-widest font-bold text-slate-900">Leave Your Rating & Review</h3>
             
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-600 font-medium">Your Rating:</span>
+              <span className="text-xs text-slate-500">Rating:</span>
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
@@ -413,7 +435,7 @@ export default function EventDetailPage() {
                     className="p-1 focus:outline-none"
                   >
                     <Star
-                      className={`w-5 h-5 ${
+                      className={`w-4 h-4 ${
                         star <= rating ? 'text-amber-500 fill-amber-500' : 'text-slate-300'
                       }`}
                     />
@@ -427,13 +449,13 @@ export default function EventDetailPage() {
               placeholder="What did you learn or enjoy most about this event?"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              className="w-full p-3 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full p-3.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:border-slate-900"
             />
 
             <button
               type="submit"
               disabled={submittingFeedback}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-slate-900 hover:bg-orange-600 transition-colors shadow-2xs"
             >
               <Send className="w-3.5 h-3.5" /> Submit Review
             </button>
@@ -441,19 +463,19 @@ export default function EventDetailPage() {
         )}
 
         {/* Reviews List */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {feedbackData?.reviews?.length === 0 ? (
-            <p className="text-xs text-slate-500 text-center py-6">
+            <p className="text-xs text-slate-400 text-center py-6">
               No reviews submitted yet for this event.
             </p>
           ) : (
             feedbackData?.reviews?.map((r) => (
-              <div key={r.id} className="p-4 rounded-xl border border-orange-50 bg-white">
+              <div key={r.id} className="p-4 rounded-2xl border border-slate-100 bg-[#F8F9FA]">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-xs text-slate-900">{r.user_name}</span>
+                  <span className="font-semibold text-xs text-slate-900">{r.user_name}</span>
                   <div className="flex items-center gap-1">
                     {[...Array(r.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                      <Star key={i} className="w-3 h-3 text-amber-500 fill-amber-500" />
                     ))}
                   </div>
                 </div>

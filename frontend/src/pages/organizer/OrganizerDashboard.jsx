@@ -287,19 +287,19 @@ export default function OrganizerDashboard() {
   const avgUtilization = totalCapacity > 0 ? Math.round((totalRegistrations / totalCapacity) * 100) : 0;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-10 text-left">
       
-      {/* Institutional Header Banner */}
-      <div className="bg-white rounded-2xl border border-orange-100 p-6 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-900 mb-1.5">
-            Faculty & Chapter Coordinator Console
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Organizer Studio
+      {/* 1. Header (Minimalist Editorial Style from Image 2) */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-2 border-b border-slate-100">
+        <div className="space-y-1">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block">
+            FACULTY & COORDINATOR STUDIO
+          </span>
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Event Operations Studio
           </h1>
-          <p className="text-xs text-slate-500 mt-1">
-            Submit event proposals, manage seating allotments, conduct gate QR ticket check-ins, and export attendee rosters.
+          <p className="text-xs text-slate-500">
+            Submit symposium proposals, track registrations, broadcast attendee updates, and verify gate QR passes.
           </p>
         </div>
 
@@ -308,63 +308,61 @@ export default function OrganizerDashboard() {
             resetForm();
             setShowCreateModal(true);
           }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-orange-600 hover:bg-orange-700 shadow-2xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-none font-bold text-xs uppercase tracking-widest text-white bg-slate-900 hover:bg-orange-600 shadow-xs transition-colors shrink-0"
         >
-          <Plus className="w-4 h-4" /> Propose New Event
+          <Plus className="w-4 h-4" /> Propose Event
         </button>
       </div>
 
-      {/* Metrics Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl bg-white border border-orange-100 shadow-2xs">
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Assigned Events</div>
-          <div className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">{totalEvents}</div>
+      {/* 2. Key Metrics Row (Minimalist Soft Boxes) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80">
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Assigned Events</div>
+          <div className="mt-2 text-2xl sm:text-3xl font-black text-slate-900">{totalEvents}</div>
           <div className="mt-1 text-[11px] text-slate-500">Across your campus chapter</div>
         </div>
-        <div className="p-5 rounded-2xl bg-white border border-orange-100 shadow-2xs">
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Total Enrolled</div>
-          <div className="mt-2 text-2xl sm:text-3xl font-extrabold text-orange-600">{totalRegistrations}</div>
-          <div className="mt-1 text-[11px] text-slate-500">Confirmed & waitlisted seats</div>
+        <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80">
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Enrolled</div>
+          <div className="mt-2 text-2xl sm:text-3xl font-black text-orange-600">{totalRegistrations}</div>
+          <div className="mt-1 text-[11px] text-slate-500">Confirmed seats & waitlist</div>
         </div>
-        <div className="p-5 rounded-2xl bg-white border border-orange-100 shadow-2xs">
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Gate Check-Ins</div>
-          <div className="mt-2 text-2xl sm:text-3xl font-extrabold text-purple-700">{totalAttended}</div>
-          <div className="mt-1 text-[11px] text-slate-500">Verified through QR scan</div>
+        <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80">
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Gate Check-Ins</div>
+          <div className="mt-2 text-2xl sm:text-3xl font-black text-slate-900">{totalAttended}</div>
+          <div className="mt-1 text-[11px] text-slate-500">Verified turnouts</div>
         </div>
-        <div className="p-5 rounded-2xl bg-white border border-orange-100 shadow-2xs">
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Seat Utilization</div>
-          <div className="mt-2 text-2xl sm:text-3xl font-extrabold text-emerald-700">{avgUtilization}%</div>
+        <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80">
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fill Rate</div>
+          <div className="mt-2 text-2xl sm:text-3xl font-black text-emerald-700">{avgUtilization}%</div>
           <div className="mt-1 text-[11px] text-slate-500">Capacity efficiency</div>
         </div>
       </div>
 
-      {/* Filter & Table Container */}
-      <div className="bg-white rounded-2xl border border-orange-100 shadow-2xs overflow-hidden">
-        
-        {/* Table Top Controls */}
-        <div className="px-6 py-4 border-b border-orange-100 bg-orange-50/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <h2 className="font-bold text-slate-900 text-sm">Managed Events Roster</h2>
-            <span className="text-[10px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-orange-100">
-              {filteredEvents.length} items
-            </span>
-          </div>
+      {/* 3. Centered Filter Tabs (Matching User Reference Image 2) */}
+      <div className="flex items-center justify-center gap-6 sm:gap-10 text-xs font-semibold tracking-wide border-b border-slate-100 pb-2">
+        {[
+          { id: 'all', label: 'All Events' },
+          { id: 'approved', label: 'Approved & Active' },
+          { id: 'pending', label: 'Under Review' },
+          { id: 'rejected', label: 'Rejected' },
+          { id: 'completed', label: 'Completed' },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setStatusFilter(tab.id)}
+            className={`pb-2 transition-all ${
+              statusFilter === tab.id
+                ? 'text-slate-900 font-black border-b-2 border-slate-900'
+                : 'text-slate-400 hover:text-slate-700'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
 
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-500 font-medium">Status Filter:</span>
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="text-xs font-semibold px-3 py-1.5 rounded-xl border border-orange-200 bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-orange-500"
-            >
-              <option value="all">All Statuses</option>
-              <option value="approved">Approved & Active</option>
-              <option value="pending">Pending Board Review</option>
-              <option value="rejected">Rejected / Clashing</option>
-              <option value="completed">Completed</option>
-            </select>
-          </div>
-        </div>
+      {/* 4. Table Container */}
+      <div className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-2xs">
 
         {/* Table List */}
         {loading ? (
