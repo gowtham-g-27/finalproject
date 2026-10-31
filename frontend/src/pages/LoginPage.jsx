@@ -37,9 +37,9 @@ export default function LoginPage() {
 
   const handleDemoFill = (role) => {
     const demos = {
-      student: { email: 'student@campus.edu', pass: 'student123' },
-      organizer: { email: 'organizer@campus.edu', pass: 'organizer123' },
-      admin: { email: 'admin@campus.edu', pass: 'admin123' },
+      student: { email: 'gowtham@campus.edu', pass: 'student123' },
+      organizer: { email: 'vyshnavi@campus.edu', pass: 'organizer123' },
+      admin: { email: 'venkatramana@campus.edu', pass: 'admin123' },
     };
     setEmail(demos[role].email);
     setPassword(demos[role].pass);

@@ -10,27 +10,26 @@ from backend.database import Database
 def hash_pw(password: str) -> str:
     return bcrypt.hashpw(password.encode("utf-8")[:72], bcrypt.gensalt()).decode("utf-8")
 
-def reset_and_seed():
+def reset_and_seed_custom():
     print("Initializing Database with live Firebase...")
     db = Database()
-    
-    # Fixed UUIDs for clean, deterministic data
-    admin_id = "usr-admin-001"
-    organizer_id = "usr-organizer-002"
-    student_id = "usr-student-003"
-    
-    event_hackathon_id = "evt-hackathon-2026"
-    event_cyber_id = "evt-cyber-summit"
-    event_cultural_id = "evt-riviera-cultural"
-    event_web3_id = "evt-web3-bootcamp"
-    event_sports_id = "evt-sports-championship"
-    
-    reg_hackathon_id = "reg-hackathon-alex"
-    reg_web3_id = "reg-web3-alex"
-    cert_web3_id = "cert-2026-vitap-0088"
-    fb_web3_id = "fb-web3-alex"
 
-    print("Clearing old local data...")
+    # User IDs
+    u_admin = "usr-venkatramana"
+    u_coord_vyshnavi = "usr-vyshnavi"
+    u_coord_navya = "usr-navya"
+    u_coord_suhana = "usr-suhana"
+    
+    u_stud_gowtham = "usr-geetha-gowtham"
+    u_stud_ramya = "usr-ramya"
+    u_stud_prasanna = "usr-prasanna-reddy"
+    u_stud_vijay = "usr-daram-vijay"
+
+    categories = [
+        "Technical", "Cultural", "Sports", "Academic", 
+        "Workshop", "Seminar", "Competition", "Other"
+    ]
+
     fresh_data = {
         "users": {},
         "events": {},
@@ -39,313 +38,944 @@ def reset_and_seed():
         "feedback": {},
         "certificates": {},
         "audit_logs": {},
-        "categories": [
-            "Technical", "Cultural", "Sports", "Academic", 
-            "Workshop", "Seminar", "Competition", "Other"
-        ]
+        "categories": categories
     }
 
-    # 1. THREE CLEAN TEST CREDENTIALS
+    # ==========================================
+    # 1. USER ACCOUNTS (4 Students, 3 Organizers, 1 Admin)
+    # ==========================================
     fresh_data["users"] = {
-        student_id: {
-            "id": student_id,
-            "email": "student@campus.edu",
-            "password_hash": hash_pw("student123"),
-            "full_name": "Alex Chen",
-            "role": "student",
-            "department": "Computer Science & Engineering",
-            "student_id": "23BCE1088",
-            "phone": "+91 98765 43210",
-            "interests": ["Technical", "Workshop", "Competition"],
+        # ADMIN
+        u_admin: {
+            "id": u_admin,
+            "email": "venkatramana@campus.edu",
+            "password_hash": hash_pw("admin123"),
+            "full_name": "Dr. Venkatramana",
+            "role": "admin",
+            "department": "Dean of Academic & Campus Affairs",
+            "student_id": "24MIS9001",
+            "phone": "+91 98480 11223",
+            "interests": ["Campus Oversight", "Event Approvals", "Governance"],
             "is_active": True,
-            "created_at": "2026-09-01T09:00:00Z"
+            "created_at": "2026-07-01T08:00:00Z"
         },
-        organizer_id: {
-            "id": organizer_id,
-            "email": "organizer@campus.edu",
-            "password_hash": hash_pw("organizer123"),
-            "full_name": "Prof. Alex Rivera",
-            "role": "organizer",
-            "department": "School of Computing & Data Science",
-            "student_id": "FAC-CSE-402",
-            "phone": "+91 94401 22334",
-            "interests": ["AI & Machine Learning", "Hackathons", "Robotics"],
-            "is_active": True,
-            "created_at": "2026-08-15T09:00:00Z"
-        },
-        admin_id: {
-            "id": admin_id,
+        # Legacy demo alias for convenience
+        "usr-admin-alias": {
+            "id": "usr-admin-alias",
             "email": "admin@campus.edu",
             "password_hash": hash_pw("admin123"),
-            "full_name": "Dr. Sarah Jenkins",
+            "full_name": "Dr. Venkatramana (Director)",
             "role": "admin",
-            "department": "Dean of Student Affairs",
-            "student_id": "ADMIN-DIR-001",
-            "phone": "+91 99887 76655",
-            "interests": ["Campus Leadership", "Accreditation", "Events Oversight"],
+            "department": "Dean of Academic & Campus Affairs",
+            "student_id": "24MIS9000",
+            "phone": "+91 98480 11223",
+            "interests": ["Campus Oversight", "Event Approvals"],
             "is_active": True,
-            "created_at": "2026-07-01T09:00:00Z"
+            "created_at": "2026-07-01T08:00:00Z"
+        },
+
+        # 3 COORDINATORS / ORGANISERS
+        u_coord_vyshnavi: {
+            "id": u_coord_vyshnavi,
+            "email": "vyshnavi@campus.edu",
+            "password_hash": hash_pw("organizer123"),
+            "full_name": "Vyshnavi",
+            "role": "organizer",
+            "department": "School of Computer Science & Engineering",
+            "student_id": "24MIS7001",
+            "phone": "+91 97011 22334",
+            "interests": ["Technical Hackathons", "Web Development", "AI Agents"],
+            "is_active": True,
+            "created_at": "2026-08-01T09:00:00Z"
+        },
+        u_coord_navya: {
+            "id": u_coord_navya,
+            "email": "navya@campus.edu",
+            "password_hash": hash_pw("organizer123"),
+            "full_name": "Navya",
+            "role": "organizer",
+            "department": "Department of Electronics & Communication",
+            "student_id": "24MIS7002",
+            "phone": "+91 98492 33445",
+            "interests": ["Robotics", "IoT Workshops", "Cultural Fests"],
+            "is_active": True,
+            "created_at": "2026-08-05T09:00:00Z"
+        },
+        u_coord_suhana: {
+            "id": u_coord_suhana,
+            "email": "suhana@campus.edu",
+            "password_hash": hash_pw("organizer123"),
+            "full_name": "Suhana",
+            "role": "organizer",
+            "department": "School of Management & Humanities",
+            "student_id": "24MIS7003",
+            "phone": "+91 99593 44556",
+            "interests": ["Sports Tournaments", "Literary Debates", "Career Seminars"],
+            "is_active": True,
+            "created_at": "2026-08-10T09:00:00Z"
+        },
+        # Legacy demo alias for organizer
+        "usr-organizer-alias": {
+            "id": "usr-organizer-alias",
+            "email": "organizer@campus.edu",
+            "password_hash": hash_pw("organizer123"),
+            "full_name": "Vyshnavi (Head Coordinator)",
+            "role": "organizer",
+            "department": "School of Computer Science & Engineering",
+            "student_id": "24MIS7000",
+            "phone": "+91 97011 22334",
+            "interests": ["Technical", "Cultural"],
+            "is_active": True,
+            "created_at": "2026-08-01T09:00:00Z"
+        },
+
+        # 4 STUDENTS
+        u_stud_gowtham: {
+            "id": u_stud_gowtham,
+            "email": "gowtham@campus.edu",
+            "password_hash": hash_pw("student123"),
+            "full_name": "Geetha Gowtham",
+            "role": "student",
+            "department": "Computer Science & Engineering",
+            "student_id": "24MIS1001",
+            "phone": "+91 94401 55667",
+            "interests": ["Technical", "Workshop", "Competition"],
+            "is_active": True,
+            "created_at": "2026-08-20T10:00:00Z"
+        },
+        # Legacy demo alias for Gowtham
+        "usr-student-alias": {
+            "id": "usr-student-alias",
+            "email": "student@campus.edu",
+            "password_hash": hash_pw("student123"),
+            "full_name": "Geetha Gowtham",
+            "role": "student",
+            "department": "Computer Science & Engineering",
+            "student_id": "24MIS1001",
+            "phone": "+91 94401 55667",
+            "interests": ["Technical", "Workshop"],
+            "is_active": True,
+            "created_at": "2026-08-20T10:00:00Z"
+        },
+        u_stud_ramya: {
+            "id": u_stud_ramya,
+            "email": "ramya@campus.edu",
+            "password_hash": hash_pw("student123"),
+            "full_name": "Ramya",
+            "role": "student",
+            "department": "Information Technology",
+            "student_id": "24MIS1002",
+            "phone": "+91 95502 66778",
+            "interests": ["Cultural", "Academic", "Workshop"],
+            "is_active": True,
+            "created_at": "2026-08-21T10:00:00Z"
+        },
+        u_stud_prasanna: {
+            "id": u_stud_prasanna,
+            "email": "prasanna@campus.edu",
+            "password_hash": hash_pw("student123"),
+            "full_name": "Prasanna Reddy",
+            "role": "student",
+            "department": "Data Science & AI",
+            "student_id": "24MIS1003",
+            "phone": "+91 96603 77889",
+            "interests": ["Technical", "Competition", "Seminar"],
+            "is_active": True,
+            "created_at": "2026-08-22T10:00:00Z"
+        },
+        u_stud_vijay: {
+            "id": u_stud_vijay,
+            "email": "vijay@campus.edu",
+            "password_hash": hash_pw("student123"),
+            "full_name": "Daram Vijay",
+            "role": "student",
+            "department": "Mechanical Engineering & Robotics",
+            "student_id": "24MIS1004",
+            "phone": "+91 97704 88990",
+            "interests": ["Sports", "Technical", "Competition"],
+            "is_active": True,
+            "created_at": "2026-08-23T10:00:00Z"
         }
     }
 
-    # 2. RICH REALISTIC EVENTS
-    fresh_data["events"] = {
-        event_hackathon_id: {
-            "id": event_hackathon_id,
-            "title": "VIT-AP AI & Robotics Hackathon 2026",
-            "description": "A 24-hour collegiate hackathon focused on autonomous robotics, edge computer vision, and generative AI agent workflows. Mentored by industry leads from NVIDIA and Google Cloud.",
+    # ==========================================
+    # 2. 20 REALISTIC EVENTS (At least 2 in each category, mixed statuses)
+    # ==========================================
+    events_list = [
+        # TECHNICAL (3 events)
+        {
+            "id": "evt-tech-01",
+            "title": "VIT-AP National 24hr Hackathon 2026",
+            "description": "The flagship hackathon challenging engineering students to engineer autonomous AI agents, smart city IoT systems, and distributed Web3 applications.",
             "category": "Technical",
-            "tags": ["AI", "Robotics", "Hackathon", "OpenCV"],
+            "tags": ["Hackathon", "AI", "Cloud", "FullStack"],
             "date": "2026-11-15",
             "start_time": "09:00 AM",
             "end_time": "06:00 PM",
             "venue": "AB-1 Central Auditorium & Innovation Lab",
             "capacity": 150,
-            "registered_count": 1,
+            "registered_count": 150, # FULLY OCCUPIED!
             "attended_count": 0,
-            "waitlist_count": 0,
+            "waitlist_count": 12,
             "status": "approved",
-            "organizer_id": organizer_id,
-            "organizer_name": "Prof. Alex Rivera",
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
             "poster_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-            "eligibility": "Open to all enrolled university engineering students.",
-            "registration_deadline": "2026-11-14T23:59:59Z",
-            "created_at": "2026-10-15T10:00:00Z"
+            "eligibility": "Open to all enrolled B.Tech & M.Tech students.",
+            "registration_deadline": "2026-11-14T23:59:59Z"
         },
-        event_cyber_id: {
-            "id": event_cyber_id,
-            "title": "National Cyber Security & Cloud Summit",
-            "description": "Hands-on defensive architecture masterclass, red-team penetration labs, and zero-trust cloud configuration workshops led by certified ethical hackers.",
-            "category": "Workshop",
-            "tags": ["Security", "Cloud", "Linux", "Networking"],
-            "date": "2026-11-20",
+        {
+            "id": "evt-tech-02",
+            "title": "Autonomous Drone & Robotics Expo",
+            "description": "Live flight testing of quadcopters, obstacle avoidance algorithms using LiDAR, and line-following robotic challenges.",
+            "category": "Technical",
+            "tags": ["Robotics", "Drones", "Embedded", "ROS"],
+            "date": "2026-11-22",
             "start_time": "10:00 AM",
-            "end_time": "04:30 PM",
-            "venue": "Newton Hall, Tech Block 2",
-            "capacity": 100,
-            "registered_count": 42,
+            "end_time": "04:00 PM",
+            "venue": "Robotics Arena, Block 3",
+            "capacity": 80,
+            "registered_count": 48,
             "attended_count": 0,
             "waitlist_count": 0,
             "status": "approved",
-            "organizer_id": organizer_id,
-            "organizer_name": "Prof. Alex Rivera",
-            "poster_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-            "eligibility": "Open to all students with basic networking understanding.",
-            "registration_deadline": "2026-11-19T23:59:59Z",
-            "created_at": "2026-10-18T11:00:00Z"
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
+            "poster_url": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Open to all university departments.",
+            "registration_deadline": "2026-11-21T23:59:59Z"
         },
-        event_cultural_id: {
-            "id": event_cultural_id,
-            "title": "Annual University Cultural Fest — Riviera 2026",
-            "description": "The flagship inter-college cultural extravaganza featuring live music, theatrical stage plays, choreo dance battles, and fine arts exhibitions across two days.",
+        {
+            "id": "evt-tech-03",
+            "title": "Full-Stack Cloud & DevOps Bootcamp",
+            "description": "Hands-on engineering bootcamp covering Docker containerization, Kubernetes clusters, and microservices CI/CD pipelines.",
+            "category": "Technical",
+            "tags": ["DevOps", "Docker", "Kubernetes", "FastAPI"],
+            "date": "2026-10-10", # FINISHED DATE!
+            "start_time": "09:30 AM",
+            "end_time": "05:00 PM",
+            "venue": "Seminar Hall 2, Tech Park",
+            "capacity": 60,
+            "registered_count": 60,
+            "attended_count": 58,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Completed for registered participants.",
+            "registration_deadline": "2026-10-09T23:59:59Z"
+        },
+
+        # CULTURAL (2 events)
+        {
+            "id": "evt-cult-01",
+            "title": "Riviera 2026 — Annual University Cultural Fest",
+            "description": "Two days of high-voltage inter-college cultural events: acoustic battle of the bands, classical fusion dance, stage drama, and star night concert.",
             "category": "Cultural",
-            "tags": ["Music", "Dance", "Riviera", "Arts"],
-            "date": "2026-12-05",
-            "start_time": "05:00 PM",
-            "end_time": "10:00 PM",
+            "tags": ["Music", "Dance", "Theatre", "Riviera"],
+            "date": "2026-12-04",
+            "start_time": "04:30 PM",
+            "end_time": "10:30 PM",
             "venue": "Open Air Amphitheatre",
             "capacity": 500,
             "registered_count": 0,
             "attended_count": 0,
             "waitlist_count": 0,
-            "status": "pending",  # PENDING APPROVAL FOR ADMIN DEMO!
-            "organizer_id": organizer_id,
-            "organizer_name": "Prof. Alex Rivera",
+            "status": "pending", # PENDING FOR VENKATRAMANA (ADMIN) APPROVAL!
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
             "poster_url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
-            "eligibility": "University wide open access.",
-            "registration_deadline": "2026-12-04T23:59:59Z",
-            "created_at": "2026-10-25T14:30:00Z"
+            "eligibility": "Open to all university students and alumni.",
+            "registration_deadline": "2026-12-03T23:59:59Z"
         },
-        event_web3_id: {
-            "id": event_web3_id,
-            "title": "Full-Stack Web3 & Cloud Native Bootcamp",
-            "description": "Three-day intensive developer workshop on distributed systems, container orchestration with Kubernetes, and verified smart contracts.",
-            "category": "Technical",
-            "tags": ["FullStack", "Docker", "Kubernetes", "Web3"],
-            "date": "2026-10-10",
-            "start_time": "09:30 AM",
-            "end_time": "05:00 PM",
-            "venue": "Seminar Hall 3",
-            "capacity": 80,
-            "registered_count": 80,
-            "attended_count": 74,
+        {
+            "id": "evt-cult-02",
+            "title": "Inter-Collegiate Symphony & Acoustic Night",
+            "description": "An enchanting musical evening featuring solo vocalists, choir performances, violin recitals, and fusion band showcases.",
+            "category": "Cultural",
+            "tags": ["Music", "Acoustic", "Choir", "Concert"],
+            "date": "2026-10-18", # FINISHED DATE!
+            "start_time": "06:00 PM",
+            "end_time": "09:30 PM",
+            "venue": "Mahatma Gandhi Auditorium",
+            "capacity": 200,
+            "registered_count": 200,
+            "attended_count": 192,
             "waitlist_count": 0,
-            "status": "completed",
-            "organizer_id": organizer_id,
-            "organizer_name": "Prof. Alex Rivera",
-            "poster_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-            "eligibility": "Completed for registered students.",
-            "registration_deadline": "2026-10-09T23:59:59Z",
-            "created_at": "2026-09-20T10:00:00Z"
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "University student badge required.",
+            "registration_deadline": "2026-10-17T23:59:59Z"
         },
-        event_sports_id: {
-            "id": event_sports_id,
-            "title": "Inter-Department Badminton & Futsal Championship",
-            "description": "Annual campus tournament with knockout rounds, live electronic scoreboards, and university trophy presentation.",
+
+        # SPORTS (3 events)
+        {
+            "id": "evt-sport-01",
+            "title": "VIT-AP Premier League Cricket Championship",
+            "description": "The mega cricket tournament between departmental teams featuring T20 group stages, super overs, and floodlit championship finale.",
             "category": "Sports",
-            "tags": ["Badminton", "Futsal", "Athletics"],
-            "date": "2026-11-25",
+            "tags": ["Cricket", "Tournament", "T20", "Athletics"],
+            "date": "2026-11-18",
             "start_time": "08:00 AM",
-            "end_time": "02:00 PM",
-            "venue": "Indoor Sports Complex",
-            "capacity": 64,
-            "registered_count": 48,
+            "end_time": "05:00 PM",
+            "venue": "Main University Sports Oval",
+            "capacity": 100,
+            "registered_count": 100, # FULLY OCCUPIED!
+            "attended_count": 0,
+            "waitlist_count": 18,
+            "status": "approved",
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Registered student athletes with sports clearance.",
+            "registration_deadline": "2026-11-17T23:59:59Z"
+        },
+        {
+            "id": "evt-sport-02",
+            "title": "Inter-Department Badminton & Squash Open",
+            "description": "Singles and doubles knockout bracket championship on indoor synthetic courts with electronic scoring.",
+            "category": "Sports",
+            "tags": ["Badminton", "Squash", "Racket", "Fitness"],
+            "date": "2026-11-28",
+            "start_time": "09:00 AM",
+            "end_time": "03:00 PM",
+            "venue": "Indoor Sports Complex Courts 1-4",
+            "capacity": 48,
+            "registered_count": 32,
             "attended_count": 0,
             "waitlist_count": 0,
             "status": "approved",
-            "organizer_id": organizer_id,
-            "organizer_name": "Prof. Alex Rivera",
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
             "poster_url": "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1200&q=80",
-            "eligibility": "University students with sports clearance.",
-            "registration_deadline": "2026-11-24T23:59:59Z",
-            "created_at": "2026-10-20T12:00:00Z"
-        }
-    }
+            "eligibility": "Open to all students and faculty.",
+            "registration_deadline": "2026-11-27T23:59:59Z"
+        },
+        {
+            "id": "evt-sport-03",
+            "title": "5-a-Side Futsal Turf Tournament",
+            "description": "High-octane indoor football tournament with 10-minute halves, group stages, and golden-goal knockout rounds.",
+            "category": "Sports",
+            "tags": ["Football", "Futsal", "Turf", "Soccer"],
+            "date": "2026-10-05", # FINISHED DATE!
+            "start_time": "08:00 AM",
+            "end_time": "01:00 PM",
+            "venue": "Campus Turf Arena",
+            "capacity": 64,
+            "registered_count": 64,
+            "attended_count": 60,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "University players.",
+            "registration_deadline": "2026-10-04T23:59:59Z"
+        },
 
-    # 3. REGISTRATIONS (One live confirmed for hackathon with QR, one attended for web3)
-    fresh_data["registrations"] = {
-        reg_hackathon_id: {
-            "id": reg_hackathon_id,
-            "event_id": event_hackathon_id,
-            "event_title": "VIT-AP AI & Robotics Hackathon 2026",
+        # ACADEMIC (2 events)
+        {
+            "id": "evt-acad-01",
+            "title": "International Conference on AI & Computational Intelligence",
+            "description": "Peer-reviewed research paper presentations, keynote talks by IEEE fellows, and panel discussions on frontier foundation models.",
+            "category": "Academic",
+            "tags": ["Research", "IEEE", "DeepLearning", "PaperPresentation"],
+            "date": "2026-12-01",
+            "start_time": "09:30 AM",
+            "end_time": "04:30 PM",
+            "venue": "Sir CV Raman Convention Centre",
+            "capacity": 120,
+            "registered_count": 75,
+            "attended_count": 0,
+            "waitlist_count": 0,
+            "status": "approved",
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Undergraduate, Postgraduate and Ph.D. scholars.",
+            "registration_deadline": "2026-11-30T23:59:59Z"
+        },
+        {
+            "id": "evt-acad-02",
+            "title": "Graduate Fellowship & Higher Studies Masterclass",
+            "description": "Comprehensive roadmap session for GRE, TOEFL, DAAD, and Erasmus Mundus scholarship applications, led by alumni currently studying in the US & Germany.",
+            "category": "Academic",
+            "tags": ["Scholarship", "HigherStudies", "GRE", "Masters"],
+            "date": "2026-10-22", # FINISHED DATE!
+            "start_time": "03:00 PM",
+            "end_time": "06:00 PM",
+            "venue": "Aryabhatta Hall 1",
+            "capacity": 90,
+            "registered_count": 90,
+            "attended_count": 88,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
+            "poster_url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Final & Pre-final year students.",
+            "registration_deadline": "2026-10-21T23:59:59Z"
+        },
+
+        # WORKSHOP (3 events)
+        {
+            "id": "evt-work-01",
+            "title": "Ethical Hacking & Red Team Penetration Testing Lab",
+            "description": "Live CTF (Capture the Flag) war-games, network traffic packet inspection with Wireshark, and defensive hardening against OWASP Top 10 vulnerabilities.",
+            "category": "Workshop",
+            "tags": ["CyberSecurity", "EthicalHacking", "PenTesting", "Linux"],
+            "date": "2026-11-19",
+            "start_time": "10:00 AM",
+            "end_time": "05:00 PM",
+            "venue": "Cyber Security Cyber Range Lab, Block 2",
+            "capacity": 50,
+            "registered_count": 50, # FULLY OCCUPIED!
+            "attended_count": 0,
+            "waitlist_count": 14,
+            "status": "approved",
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Students with personal laptops and Kali Linux VM.",
+            "registration_deadline": "2026-11-18T23:59:59Z"
+        },
+        {
+            "id": "evt-work-02",
+            "title": "Generative AI & LLM Agent Workflows with LangChain",
+            "description": "Build production-grade retrieval augmented generation (RAG) pipelines, multimodal vision agents, and vector embeddings using Python and Gemini API.",
+            "category": "Workshop",
+            "tags": ["GenAI", "LangChain", "Python", "RAG"],
+            "date": "2026-11-26",
+            "start_time": "01:30 PM",
+            "end_time": "05:30 PM",
+            "venue": "Computing Lab 4",
+            "capacity": 70,
+            "registered_count": 45,
+            "attended_count": 0,
+            "waitlist_count": 0,
+            "status": "approved",
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Basic Python familiarity required.",
+            "registration_deadline": "2026-11-25T23:59:59Z"
+        },
+        {
+            "id": "evt-work-03",
+            "title": "UI/UX Design Systems with Figma & Tailwind",
+            "description": "Master component tokens, responsive auto-layout, WCAG accessible color contrast, and micro-interactions for modern web applications.",
+            "category": "Workshop",
+            "tags": ["UIUX", "Figma", "Design", "TailwindCSS"],
+            "date": "2026-10-14", # FINISHED DATE!
+            "start_time": "10:00 AM",
+            "end_time": "03:00 PM",
+            "venue": "Design Studio 1",
+            "capacity": 40,
+            "registered_count": 40,
+            "attended_count": 39,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
+            "poster_url": "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Open to all enthusiasts.",
+            "registration_deadline": "2026-10-13T23:59:59Z"
+        },
+
+        # SEMINAR (2 events)
+        {
+            "id": "evt-sem-01",
+            "title": "Future of Silicon & Semiconductor Fabrication in India",
+            "description": "Distinguished lecture by leading VLSI and chip design architects on RISC-V processor synthesis, clean-room lithography, and career trajectories in fab tech.",
+            "category": "Seminar",
+            "tags": ["Semiconductors", "VLSI", "RISCV", "Hardware"],
+            "date": "2026-11-24",
+            "start_time": "11:00 AM",
+            "end_time": "01:00 PM",
+            "venue": "Sarvepalli Radhakrishnan Auditorium",
+            "capacity": 150,
+            "registered_count": 82,
+            "attended_count": 0,
+            "waitlist_count": 0,
+            "status": "approved",
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
+            "poster_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "ECE, EEE and CSE students.",
+            "registration_deadline": "2026-11-23T23:59:59Z"
+        },
+        {
+            "id": "evt-sem-02",
+            "title": "Quantum Computing & Quantum Cryptography Keynote",
+            "description": "An introductory seminar to Qubits, superposition, Shor's factoring algorithm, and post-quantum cryptographic standards.",
+            "category": "Seminar",
+            "tags": ["Quantum", "Physics", "Cryptography", "Algorithms"],
+            "date": "2026-10-27", # FINISHED DATE!
+            "start_time": "02:00 PM",
+            "end_time": "04:30 PM",
+            "venue": "APJ Abdul Kalam Conference Hall",
+            "capacity": 100,
+            "registered_count": 100,
+            "attended_count": 95,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "University students & faculty.",
+            "registration_deadline": "2026-10-26T23:59:59Z"
+        },
+
+        # COMPETITION (3 events)
+        {
+            "id": "evt-comp-01",
+            "title": "VIT-AP Algorithmic Coding Arena — CodeClash 2026",
+            "description": "Speed algorithmic programming battle on data structures, graphs, dynamic programming, and greedy logic on an automated judge platform.",
+            "category": "Competition",
+            "tags": ["CompetitiveCoding", "Algorithms", "DataStructures", "C++"],
+            "date": "2026-11-17",
+            "start_time": "02:00 PM",
+            "end_time": "05:00 PM",
+            "venue": "Computer Centre 1 & 2",
+            "capacity": 120,
+            "registered_count": 120, # FULLY OCCUPIED!
+            "attended_count": 0,
+            "waitlist_count": 25,
+            "status": "approved",
+            "organizer_id": u_coord_vyshnavi,
+            "organizer_name": "Vyshnavi",
+            "poster_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Individual participation.",
+            "registration_deadline": "2026-11-16T23:59:59Z"
+        },
+        {
+            "id": "evt-comp-02",
+            "title": "National Collegiate Parliamentary Debate Championship",
+            "description": "Asian parliamentary style debate tournament debating international geopolitics, artificial intelligence ethics, and constitutional jurisprudence.",
+            "category": "Competition",
+            "tags": ["Debate", "PublicSpeaking", "Law", "Policy"],
+            "date": "2026-11-29",
+            "start_time": "09:00 AM",
+            "end_time": "06:00 PM",
+            "venue": "Moot Court Hall & Senate Chamber",
+            "capacity": 60,
+            "registered_count": 36,
+            "attended_count": 0,
+            "waitlist_count": 0,
+            "status": "approved",
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Teams of 3 students.",
+            "registration_deadline": "2026-11-28T23:59:59Z"
+        },
+        {
+            "id": "evt-comp-03",
+            "title": "Campus Chess Grand Prix — Rapid & Blitz",
+            "description": "FIDE-rated rapid and blitz tournament across 7 swiss rounds with digital DGT chess boards and live broadcast.",
+            "category": "Competition",
+            "tags": ["Chess", "MindSports", "Strategy"],
+            "date": "2026-10-12", # FINISHED DATE!
+            "start_time": "09:00 AM",
+            "end_time": "04:00 PM",
+            "venue": "Student Activity Centre, Level 2",
+            "capacity": 50,
+            "registered_count": 50,
+            "attended_count": 48,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "All enrolled chess players.",
+            "registration_deadline": "2026-10-11T23:59:59Z"
+        },
+
+        # OTHER (2 events)
+        {
+            "id": "evt-oth-01",
+            "title": "Green Campus Sustainability & Tree Plantation Drive",
+            "description": "University community initiative to plant 1,000 indigenous saplings across the north campus zone, accompanied by composting and zero-waste workshops.",
+            "category": "Other",
+            "tags": ["Eco", "GreenCampus", "Volunteering", "Sustainability"],
+            "date": "2026-11-21",
+            "start_time": "07:30 AM",
+            "end_time": "11:30 AM",
+            "venue": "North Eco Park & Botanical Garden",
+            "capacity": 150,
+            "registered_count": 110,
+            "attended_count": 0,
+            "waitlist_count": 0,
+            "status": "approved",
+            "organizer_id": u_coord_navya,
+            "organizer_name": "Navya",
+            "poster_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Open to all students, staff and faculty.",
+            "registration_deadline": "2026-11-20T23:59:59Z"
+        },
+        {
+            "id": "evt-oth-02",
+            "title": "Annual Blood Donation & Wellness Camp",
+            "description": "Organized in collaboration with the Indian Red Cross Society and Government General Hospital. Free health screenings, BMI metrics, and donor certifications.",
+            "category": "Other",
+            "tags": ["BloodDonation", "Health", "RedCross", "Community"],
+            "date": "2026-10-02", # FINISHED DATE!
+            "start_time": "09:00 AM",
+            "end_time": "04:00 PM",
+            "venue": "Campus Health Centre",
+            "capacity": 200,
+            "registered_count": 200,
+            "attended_count": 184,
+            "waitlist_count": 0,
+            "status": "completed", # COMPLETED!
+            "organizer_id": u_coord_suhana,
+            "organizer_name": "Suhana",
+            "poster_url": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1200&q=80",
+            "eligibility": "Donors aged 18+.",
+            "registration_deadline": "2026-10-01T23:59:59Z"
+        }
+    ]
+
+    for ev in events_list:
+        ev["created_at"] = (datetime.utcnow() - timedelta(days=20)).isoformat() + "Z"
+        fresh_data["events"][ev["id"]] = ev
+
+    # ==========================================
+    # 3. REGISTRATIONS & QR TOKENS (For all 4 students across various events)
+    # ==========================================
+    registrations_list = [
+        # GEETHA GOWTHAM
+        {
+            "id": "reg-gowtham-hackathon",
+            "event_id": "evt-tech-01",
+            "event_title": "VIT-AP National 24hr Hackathon 2026",
             "event_date": "2026-11-15",
             "event_time": "09:00 AM - 06:00 PM",
             "event_venue": "AB-1 Central Auditorium & Innovation Lab",
-            "user_id": student_id,
-            "user_name": "Alex Chen",
-            "user_email": "student@campus.edu",
+            "user_id": u_stud_gowtham,
+            "user_name": "Geetha Gowtham",
+            "user_email": "gowtham@campus.edu",
             "status": "confirmed",
-            "ticket_code": "TKT-HACK-AI-2026", # READY TO SCAN VIA CAMERA OR CODE!
-            "registered_at": "2026-10-28T11:20:00Z",
+            "ticket_code": "TKT-24MIS1001-HACK", # QR PASS FOR GOWTHAM!
+            "registered_at": "2026-10-28T10:00:00Z",
             "attended_at": None,
             "certificate_id": None
         },
-        reg_web3_id: {
-            "id": reg_web3_id,
-            "event_id": event_web3_id,
-            "event_title": "Full-Stack Web3 & Cloud Native Bootcamp",
+        {
+            "id": "reg-gowtham-devops",
+            "event_id": "evt-tech-03",
+            "event_title": "Full-Stack Cloud & DevOps Bootcamp",
             "event_date": "2026-10-10",
             "event_time": "09:30 AM - 05:00 PM",
-            "event_venue": "Seminar Hall 3",
-            "user_id": student_id,
-            "user_name": "Alex Chen",
-            "user_email": "student@campus.edu",
+            "event_venue": "Seminar Hall 2, Tech Park",
+            "user_id": u_stud_gowtham,
+            "user_name": "Geetha Gowtham",
+            "user_email": "gowtham@campus.edu",
             "status": "attended",
-            "ticket_code": "TKT-WEB3-DONE-10",
-            "registered_at": "2026-09-25T14:15:00Z",
-            "attended_at": "2026-10-10T09:45:00Z",
-            "certificate_id": cert_web3_id
-        }
-    }
+            "ticket_code": "TKT-24MIS1001-DEVOPS",
+            "registered_at": "2026-09-25T14:00:00Z",
+            "attended_at": "2026-10-10T09:40:00Z",
+            "certificate_id": "cert-gowtham-devops"
+        },
 
-    # 4. CERTIFICATES (Verified attendance certificate with PDF generation)
+        # RAMYA
+        {
+            "id": "reg-ramya-cyber",
+            "event_id": "evt-work-01",
+            "event_title": "Ethical Hacking & Red Team Penetration Testing Lab",
+            "event_date": "2026-11-19",
+            "event_time": "10:00 AM - 05:00 PM",
+            "event_venue": "Cyber Security Cyber Range Lab, Block 2",
+            "user_id": u_stud_ramya,
+            "user_name": "Ramya",
+            "user_email": "ramya@campus.edu",
+            "status": "confirmed",
+            "ticket_code": "TKT-24MIS1002-CYBER", # QR PASS FOR RAMYA!
+            "registered_at": "2026-10-29T11:15:00Z",
+            "attended_at": None,
+            "certificate_id": None
+        },
+        {
+            "id": "reg-ramya-music",
+            "event_id": "evt-cult-02",
+            "event_title": "Inter-Collegiate Symphony & Acoustic Night",
+            "event_date": "2026-10-18",
+            "event_time": "06:00 PM - 09:30 PM",
+            "event_venue": "Mahatma Gandhi Auditorium",
+            "user_id": u_stud_ramya,
+            "user_name": "Ramya",
+            "user_email": "ramya@campus.edu",
+            "status": "attended",
+            "ticket_code": "TKT-24MIS1002-MUSIC",
+            "registered_at": "2026-10-01T15:30:00Z",
+            "attended_at": "2026-10-18T18:15:00Z",
+            "certificate_id": "cert-ramya-music"
+        },
+
+        # PRASANNA REDDY
+        {
+            "id": "reg-prasanna-codeclash",
+            "event_id": "evt-comp-01",
+            "event_title": "VIT-AP Algorithmic Coding Arena — CodeClash 2026",
+            "event_date": "2026-11-17",
+            "event_time": "02:00 PM - 05:00 PM",
+            "event_venue": "Computer Centre 1 & 2",
+            "user_id": u_stud_prasanna,
+            "user_name": "Prasanna Reddy",
+            "user_email": "prasanna@campus.edu",
+            "status": "confirmed",
+            "ticket_code": "TKT-24MIS1003-CLASH", # QR PASS FOR PRASANNA!
+            "registered_at": "2026-10-27T09:30:00Z",
+            "attended_at": None,
+            "certificate_id": None
+        },
+        {
+            "id": "reg-prasanna-quantum",
+            "event_id": "evt-sem-02",
+            "event_title": "Quantum Computing & Quantum Cryptography Keynote",
+            "event_date": "2026-10-27",
+            "event_time": "02:00 PM - 04:30 PM",
+            "event_venue": "APJ Abdul Kalam Conference Hall",
+            "user_id": u_stud_prasanna,
+            "user_name": "Prasanna Reddy",
+            "user_email": "prasanna@campus.edu",
+            "status": "attended",
+            "ticket_code": "TKT-24MIS1003-QUANTUM",
+            "registered_at": "2026-10-15T12:00:00Z",
+            "attended_at": "2026-10-27T14:10:00Z",
+            "certificate_id": "cert-prasanna-quantum"
+        },
+
+        # DARAM VIJAY
+        {
+            "id": "reg-vijay-cricket",
+            "event_id": "evt-sport-01",
+            "event_title": "VIT-AP Premier League Cricket Championship",
+            "event_date": "2026-11-18",
+            "event_time": "08:00 AM - 05:00 PM",
+            "event_venue": "Main University Sports Oval",
+            "user_id": u_stud_vijay,
+            "user_name": "Daram Vijay",
+            "user_email": "vijay@campus.edu",
+            "status": "confirmed",
+            "ticket_code": "TKT-24MIS1004-CRICKET", # QR PASS FOR VIJAY!
+            "registered_at": "2026-10-30T08:45:00Z",
+            "attended_at": None,
+            "certificate_id": None
+        },
+        {
+            "id": "reg-vijay-futsal",
+            "event_id": "evt-sport-03",
+            "event_title": "5-a-Side Futsal Turf Tournament",
+            "event_date": "2026-10-05",
+            "event_time": "08:00 AM - 01:00 PM",
+            "event_venue": "Campus Turf Arena",
+            "user_id": u_stud_vijay,
+            "user_name": "Daram Vijay",
+            "user_email": "vijay@campus.edu",
+            "status": "attended",
+            "ticket_code": "TKT-24MIS1004-FUTSAL",
+            "registered_at": "2026-09-28T16:00:00Z",
+            "attended_at": "2026-10-05T08:20:00Z",
+            "certificate_id": "cert-vijay-futsal"
+        }
+    ]
+
+    for reg in registrations_list:
+        fresh_data["registrations"][reg["id"]] = reg
+
+    # ==========================================
+    # 4. CERTIFICATES (Verified for the 4 students)
+    # ==========================================
     fresh_data["certificates"] = {
-        cert_web3_id: {
-            "id": cert_web3_id,
-            "certificate_number": "CERT-2026-VITAP-0088",
-            "event_id": event_web3_id,
-            "event_title": "Full-Stack Web3 & Cloud Native Bootcamp",
-            "user_id": student_id,
-            "user_name": "Alex Chen",
+        "cert-gowtham-devops": {
+            "id": "cert-gowtham-devops",
+            "certificate_number": "CERT-2026-24MIS1001",
+            "event_id": "evt-tech-03",
+            "event_title": "Full-Stack Cloud & DevOps Bootcamp",
+            "user_id": u_stud_gowtham,
+            "user_name": "Geetha Gowtham",
             "issue_date": "2026-10-10",
+            "verified": True
+        },
+        "cert-ramya-music": {
+            "id": "cert-ramya-music",
+            "certificate_number": "CERT-2026-24MIS1002",
+            "event_id": "evt-cult-02",
+            "event_title": "Inter-Collegiate Symphony & Acoustic Night",
+            "user_id": u_stud_ramya,
+            "user_name": "Ramya",
+            "issue_date": "2026-10-18",
+            "verified": True
+        },
+        "cert-prasanna-quantum": {
+            "id": "cert-prasanna-quantum",
+            "certificate_number": "CERT-2026-24MIS1003",
+            "event_id": "evt-sem-02",
+            "event_title": "Quantum Computing & Quantum Cryptography Keynote",
+            "user_id": u_stud_prasanna,
+            "user_name": "Prasanna Reddy",
+            "issue_date": "2026-10-27",
+            "verified": True
+        },
+        "cert-vijay-futsal": {
+            "id": "cert-vijay-futsal",
+            "certificate_number": "CERT-2026-24MIS1004",
+            "event_id": "evt-sport-03",
+            "event_title": "5-a-Side Futsal Turf Tournament",
+            "user_id": u_stud_vijay,
+            "user_name": "Daram Vijay",
+            "issue_date": "2026-10-05",
             "verified": True
         }
     }
 
-    # 5. REVIEWS & RATINGS
+    # ==========================================
+    # 5. REVIEWS & RATINGS (Real feedback from students)
+    # ==========================================
     fresh_data["feedback"] = {
-        fb_web3_id: {
-            "id": fb_web3_id,
-            "event_id": event_web3_id,
-            "user_id": student_id,
-            "user_name": "Alex Chen",
+        "fb-gowtham": {
+            "id": "fb-gowtham",
+            "event_id": "evt-tech-03",
+            "user_id": u_stud_gowtham,
+            "user_name": "Geetha Gowtham",
             "rating": 5,
             "organization_rating": 5,
             "content_rating": 5,
-            "comment": "Exceptional hands-on learning! The Docker and Kubernetes labs were structured step-by-step. Highly recommend Prof. Rivera's sessions.",
-            "created_at": "2026-10-11T12:00:00Z"
+            "comment": "Outstanding hands-on session by Vyshnavi! Setting up Kubernetes pods and CI/CD pipelines locally gave me practical clarity.",
+            "created_at": "2026-10-11T10:00:00Z"
+        },
+        "fb-ramya": {
+            "id": "fb-ramya",
+            "event_id": "evt-cult-02",
+            "user_id": u_stud_ramya,
+            "user_name": "Ramya",
+            "rating": 5,
+            "organization_rating": 5,
+            "content_rating": 5,
+            "comment": "The acoustics in the auditorium were magical. Great stage coordination by Navya and team!",
+            "created_at": "2026-10-19T11:30:00Z"
+        },
+        "fb-prasanna": {
+            "id": "fb-prasanna",
+            "event_id": "evt-sem-02",
+            "user_id": u_stud_prasanna,
+            "user_name": "Prasanna Reddy",
+            "rating": 5,
+            "organization_rating": 5,
+            "content_rating": 5,
+            "comment": "The quantum cryptography proofs were explained so intuitively. Truly a high-caliber university seminar.",
+            "created_at": "2026-10-28T09:15:00Z"
+        },
+        "fb-vijay": {
+            "id": "fb-vijay",
+            "event_id": "evt-sport-03",
+            "user_id": u_stud_vijay,
+            "user_name": "Daram Vijay",
+            "rating": 5,
+            "organization_rating": 5,
+            "content_rating": 5,
+            "comment": "Intense matches on the turf arena! Refereeing and match scheduling were seamless.",
+            "created_at": "2026-10-06T14:00:00Z"
         }
     }
 
-    # 6. NOTIFICATIONS FOR STUDENT & ORGANIZER
+    # ==========================================
+    # 6. IN-APP NOTIFICATIONS
+    # ==========================================
     fresh_data["notifications"] = {
-        "notif-1": {
-            "id": "notif-1",
-            "user_id": student_id,
-            "title": "Registration Confirmed!",
-            "message": "You are registered for 'VIT-AP AI & Robotics Hackathon 2026'. Your QR access pass is ready.",
+        "notif-gowtham-1": {
+            "id": "notif-gowtham-1",
+            "user_id": u_stud_gowtham,
+            "title": "Pass Ready: Hackathon 2026",
+            "message": "Your entry badge for 'VIT-AP National 24hr Hackathon 2026' is confirmed. Ticket code: TKT-24MIS1001-HACK.",
             "type": "success",
             "link": "/dashboard",
             "is_read": False,
-            "created_at": "2026-10-28T11:20:00Z"
+            "created_at": "2026-10-28T10:00:00Z"
         },
-        "notif-2": {
-            "id": "notif-2",
-            "user_id": student_id,
+        "notif-gowtham-2": {
+            "id": "notif-gowtham-2",
+            "user_id": u_stud_gowtham,
             "title": "Certificate Available",
-            "message": "Your official Certificate of Participation for Full-Stack Web3 Bootcamp is ready to download.",
+            "message": "Your official Certificate for Full-Stack DevOps Bootcamp is issued. Certificate Number: CERT-2026-24MIS1001.",
             "type": "info",
             "link": "/certificates",
             "is_read": True,
             "created_at": "2026-10-10T18:00:00Z"
         },
-        "notif-3": {
-            "id": "notif-3",
-            "user_id": organizer_id,
-            "title": "New Event Proposal Submitted",
-            "message": "Your proposal for 'Riviera 2026' was submitted to the Dean's office for review.",
+        "notif-admin-1": {
+            "id": "notif-admin-1",
+            "user_id": u_admin,
+            "title": "Pending Proposal: Riviera 2026",
+            "message": "Coordinator Navya has submitted 'Riviera 2026 — Annual University Cultural Fest' for administrative review and approval.",
+            "type": "warning",
+            "link": "/admin",
+            "is_read": False,
+            "created_at": "2026-10-29T14:30:00Z"
+        },
+        "notif-vyshnavi-1": {
+            "id": "notif-vyshnavi-1",
+            "user_id": u_coord_vyshnavi,
+            "title": "Hackathon Capacity Reached",
+            "message": "'VIT-AP National 24hr Hackathon 2026' has reached 150/150 capacity. New registrants are joining the waitlist.",
             "type": "info",
             "link": "/organizer",
             "is_read": False,
-            "created_at": "2026-10-25T14:30:00Z"
+            "created_at": "2026-10-30T16:00:00Z"
         }
     }
 
-    # 7. AUDIT TRAIL LOGS FOR ADMIN
+    # ==========================================
+    # 7. AUDIT TRAIL LOGS
+    # ==========================================
     fresh_data["audit_logs"] = {
         "log-1": {
             "id": "log-1",
-            "user_id": admin_id,
-            "user_name": "Dr. Sarah Jenkins",
+            "user_id": u_admin,
+            "user_name": "Dr. Venkatramana",
             "user_role": "admin",
             "action": "APPROVE_EVENT",
             "resource_type": "event",
-            "resource_id": event_hackathon_id,
-            "details": {"title": "VIT-AP AI & Robotics Hackathon 2026", "status": "approved"},
+            "resource_id": "evt-tech-01",
+            "details": {"title": "VIT-AP National 24hr Hackathon 2026", "status": "approved"},
             "timestamp": "2026-10-16T11:00:00Z"
         },
         "log-2": {
             "id": "log-2",
-            "user_id": organizer_id,
-            "user_name": "Prof. Alex Rivera",
+            "user_id": u_coord_navya,
+            "user_name": "Navya",
             "user_role": "organizer",
             "action": "SUBMIT_EVENT_PROPOSAL",
             "resource_type": "event",
-            "resource_id": event_cultural_id,
-            "details": {"title": "Annual University Cultural Fest — Riviera 2026"},
-            "timestamp": "2026-10-25T14:30:00Z"
+            "resource_id": "evt-cult-01",
+            "details": {"title": "Riviera 2026 — Annual University Cultural Fest"},
+            "timestamp": "2026-10-29T14:30:00Z"
         },
         "log-3": {
             "id": "log-3",
-            "user_id": organizer_id,
-            "user_name": "Prof. Alex Rivera",
+            "user_id": u_coord_vyshnavi,
+            "user_name": "Vyshnavi",
             "user_role": "organizer",
             "action": "CHECK_IN_ATTENDEE",
             "resource_type": "attendance",
-            "resource_id": reg_web3_id,
-            "details": {"student": "Alex Chen", "event": "Full-Stack Web3 Bootcamp", "ticket": "TKT-WEB3-DONE-10"},
-            "timestamp": "2026-10-10T09:45:00Z"
+            "resource_id": "reg-gowtham-devops",
+            "details": {"student": "Geetha Gowtham", "roll": "24MIS1001", "event": "Full-Stack Cloud & DevOps Bootcamp"},
+            "timestamp": "2026-10-10T09:40:00Z"
         }
     }
 
-    # Write fresh dataset to local db.json
+    # Save to local db.json
     db.data = fresh_data
     db.save()
-    print("Local database updated with fresh coherent dataset.")
+    print("Local database updated with customized 20 events and campus users.")
 
-    # Now empty and sync Firestore
+    # Sync to live Firestore
     if db.firestore:
-        print("Clearing all old documents from cloud Firestore...")
+        print("Emptying old documents from live cloud Firestore...")
         cols = ["users", "events", "registrations", "notifications", "feedback", "certificates", "audit_logs"]
         for col_name in cols:
             docs = list(db.firestore.collection(col_name).stream())
@@ -361,11 +991,11 @@ def reset_and_seed():
                         b_count = 0
                 if b_count > 0:
                     batch.commit()
-                print(f"  - Emptied {len(docs)} documents from Firestore [{col_name}]")
+                print(f"  - Cleared {len(docs)} documents from Firestore [{col_name}]")
 
-        print("Uploading fresh coherent dataset to cloud Firestore...")
+        print("Uploading fresh customized dataset to live cloud Firestore...")
         db.sync_all_to_firestore()
-        print("SUCCESS! Cloud Firestore is now completely clean and populated with the new data!")
+        print("SUCCESS: 20 events, 4 students, 3 coordinators, 1 admin, QR codes, and certificates successfully live in Firestore!")
 
 if __name__ == "__main__":
-    reset_and_seed()
+    reset_and_seed_custom()

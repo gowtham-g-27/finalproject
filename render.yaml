@@ -11,3 +11,4 @@ services:
         value: "true"
       - key: FIREBASE_CREDENTIALS_JSON
         sync: false
+
