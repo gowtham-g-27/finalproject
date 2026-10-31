@@ -267,7 +267,7 @@ export default function StudentDashboard() {
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-orange-200 text-left">
                 <div>
                   <div className="text-[10px] font-bold text-orange-800 uppercase tracking-widest">
-                    Apex University Student Affairs
+                    VIT-AP University Student Welfare Office
                   </div>
                   <div className="font-bold text-sm text-slate-900">Official Access Pass</div>
                 </div>

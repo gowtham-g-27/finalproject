@@ -474,7 +474,7 @@ export default function OrganizerDashboard() {
                 required
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                placeholder="e.g. Apex DevSummit 2026: Hands-on Cloud Native Workshop"
+                placeholder="e.g. VIT-AP TechSummit 2026: Hands-on Cloud Native Workshop"
                 className="w-full px-3 py-2 rounded-xl border border-orange-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>

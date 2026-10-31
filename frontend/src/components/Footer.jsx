@@ -14,10 +14,10 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-orange-600 text-white flex items-center justify-center font-bold">
                 <GraduationCap className="w-4 h-4" />
               </div>
-              <span>Apex University</span>
+              <span>VIT-AP University</span>
             </div>
             <p className="text-slate-500 text-[11px] leading-relaxed">
-              Directorate of Student Affairs & Campus Engagement. Official central platform for inter-collegiate symposiums, workshops, varsity sports, and cultural festivals.
+              Office of Student Welfare & Campus Engagement. Official central platform for inter-collegiate symposiums, workshops, varsity sports, and cultural festivals.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5 text-orange-600" />
-                <span>studentaffairs@campus.edu</span>
+                <span>studentwelfare@vitap.ac.in</span>
               </div>
               <div className="pt-2 text-[10px] text-slate-400">
                 Official Academic Term 2025–2026
@@ -66,7 +66,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-orange-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
           <div>
-            © 2026 Apex University. Smart College Event Management System (NexEvent). All rights reserved.
+            © 2026 VIT-AP University. Smart College Event Management System (NexEvent). All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-slate-600">

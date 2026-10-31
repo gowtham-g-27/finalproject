@@ -58,7 +58,7 @@ export default function LoginPage() {
             Campus Sign In
           </h2>
           <p className="mt-1 text-xs text-slate-500">
-            Apex University Student, Faculty & Board Access
+            VIT-AP University Student, Faculty & Board Access
           </p>
         </div>
 

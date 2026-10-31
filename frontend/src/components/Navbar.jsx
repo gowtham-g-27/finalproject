@@ -91,7 +91,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <span className="font-semibold text-slate-800 flex items-center gap-1.5">
               <Building2 className="w-3.5 h-3.5 text-orange-600" />
-              Apex University • Directorate of Student Affairs
+              VIT-AP University • Directorate of Student Affairs
             </span>
             <span className="hidden md:inline text-slate-300">|</span>
             <span className="hidden md:inline text-slate-500 font-medium">

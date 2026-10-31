@@ -33,7 +33,7 @@ def verify_certificate(certificate_number: str):
         "student_name": cert["user_name"],
         "event_title": cert["event_title"],
         "issue_date": cert["issue_date"],
-        "issued_by": "Campus Student Affairs & Event Board",
+        "issued_by": "VIT-AP University Student Affairs & Event Board",
         "status": "Authentic & Verified"
     }
 
@@ -70,7 +70,7 @@ def download_certificate_pdf(certificate_id: str):
 
     p.setFillColor(colors.HexColor("#EA580C"))
     p.setFont("Helvetica-Bold", 18)
-    p.drawCentredString(width / 2, height - 60, "SMART COLLEGE EVENT HUB — OFFICE OF ACADEMIC AFFAIRS")
+    p.drawCentredString(width / 2, height - 60, "VIT-AP UNIVERSITY — OFFICE OF STUDENT WELFARE")
 
     p.setFillColor(colors.HexColor("#64748B"))
     p.setFont("Helvetica", 11)
@@ -125,7 +125,7 @@ def download_certificate_pdf(certificate_id: str):
     p.setFont("Helvetica", 9)
     p.setFillColor(colors.HexColor("#64748B"))
     p.drawCentredString(180, 80, "Event Organizing Committee")
-    p.drawCentredString(width - 180, 80, "University Board")
+    p.drawCentredString(width - 180, 80, "VIT-AP University Board")
 
     # Certificate ID stamp
     p.setFillColor(colors.HexColor("#94A3B8"))
