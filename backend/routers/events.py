@@ -300,3 +300,49 @@ END:VCALENDAR"""
         headers={"Content-Disposition": f"attachment; filename=event_{event_id}.ics"}
     )
 
+@router.post("/{event_id}/broadcast")
+def broadcast_event_update(
+    event_id: str,
+    payload: dict,
+    current_user: dict = Depends(require_role(["organizer", "admin"]))
+):
+    ev = db.data["events"].get(event_id)
+    if not ev:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+    # Fixed role constraint: only the event's creator or admin can broadcast updates
+    if current_user["role"] != "admin" and ev.get("organizer_id") != current_user["id"]:
+        raise HTTPException(status_code=403, detail="You can only broadcast updates for events you organize")
+
+    title = payload.get("title", f"Event Announcement: {ev['title']}").strip()
+    message = payload.get("message", "").strip()
+    if not message:
+        raise HTTPException(status_code=400, detail="Announcement message is required")
+
+    # Find all confirmed or waitlisted students for this event
+    regs = [r for r in db.data["registrations"].values() if r.get("event_id") == event_id]
+    notified_users = set()
+
+    for r in regs:
+        uid = r.get("user_id")
+        if uid and uid not in notified_users:
+            db.create_notification(
+                user_id=uid,
+                title=title,
+                message=message,
+                notif_type="info",
+                link=f"/events/{event_id}"
+            )
+            notified_users.add(uid)
+
+    db.log_audit(
+        current_user["id"], current_user["full_name"], current_user["role"],
+        "BROADCAST_EVENT_UPDATE", "event", event_id,
+        {"title": title, "notified_attendees": len(notified_users)}
+    )
+
+    return {
+        "message": f"Event update dispatched to {len(notified_users)} registered attendees",
+        "notified_count": len(notified_users)
+    }
+

@@ -53,6 +53,7 @@ export const api = {
   createEvent: (eventData) => request('/events', { method: 'POST', body: JSON.stringify(eventData) }),
   updateEvent: (id, eventData) => request(`/events/${id}`, { method: 'PUT', body: JSON.stringify(eventData) }),
   deleteEvent: (id) => request(`/events/${id}`, { method: 'DELETE' }),
+  broadcastEventUpdate: (eventId, payload) => request(`/events/${eventId}/broadcast`, { method: 'POST', body: JSON.stringify(payload) }),
   aiEventAssistant: (promptData) => request('/events/ai-assistant', { method: 'POST', body: JSON.stringify(promptData) }),
   downloadCalendarIcs: (eventId) => request(`/events/${eventId}/calendar-ics`),
 

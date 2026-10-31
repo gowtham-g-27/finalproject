@@ -25,8 +25,10 @@ export default function AdminDashboard() {
   const [usersList, setUsersList] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
   const [pendingEvents, setPendingEvents] = useState([]);
+  const [allCampusEvents, setAllCampusEvents] = useState([]);
   const [userSearch, setUserSearch] = useState('');
   const [auditSearch, setAuditSearch] = useState('');
+  const [eventSearch, setEventSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
   // Rejection modal
@@ -41,16 +43,18 @@ export default function AdminDashboard() {
   const loadAllAdminData = async () => {
     setLoading(true);
     try {
-      const [analyticsData, usersData, allEvents, logsData] = await Promise.all([
+      const [analyticsData, usersData, pendingList, allList, logsData] = await Promise.all([
         api.getDashboardAnalytics(),
         api.listUsers(),
         api.getEvents({ status: 'pending' }),
+        api.getEvents({}),
         api.getAuditLogs(),
       ]);
 
       setAnalytics(analyticsData);
       setUsersList(usersData);
-      setPendingEvents(allEvents);
+      setPendingEvents(pendingList);
+      setAllCampusEvents(allList);
       setAuditLogs(logsData);
     } catch (err) {
       addToast('Failed to load administrative records', 'error');
@@ -235,6 +239,26 @@ export default function AdminDashboard() {
                   : 'bg-slate-100 text-slate-600'
               }`}>
                 {pendingEvents.length}
+              </span>
+            </button>
+
+            {/* Nav Item: Monitor All Events (Fixed Admin Role Permission) */}
+            <button
+              onClick={() => setActiveTab('monitor')}
+              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'monitor'
+                  ? 'bg-orange-600 text-white shadow-xs'
+                  : 'text-slate-700 hover:bg-orange-50 hover:text-orange-900'
+              }`}
+            >
+              <span className="flex items-center gap-2.5">
+                <FileText className="w-4 h-4" />
+                <span>Monitor All Events</span>
+              </span>
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-mono ${
+                activeTab === 'monitor' ? 'bg-white text-orange-700' : 'bg-slate-100 text-slate-600'
+              }`}>
+                {allCampusEvents.length}
               </span>
             </button>
 
@@ -499,6 +523,95 @@ export default function AdminDashboard() {
             </div>
           )}
 
+          {/* TAB: MONITOR ALL EVENTS (Fixed Admin Role Permission) */}
+          {activeTab === 'monitor' && (
+            <div className="bg-white rounded-2xl border border-orange-100 shadow-2xs overflow-hidden space-y-4 p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h2 className="font-bold text-slate-900 text-sm">Monitor All University Events</h2>
+                  <p className="text-xs text-slate-500">Live platform status across all campus departments, organizers, and categories</p>
+                </div>
+
+                <div className="relative w-full sm:w-72">
+                  <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <input
+                    type="text"
+                    placeholder="Search by title, host, venue..."
+                    value={eventSearch}
+                    onChange={(e) => setEventSearch(e.target.value)}
+                    className="w-full pl-9 pr-3 py-2 rounded-xl border border-orange-200 bg-white text-xs text-slate-900 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                  />
+                </div>
+              </div>
+
+              <div className="overflow-x-auto border border-orange-100 rounded-xl">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-orange-50/60 text-slate-700 font-bold border-b border-orange-100 uppercase tracking-wider text-[10px]">
+                    <tr>
+                      <th className="px-6 py-3.5">Event Title & Discipline</th>
+                      <th className="px-6 py-3.5">Assigned Host / Organiser</th>
+                      <th className="px-6 py-3.5">Date & Venue</th>
+                      <th className="px-6 py-3.5">Capacity & Demand</th>
+                      <th className="px-6 py-3.5">Status</th>
+                      <th className="px-6 py-3.5 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-orange-50">
+                    {allCampusEvents
+                      .filter((e) => {
+                        const s = eventSearch.toLowerCase();
+                        return (
+                          e.title?.toLowerCase().includes(s) ||
+                          e.organizer_name?.toLowerCase().includes(s) ||
+                          e.venue?.toLowerCase().includes(s) ||
+                          e.category?.toLowerCase().includes(s)
+                        );
+                      })
+                      .map((ev) => (
+                        <tr key={ev.id} className="hover:bg-orange-50/20">
+                          <td className="px-6 py-4">
+                            <div className="font-bold text-slate-900">{ev.title}</div>
+                            <span className="text-[10px] font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded border border-orange-200 mt-1 inline-block">
+                              {ev.category}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4">
+                            <div className="font-semibold text-slate-800">{ev.organizer_name}</div>
+                            <div className="text-[10px] text-slate-400 font-mono">ID: {ev.organizer_id.slice(0, 8)}</div>
+                          </td>
+                          <td className="px-6 py-4 text-slate-600">
+                            <div>{ev.date}</div>
+                            <div className="text-[11px] text-slate-500">{ev.venue}</div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <div className="font-bold text-slate-900">
+                              {ev.registered_count} / {ev.capacity}
+                            </div>
+                            <div className="text-[10px] text-purple-700 font-semibold mt-0.5">
+                              {ev.attended_count || 0} checked in
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <StatusBadge status={ev.status} />
+                          </td>
+                          <td className="px-6 py-4 text-right">
+                            <a
+                              href={`/events/${ev.id}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-xs font-bold text-orange-600 hover:text-orange-700 hover:underline"
+                            >
+                              View Public Page
+                            </a>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           {/* TAB 3: USER MANAGEMENT & RBAC */}
           {activeTab === 'users' && (
             <div className="bg-white rounded-2xl border border-orange-100 shadow-2xs overflow-hidden space-y-4 p-6">
@@ -565,7 +678,25 @@ export default function AdminDashboard() {
                             {u.is_active ? 'Active' : 'Suspended'}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-right">
+                        <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
+                          {u.id !== user?.id && u.role === 'student' && (
+                            <button
+                              onClick={() => handleRoleChange(u.id, 'organizer')}
+                              className="text-xs font-bold px-2.5 py-1 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-900 border border-orange-200 transition-colors"
+                              title="Assign as Campus Organiser"
+                            >
+                              Assign Organiser
+                            </button>
+                          )}
+                          {u.id !== user?.id && u.role === 'organizer' && (
+                            <button
+                              onClick={() => handleRoleChange(u.id, 'student')}
+                              className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-colors"
+                              title="Revert to Student Role"
+                            >
+                              Demote to Student
+                            </button>
+                          )}
                           {u.id !== user?.id && (
                             <button
                               onClick={() => handleToggleUserStatus(u.id, u.is_active)}

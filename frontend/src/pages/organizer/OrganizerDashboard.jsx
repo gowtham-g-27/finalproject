@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { 
   Plus, Calendar, Users, QrCode, Edit3, Trash2, 
   Clock, MapPin, Eye, FileText, CheckCircle2, AlertCircle, 
-  ExternalLink, Search, Filter, BookOpen, ChevronRight, Wand2
+  ExternalLink, Search, Filter, BookOpen, ChevronRight, Wand2,
+  Megaphone, BarChart2, Download, Send
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
@@ -29,6 +30,15 @@ export default function OrganizerDashboard() {
   const [participants, setParticipants] = useState([]);
   const [loadingParticipants, setLoadingParticipants] = useState(false);
   const [scanningEvent, setScanningEvent] = useState(null);
+
+  // Send Event Update state
+  const [broadcastTarget, setBroadcastTarget] = useState(null);
+  const [broadcastTitle, setBroadcastTitle] = useState('');
+  const [broadcastMsg, setBroadcastMsg] = useState('');
+  const [sendingBroadcast, setSendingBroadcast] = useState(false);
+
+  // Event Report state
+  const [reportEvent, setReportEvent] = useState(null);
 
   // Proposal drafting assistant state
   const [aiTopic, setAiTopic] = useState('');
@@ -223,6 +233,47 @@ export default function OrganizerDashboard() {
     }
   };
 
+  const handleSendBroadcast = async (e) => {
+    e.preventDefault();
+    if (!broadcastTarget || !broadcastMsg.trim()) return;
+    setSendingBroadcast(true);
+    try {
+      const res = await api.broadcastEventUpdate(broadcastTarget.id, {
+        title: broadcastTitle.trim() || `Event Announcement: ${broadcastTarget.title}`,
+        message: broadcastMsg.trim(),
+      });
+      addToast(res.message || 'Announcement broadcast to all registered students!', 'success');
+      setBroadcastTarget(null);
+      setBroadcastTitle('');
+      setBroadcastMsg('');
+    } catch (err) {
+      addToast(err.message || 'Failed to broadcast update', 'error');
+    } finally {
+      setSendingBroadcast(false);
+    }
+  };
+
+  const handleExportRosterCSV = () => {
+    if (!selectedEvent || participants.length === 0) return;
+    const headers = ["Ticket Code", "Student Name", "Email", "Status", "Gate Checked-In At"];
+    const rows = participants.map(p => [
+      `"${p.ticket_code}"`,
+      `"${p.user_name}"`,
+      `"${p.user_email}"`,
+      `"${p.status}"`,
+      `"${p.attended_at || 'Not Checked In'}"`
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${selectedEvent.title.replace(/[^a-zA-Z0-9]/g, '_')}_attendance_report.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    addToast("Attendee report exported as CSV", "success");
+  };
+
   // Filtered Events
   const filteredEvents = statusFilter === 'all'
     ? events
@@ -392,17 +443,39 @@ export default function OrganizerDashboard() {
                       <button
                         onClick={() => setScanningEvent(ev)}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-orange-600 hover:bg-orange-700 text-white shadow-2xs"
-                        title="Scan Gate QR Tickets"
+                        title="Scan Gate QR Tickets (Camera)"
                       >
                         <QrCode className="w-3.5 h-3.5" /> Check-in
                       </button>
+
                       <button
                         onClick={() => handleViewParticipants(ev)}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-orange-200 text-slate-700 hover:bg-orange-50"
-                        title="View & Verify Roster"
+                        title="View Roster & Attendance"
                       >
                         <Users className="w-3.5 h-3.5 text-slate-500" /> Roster
                       </button>
+
+                      <button
+                        onClick={() => {
+                          setBroadcastTarget(ev);
+                          setBroadcastTitle(`Update: ${ev.title}`);
+                          setBroadcastMsg('');
+                        }}
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-orange-50 border border-orange-200 text-orange-900 hover:bg-orange-100"
+                        title="Send Event Update / Announcement"
+                      >
+                        <Megaphone className="w-3.5 h-3.5 text-orange-600" /> Update
+                      </button>
+
+                      <button
+                        onClick={() => setReportEvent(ev)}
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100"
+                        title="View Event Report"
+                      >
+                        <BarChart2 className="w-3.5 h-3.5 text-slate-600" /> Report
+                      </button>
+
                       <button
                         onClick={() => handleOpenEdit(ev)}
                         className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100"
@@ -410,6 +483,7 @@ export default function OrganizerDashboard() {
                       >
                         <Edit3 className="w-4 h-4" />
                       </button>
+
                       <button
                         onClick={() => handleDeleteEvent(ev.id)}
                         className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50"
@@ -808,6 +882,20 @@ export default function OrganizerDashboard() {
             </div>
           )}
 
+          {/* Roster Controls & Export */}
+          <div className="flex items-center justify-between pt-1">
+            <span className="text-xs text-slate-500">
+              Verified physical check-in passes
+            </span>
+            <button
+              onClick={handleExportRosterCSV}
+              disabled={participants.length === 0}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-orange-200 text-slate-700 hover:bg-orange-50 disabled:opacity-50"
+            >
+              <Download className="w-3.5 h-3.5 text-orange-600" /> Export Roster (CSV)
+            </button>
+          </div>
+
           {loadingParticipants ? (
             <div className="p-8 text-center animate-pulse text-xs text-slate-500">Loading attendee records...</div>
           ) : participants.length === 0 ? (
@@ -834,6 +922,145 @@ export default function OrganizerDashboard() {
             </div>
           )}
         </div>
+      </Modal>
+
+      {/* Broadcast Event Announcement Modal (Fixed Organiser Role Permission) */}
+      <Modal
+        isOpen={!!broadcastTarget}
+        onClose={() => setBroadcastTarget(null)}
+        title={broadcastTarget ? `Send Update: ${broadcastTarget.title}` : 'Send Event Announcement'}
+        maxWidth="max-w-md"
+      >
+        {broadcastTarget && (
+          <form onSubmit={handleSendBroadcast} className="space-y-4">
+            <p className="text-xs text-slate-600">
+              Dispatches an immediate in-app bulletin to all students registered or waitlisted for this event.
+            </p>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                Announcement Subject *
+              </label>
+              <input
+                type="text"
+                required
+                value={broadcastTitle}
+                onChange={(e) => setBroadcastTitle(e.target.value)}
+                placeholder="e.g. Venue Room Update or Materials to Bring"
+                className="w-full px-3 py-2 rounded-xl border border-orange-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                Announcement Message *
+              </label>
+              <textarea
+                rows={3}
+                required
+                value={broadcastMsg}
+                onChange={(e) => setBroadcastMsg(e.target.value)}
+                placeholder="Detail any room revisions, agenda shifts, or preparation instructions..."
+                className="w-full p-3 rounded-xl border border-orange-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            <div className="flex justify-end gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => setBroadcastTarget(null)}
+                className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={sendingBroadcast}
+                className="px-4 py-2 text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 rounded-xl shadow-xs inline-flex items-center gap-1.5"
+              >
+                <Send className="w-3.5 h-3.5" />
+                {sendingBroadcast ? 'Dispatching...' : 'Broadcast to Attendees'}
+              </button>
+            </div>
+          </form>
+        )}
+      </Modal>
+
+      {/* View Event Report Modal (Fixed Organiser Role Permission) */}
+      <Modal
+        isOpen={!!reportEvent}
+        onClose={() => setReportEvent(null)}
+        title={reportEvent ? `Event Performance Report: ${reportEvent.title}` : 'Event Report'}
+        maxWidth="max-w-lg"
+      >
+        {reportEvent && (
+          <div className="space-y-5 text-xs">
+            <div className="p-3 bg-orange-50/70 rounded-2xl border border-orange-200 flex items-center justify-between">
+              <div>
+                <span className="text-slate-500 block text-[10px] uppercase font-bold">Category & Venue</span>
+                <strong className="text-slate-900">{reportEvent.category} • {reportEvent.venue}</strong>
+              </div>
+              <StatusBadge status={reportEvent.status} />
+            </div>
+
+            {/* Turnout KPIs */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+              <div className="p-3 bg-white rounded-xl border border-orange-100 shadow-2xs">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Max Seats</span>
+                <div className="text-lg font-black text-slate-900 mt-1">{reportEvent.capacity}</div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-orange-100 shadow-2xs">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Enrolled</span>
+                <div className="text-lg font-black text-orange-600 mt-1">{reportEvent.registered_count}</div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-orange-100 shadow-2xs">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Turnout</span>
+                <div className="text-lg font-black text-purple-700 mt-1">{reportEvent.attended_count || 0}</div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-orange-100 shadow-2xs">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Fill Rate</span>
+                <div className="text-lg font-black text-emerald-700 mt-1">
+                  {reportEvent.capacity > 0 ? Math.round((reportEvent.registered_count / reportEvent.capacity) * 100) : 0}%
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-1.5 p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700">
+              <div className="flex justify-between">
+                <span>Registration Deadline:</span>
+                <strong className="font-mono">{reportEvent.registration_deadline || reportEvent.date}</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Waitlisted Candidates:</span>
+                <strong>{reportEvent.waitlist_count || 0} students queued</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Turnout Efficiency:</span>
+                <strong className="text-purple-700">
+                  {reportEvent.registered_count > 0 ? Math.round(((reportEvent.attended_count || 0) / reportEvent.registered_count) * 100) : 0}% attended
+                </strong>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center pt-2 border-t border-slate-100">
+              <button
+                onClick={() => {
+                  handleViewParticipants(reportEvent);
+                  setReportEvent(null);
+                }}
+                className="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1"
+              >
+                Inspect Attendee Roster <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={() => setReportEvent(null)}
+                className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl"
+              >
+                Close Report
+              </button>
+            </div>
+          </div>
+        )}
       </Modal>
 
       {/* QR Code Scanner Gate Modal */}

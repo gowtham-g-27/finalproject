@@ -95,6 +95,12 @@ export default function Sidebar() {
     { label: 'Verify Certificate', path: '/certificates', icon: Award },
   ];
 
+  const visibleNavItems = navItems.filter((item) => {
+    if (!item.roles) return true;
+    if (!user) return item.roles.includes('student');
+    return item.roles.includes(user.role);
+  });
+
   const sidebarContent = (
     <div className="flex flex-col h-full bg-white border-r border-orange-100 select-none">
       
@@ -169,7 +175,7 @@ export default function Sidebar() {
           Navigation
         </div>
 
-        {navItems.map((item) => {
+        {visibleNavItems.map((item) => {
           const Icon = item.icon;
           const active = isActive(item.path);
 
@@ -359,3 +365,4 @@ export default function Sidebar() {
     </>
   );
 }
+
