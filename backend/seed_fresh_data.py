@@ -640,7 +640,9 @@ def reset_and_seed_custom():
     ]
 
     for ev in events_list:
-        ev["created_at"] = (datetime.utcnow() - timedelta(days=20)).isoformat() + "Z"
+        now_ts = (datetime.utcnow() - timedelta(days=20)).isoformat() + "Z"
+        ev["created_at"] = now_ts
+        ev["updated_at"] = now_ts
         fresh_data["events"][ev["id"]] = ev
 
     # ==========================================
