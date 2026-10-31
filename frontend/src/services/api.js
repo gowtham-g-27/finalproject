@@ -1,8 +1,15 @@
 const getApiBase = () => {
-  if (import.meta.env.VITE_API_BASE_URL) return import.meta.env.VITE_API_BASE_URL;
-  if (typeof window !== 'undefined' && window.location.hostname) {
-    const port = '8000';
-    return `${window.location.protocol}//${window.location.hostname}:${port}/api/v1`;
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '');
+  }
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    // Local development
+    if (host === 'localhost' || host === '127.0.0.1') {
+      return `${window.location.protocol}//${host}:8000/api/v1`;
+    }
+    // Deployed production environment: use same-origin /api/v1 proxy
+    return `${window.location.origin}/api/v1`;
   }
   return 'http://127.0.0.1:8000/api/v1';
 };
