@@ -8,10 +8,10 @@ const getApiBase = () => {
     if (host === 'localhost' || host === '127.0.0.1') {
       return `${window.location.protocol}//${host}:8000/api/v1`;
     }
-    // Deployed production environment: use same-origin /api/v1 proxy
-    return `${window.location.origin}/api/v1`;
+    // Deployed production environment: connect directly to live Render backend
+    return 'https://finalproject-ajle.onrender.com/api/v1';
   }
-  return 'http://127.0.0.1:8000/api/v1';
+  return 'https://finalproject-ajle.onrender.com/api/v1';
 };
 
 const API_BASE = getApiBase();

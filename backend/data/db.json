@@ -397,7 +397,7 @@
       "registration_deadline": "2026-11-20T23:59:59Z",
       "organizer_name": "Navya",
       "category": "Other",
-      "registered_count": 110,
+      "registered_count": 111,
       "tags": [
         "Eco",
         "GreenCampus",
@@ -453,7 +453,7 @@
       "registration_deadline": "2026-11-23T23:59:59Z",
       "organizer_name": "Navya",
       "category": "Seminar",
-      "registered_count": 82,
+      "registered_count": 83,
       "tags": [
         "Semiconductors",
         "VLSI",
@@ -621,7 +621,7 @@
       "registration_deadline": "2026-11-21T23:59:59Z",
       "organizer_name": "Navya",
       "category": "Technical",
-      "registered_count": 48,
+      "registered_count": 49,
       "tags": [
         "Robotics",
         "Drones",
@@ -667,7 +667,7 @@
       "created_at": "2026-10-11T19:04:03.345172Z",
       "date": "2026-11-19",
       "status": "approved",
-      "waitlist_count": 14,
+      "waitlist_count": 15,
       "start_time": "10:00 AM",
       "venue": "Cyber Security Cyber Range Lab, Block 2",
       "updated_at": "2026-10-11T19:04:03.345172Z",
@@ -874,6 +874,70 @@
       "ticket_code": "TKT-24MIS1004-FUTSAL",
       "user_name": "Daram Vijay",
       "id": "reg-vijay-futsal"
+    },
+    "51272fa0-022b-4f53-829a-12fdcdae85cb": {
+      "id": "51272fa0-022b-4f53-829a-12fdcdae85cb",
+      "event_id": "evt-oth-01",
+      "event_title": "Green Campus Sustainability & Tree Plantation Drive",
+      "event_date": "2026-11-21",
+      "event_time": "07:30 AM",
+      "event_venue": "North Eco Park & Botanical Garden",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_email": "student@campus.edu",
+      "status": "confirmed",
+      "ticket_code": "TKT-EVT--51272FA0",
+      "registered_at": "2026-10-31T19:07:11.974437Z",
+      "attended_at": null,
+      "certificate_id": null
+    },
+    "6270f512-9a98-48fa-bc81-026dc2a83256": {
+      "id": "6270f512-9a98-48fa-bc81-026dc2a83256",
+      "event_id": "evt-tech-02",
+      "event_title": "Autonomous Drone & Robotics Expo",
+      "event_date": "2026-11-22",
+      "event_time": "10:00 AM",
+      "event_venue": "Robotics Arena, Block 3",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_email": "student@campus.edu",
+      "status": "confirmed",
+      "ticket_code": "TKT-EVT--6270F512",
+      "registered_at": "2026-10-31T19:07:19.103850Z",
+      "attended_at": null,
+      "certificate_id": null
+    },
+    "9784eee1-ed8e-421b-85d6-a38e7b63cb5f": {
+      "id": "9784eee1-ed8e-421b-85d6-a38e7b63cb5f",
+      "event_id": "evt-sem-01",
+      "event_title": "Future of Silicon & Semiconductor Fabrication in India",
+      "event_date": "2026-11-24",
+      "event_time": "11:00 AM",
+      "event_venue": "Sarvepalli Radhakrishnan Auditorium",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_email": "student@campus.edu",
+      "status": "confirmed",
+      "ticket_code": "TKT-EVT--9784EEE1",
+      "registered_at": "2026-10-31T19:07:25.753925Z",
+      "attended_at": null,
+      "certificate_id": null
+    },
+    "d3d9e31c-5649-4477-aad5-aa841fdcd4e1": {
+      "id": "d3d9e31c-5649-4477-aad5-aa841fdcd4e1",
+      "event_id": "evt-work-01",
+      "event_title": "Ethical Hacking & Red Team Penetration Testing Lab",
+      "event_date": "2026-11-19",
+      "event_time": "10:00 AM",
+      "event_venue": "Cyber Security Cyber Range Lab, Block 2",
+      "user_id": "usr-geetha-gowtham",
+      "user_name": "Geetha Gowtham",
+      "user_email": "gowtham@campus.edu",
+      "status": "waitlisted",
+      "ticket_code": "TKT-EVT--D3D9E31C",
+      "registered_at": "2026-10-31T19:23:19.879115Z",
+      "attended_at": null,
+      "certificate_id": null
     }
   },
   "notifications": {
@@ -916,6 +980,46 @@
       "user_id": "usr-vyshnavi",
       "title": "Hackathon Capacity Reached",
       "id": "notif-vyshnavi-1"
+    },
+    "81bff49b-ee31-4712-a074-56a951d6093e": {
+      "id": "81bff49b-ee31-4712-a074-56a951d6093e",
+      "user_id": "usr-student-alias",
+      "title": "Registration Update",
+      "message": "Successfully registered for 'Green Campus Sustainability & Tree Plantation Drive'! Your ticket is confirmed.",
+      "type": "success",
+      "link": "/events/evt-oth-01",
+      "is_read": false,
+      "created_at": "2026-10-31T19:07:13.087790Z"
+    },
+    "afcf9e55-03c3-49f8-a6de-e58479c31eb2": {
+      "id": "afcf9e55-03c3-49f8-a6de-e58479c31eb2",
+      "user_id": "usr-student-alias",
+      "title": "Registration Update",
+      "message": "Successfully registered for 'Autonomous Drone & Robotics Expo'! Your ticket is confirmed.",
+      "type": "success",
+      "link": "/events/evt-tech-02",
+      "is_read": false,
+      "created_at": "2026-10-31T19:07:20.368190Z"
+    },
+    "2d7d163c-8609-4a89-8883-1f6ab9ac959e": {
+      "id": "2d7d163c-8609-4a89-8883-1f6ab9ac959e",
+      "user_id": "usr-student-alias",
+      "title": "Registration Update",
+      "message": "Successfully registered for 'Future of Silicon & Semiconductor Fabrication in India'! Your ticket is confirmed.",
+      "type": "success",
+      "link": "/events/evt-sem-01",
+      "is_read": false,
+      "created_at": "2026-10-31T19:07:26.942831Z"
+    },
+    "cb7ee4ab-2d54-41e5-b001-4e7ee8c54a53": {
+      "id": "cb7ee4ab-2d54-41e5-b001-4e7ee8c54a53",
+      "user_id": "usr-geetha-gowtham",
+      "title": "Registration Update",
+      "message": "Event capacity reached. You have been placed on the waitlist (Position #15).",
+      "type": "warning",
+      "link": "/events/evt-work-01",
+      "is_read": false,
+      "created_at": "2026-10-31T19:23:23.009667Z"
     }
   },
   "feedback": {
@@ -1059,6 +1163,84 @@
       "resource_id": "usr-geetha-gowtham",
       "details": {},
       "timestamp": "2026-10-31T19:04:39.406210Z"
+    },
+    "5d1222ba-cbf0-4856-b899-4f824ddf5ab6": {
+      "id": "5d1222ba-cbf0-4856-b899-4f824ddf5ab6",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-student-alias",
+      "details": {},
+      "timestamp": "2026-10-31T19:07:01.095953Z"
+    },
+    "144ffd8b-bcd8-403b-b6f6-067394bab218": {
+      "id": "144ffd8b-bcd8-403b-b6f6-067394bab218",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "EVENT_REGISTRATION",
+      "resource_type": "registration",
+      "resource_id": "51272fa0-022b-4f53-829a-12fdcdae85cb",
+      "details": {
+        "event_id": "evt-oth-01",
+        "status": "confirmed"
+      },
+      "timestamp": "2026-10-31T19:07:12.532561Z"
+    },
+    "0d326e5d-3c40-4688-a54a-252152e58bd2": {
+      "id": "0d326e5d-3c40-4688-a54a-252152e58bd2",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "EVENT_REGISTRATION",
+      "resource_type": "registration",
+      "resource_id": "6270f512-9a98-48fa-bc81-026dc2a83256",
+      "details": {
+        "event_id": "evt-tech-02",
+        "status": "confirmed"
+      },
+      "timestamp": "2026-10-31T19:07:19.616779Z"
+    },
+    "48454bdf-31c2-40c0-9f68-e79a17c2390f": {
+      "id": "48454bdf-31c2-40c0-9f68-e79a17c2390f",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "EVENT_REGISTRATION",
+      "resource_type": "registration",
+      "resource_id": "9784eee1-ed8e-421b-85d6-a38e7b63cb5f",
+      "details": {
+        "event_id": "evt-sem-01",
+        "status": "confirmed"
+      },
+      "timestamp": "2026-10-31T19:07:26.448285Z"
+    },
+    "91d734f9-aadd-49ed-8d3b-8ae6de4dc244": {
+      "id": "91d734f9-aadd-49ed-8d3b-8ae6de4dc244",
+      "user_id": "usr-geetha-gowtham",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-geetha-gowtham",
+      "details": {},
+      "timestamp": "2026-10-31T19:20:02.856730Z"
+    },
+    "9d5c34f7-0d40-4c4e-80dc-a17692b0b6ea": {
+      "id": "9d5c34f7-0d40-4c4e-80dc-a17692b0b6ea",
+      "user_id": "usr-geetha-gowtham",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "EVENT_REGISTRATION",
+      "resource_type": "registration",
+      "resource_id": "d3d9e31c-5649-4477-aad5-aa841fdcd4e1",
+      "details": {
+        "event_id": "evt-work-01",
+        "status": "waitlisted"
+      },
+      "timestamp": "2026-10-31T19:23:20.867000Z"
     }
   },
   "categories": [
