@@ -344,7 +344,24 @@ export default function EventDetailPage() {
             </div>
 
             {/* Registration CTA Button */}
-            {myRegistration ? (
+            {event.status === 'completed' ? (
+              <div className="p-5 rounded-2xl bg-slate-100 border border-slate-200 space-y-2 text-center">
+                <div className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                  Event Concluded
+                </div>
+                <p className="text-[11px] text-slate-500">
+                  This official campus event concluded on {event.date}. Registrations are closed.
+                </p>
+                {myRegistration && (
+                  <Link
+                    to="/dashboard"
+                    className="inline-block mt-1 px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-white hover:bg-orange-600 transition-colors"
+                  >
+                    View Attendance & Certificate
+                  </Link>
+                )}
+              </div>
+            ) : myRegistration ? (
               <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-3 text-center">
                 <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-emerald-700">
                   <CheckCircle2 className="w-4 h-4" />

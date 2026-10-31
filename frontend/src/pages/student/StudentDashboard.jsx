@@ -346,7 +346,11 @@ export default function StudentDashboard() {
 
                     {/* Footer Actions */}
                     <div className="p-5 sm:p-6 pt-0 border-t border-slate-50 flex items-center gap-2">
-                      {regFound ? (
+                      {ev.status === 'completed' ? (
+                        <div className="w-full py-2.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold text-center">
+                          Concluded on {ev.date}
+                        </div>
+                      ) : regFound ? (
                         <button
                           onClick={() => {
                             if (regFound.status === 'confirmed') setSelectedTicket(regFound);

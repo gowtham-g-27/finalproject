@@ -30,29 +30,33 @@ export default function SignupPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password || !fullName) {
-      addToast('Please fill all required fields', 'warning');
+    const cleanEmail = email.trim();
+    const cleanPassword = password.trim();
+    const cleanName = fullName.trim();
+
+    if (!cleanEmail || !cleanPassword || !cleanName) {
+      addToast('Please fill all required fields (Name, Email, Password)', 'warning');
       return;
     }
 
     setLoading(true);
     try {
       const user = await signup({
-        email,
-        password,
-        full_name: fullName,
+        email: cleanEmail,
+        password: cleanPassword,
+        full_name: cleanName,
         role,
         department,
-        student_id: studentId || undefined,
-        phone: phone || undefined,
+        student_id: studentId ? studentId.trim() : undefined,
+        phone: phone ? phone.trim() : undefined,
         interests,
       });
 
       addToast(`Account created! Welcome, ${user.full_name}`, 'success');
       if (role === 'organizer') navigate('/organizer');
-      else navigate('/events');
+      else navigate('/dashboard');
     } catch (err) {
-      addToast(err.message, 'error');
+      addToast(err.message || 'Registration failed', 'error');
     } finally {
       setLoading(false);
     }
