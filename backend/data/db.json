@@ -272,7 +272,7 @@
     },
     "evt-cult-01": {
       "id": "evt-cult-01",
-      "title": "Riviera 2026 — Annual University Cultural Fest",
+      "title": "Riviera 2026 \u2014 Annual University Cultural Fest",
       "description": "Two days of high-voltage inter-college cultural events: acoustic battle of the bands, classical fusion dance, stage drama, and star night concert.",
       "category": "Cultural",
       "tags": [
@@ -289,14 +289,14 @@
       "registered_count": 0,
       "attended_count": 0,
       "waitlist_count": 0,
-      "status": "pending",
+      "status": "approved",
       "organizer_id": "usr-navya",
       "organizer_name": "Navya",
       "poster_url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all university students and alumni.",
       "registration_deadline": "2026-12-03T23:59:59Z",
       "created_at": "2026-10-11T18:08:50.584906Z",
-      "updated_at": "2026-10-11T18:08:50.584906Z"
+      "updated_at": "2026-10-31T18:43:44.918123Z"
     },
     "evt-cult-02": {
       "id": "evt-cult-02",
@@ -608,7 +608,7 @@
     },
     "evt-comp-01": {
       "id": "evt-comp-01",
-      "title": "VIT-AP Algorithmic Coding Arena — CodeClash 2026",
+      "title": "VIT-AP Algorithmic Coding Arena \u2014 CodeClash 2026",
       "description": "Speed algorithmic programming battle on data structures, graphs, dynamic programming, and greedy logic on an automated judge platform.",
       "category": "Competition",
       "tags": [
@@ -664,7 +664,7 @@
     },
     "evt-comp-03": {
       "id": "evt-comp-03",
-      "title": "Campus Chess Grand Prix — Rapid & Blitz",
+      "title": "Campus Chess Grand Prix \u2014 Rapid & Blitz",
       "description": "FIDE-rated rapid and blitz tournament across 7 swiss rounds with digital DGT chess boards and live broadcast.",
       "category": "Competition",
       "tags": [
@@ -814,7 +814,7 @@
     "reg-prasanna-codeclash": {
       "id": "reg-prasanna-codeclash",
       "event_id": "evt-comp-01",
-      "event_title": "VIT-AP Algorithmic Coding Arena — CodeClash 2026",
+      "event_title": "VIT-AP Algorithmic Coding Arena \u2014 CodeClash 2026",
       "event_date": "2026-11-17",
       "event_time": "02:00 PM - 05:00 PM",
       "event_venue": "Computer Centre 1 & 2",
@@ -901,7 +901,7 @@
       "id": "notif-admin-1",
       "user_id": "usr-venkatramana",
       "title": "Pending Proposal: Riviera 2026",
-      "message": "Coordinator Navya has submitted 'Riviera 2026 — Annual University Cultural Fest' for administrative review and approval.",
+      "message": "Coordinator Navya has submitted 'Riviera 2026 \u2014 Annual University Cultural Fest' for administrative review and approval.",
       "type": "warning",
       "link": "/admin",
       "is_read": false,
@@ -1030,7 +1030,7 @@
       "resource_type": "event",
       "resource_id": "evt-cult-01",
       "details": {
-        "title": "Riviera 2026 — Annual University Cultural Fest"
+        "title": "Riviera 2026 \u2014 Annual University Cultural Fest"
       },
       "timestamp": "2026-10-29T14:30:00Z"
     },
