@@ -64,5 +64,5 @@ class EventResponse(EventBase):
     waitlist_count: int = 0
     attended_count: int = 0
     created_at: str
-    updated_at: str
+    updated_at: Optional[str] = None
 
