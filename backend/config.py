@@ -10,6 +10,7 @@ class Settings:
     
     # Firebase configuration
     FIREBASE_CREDENTIALS_PATH: str = os.getenv("FIREBASE_CREDENTIALS_PATH", "backend/firebase-credentials.json")
+    FIREBASE_CREDENTIALS_JSON: str = os.getenv("FIREBASE_CREDENTIALS_JSON", "")
     USE_FIREBASE: bool = os.getenv("USE_FIREBASE", "false").lower() in ("true", "1", "yes")
 
 settings = Settings()

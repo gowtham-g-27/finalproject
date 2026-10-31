@@ -31,15 +31,23 @@ class Database:
             self.seed_initial_data()
 
     def _init_firebase(self):
-        if settings.USE_FIREBASE and os.path.exists(settings.FIREBASE_CREDENTIALS_PATH):
+        cred_obj = None
+        if settings.USE_FIREBASE or settings.FIREBASE_CREDENTIALS_JSON or os.path.exists(settings.FIREBASE_CREDENTIALS_PATH):
             try:
                 import firebase_admin
                 from firebase_admin import credentials, firestore
-                if not firebase_admin._apps:
-                    cred = credentials.Certificate(settings.FIREBASE_CREDENTIALS_PATH)
-                    firebase_admin.initialize_app(cred)
-                self.firestore = firestore.client()
-                print("Connected to Firebase Firestore successfully.")
+                
+                if settings.FIREBASE_CREDENTIALS_JSON:
+                    cred_dict = json.loads(settings.FIREBASE_CREDENTIALS_JSON)
+                    cred_obj = credentials.Certificate(cred_dict)
+                elif os.path.exists(settings.FIREBASE_CREDENTIALS_PATH):
+                    cred_obj = credentials.Certificate(settings.FIREBASE_CREDENTIALS_PATH)
+                
+                if cred_obj:
+                    if not firebase_admin._apps:
+                        firebase_admin.initialize_app(cred_obj)
+                    self.firestore = firestore.client()
+                    print("Connected to Firebase Firestore successfully.")
             except Exception as e:
                 print(f"Firebase initialization error: {e}. Falling back to atomic local persistence.")
                 self.firestore = None
@@ -55,6 +63,7 @@ class Database:
 
     def load(self):
         with self.lock:
+            # 1. First load from local db file if present
             if os.path.exists(self.db_path):
                 try:
                     with open(self.db_path, "r", encoding="utf-8") as f:
@@ -62,11 +71,62 @@ class Database:
                 except Exception as e:
                     print(f"Failed to load DB file: {e}")
 
+            # 2. If Firestore is active, pull collections from cloud
+            if self.firestore:
+                try:
+                    collections = ["users", "events", "registrations", "notifications", "feedback", "certificates", "audit_logs"]
+                    firestore_has_data = False
+                    for col_name in collections:
+                        docs = self.firestore.collection(col_name).stream()
+                        col_dict = {}
+                        for doc in docs:
+                            firestore_has_data = True
+                            col_dict[doc.id] = doc.to_dict()
+                        if col_dict:
+                            self.data[col_name] = col_dict
+
+                    # If Firestore was totally empty, seed our rich dataset to Firestore
+                    if not firestore_has_data and self.data["users"]:
+                        print("Firestore collections are empty. Seeding local dataset to cloud...")
+                        self.sync_all_to_firestore()
+                except Exception as e:
+                    print(f"Error syncing from Firestore: {e}")
+
     def save(self):
         with self.lock:
+            # Atomic local file persistence
             os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
             with open(self.db_path, "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=2, ensure_ascii=False)
+
+            # Sync to Firestore if configured
+            if self.firestore:
+                try:
+                    # Sync any dirty collections to Firestore in background/lightweight loop
+                    self.sync_all_to_firestore()
+                except Exception as e:
+                    print(f"Firestore cloud save error: {e}")
+
+    def sync_all_to_firestore(self):
+        if not self.firestore:
+            return
+        collections = ["users", "events", "registrations", "notifications", "feedback", "certificates", "audit_logs"]
+        for col_name in collections:
+            col_data = self.data.get(col_name, {})
+            if isinstance(col_data, dict):
+                batch = self.firestore.batch()
+                count = 0
+                for doc_id, doc_val in col_data.items():
+                    if isinstance(doc_val, dict):
+                        doc_ref = self.firestore.collection(col_name).document(str(doc_id))
+                        batch.set(doc_ref, doc_val)
+                        count += 1
+                        if count >= 450: # Firestore batch limit is 500
+                            batch.commit()
+                            batch = self.firestore.batch()
+                            count = 0
+                if count > 0:
+                    batch.commit()
 
     def log_audit(self, user_id: str, user_name: str, user_role: str, action: str, resource_type: str, resource_id: str, details: Optional[Dict] = None):
         log_id = str(uuid.uuid4())
