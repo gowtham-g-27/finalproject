@@ -1,9 +1,9 @@
 {
   "users": {
-    "ded9d423-285e-4641-bd4a-cfa2a565d31f": {
-      "id": "ded9d423-285e-4641-bd4a-cfa2a565d31f",
+    "11c897e2-e1d8-4dfe-9db2-9ea8ff14fb7a": {
+      "id": "11c897e2-e1d8-4dfe-9db2-9ea8ff14fb7a",
       "email": "admin@campus.edu",
-      "password_hash": "$2b$12$6z/BmyPy1SKDR3NQ29SV6OHz3wa8Izd9.y4rFy84jkjpCtarAImNS",
+      "password_hash": "$2b$12$z8HGdLa6QaMCFK28TPf5deIb7.I9RMVefAyIZLVYsbNHiYZDneXTS",
       "full_name": "Dr. Sarah Jenkins",
       "role": "admin",
       "department": "Dean of Student Affairs",
@@ -15,12 +15,12 @@
         "Events Oversight"
       ],
       "is_active": true,
-      "created_at": "2026-08-02T10:29:12.028504Z"
+      "created_at": "2026-08-02T16:10:04.192433Z"
     },
-    "e3da2cf2-0486-4624-9db8-c3ae0d0f2542": {
-      "id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+    "e5718ee1-2233-4070-8ba7-b81b3acd2a3a": {
+      "id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "email": "organizer@campus.edu",
-      "password_hash": "$2b$12$5W5kynLX3Keo2C4KLTSfKuRna7UzAwvz0kDay/lirDTf17ECYTi9a",
+      "password_hash": "$2b$12$KeHBp6G9hiWVpcFCnUsONeT7reGQXuCbIu2W.QbQKYCJLUkzIW0Iu",
       "full_name": "Prof. Alex Rivera",
       "role": "organizer",
       "department": "Computer Science & Engineering",
@@ -32,12 +32,12 @@
         "Competitive Programming"
       ],
       "is_active": true,
-      "created_at": "2026-09-01T10:29:12.409819Z"
+      "created_at": "2026-09-01T16:10:04.577995Z"
     },
-    "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36": {
-      "id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+    "7a5c4473-b2e7-4df2-acf1-fa04c184a726": {
+      "id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "email": "student@campus.edu",
-      "password_hash": "$2b$12$.a/3YIdqmq9cH6XqZFN32u84GrvcBMyn6Ue46vjucMlsYdtuI3AG.",
+      "password_hash": "$2b$12$4VHX1oChH6FZIowN6Y7QA.Uoaao/C6HqKjlsYxtMD/YUcwRUBE49i",
       "full_name": "Rohan Sharma",
       "role": "student",
       "department": "Computer Science",
@@ -49,12 +49,12 @@
         "Competition"
       ],
       "is_active": true,
-      "created_at": "2026-10-01T10:29:12.806206Z"
+      "created_at": "2026-10-01T16:10:04.959815Z"
     },
-    "82c4767b-b5d0-4949-b291-fb94b8cd3bb1": {
-      "id": "82c4767b-b5d0-4949-b291-fb94b8cd3bb1",
+    "c39ef6f8-ef91-4417-a378-477c43d36b2f": {
+      "id": "c39ef6f8-ef91-4417-a378-477c43d36b2f",
       "email": "priya.patel@campus.edu",
-      "password_hash": "$2b$12$HyVswaQ08xKGpvAEqsYUB.YWWOXjNQYNvm/c4grzSWipFW5z1zJtK",
+      "password_hash": "$2b$12$zlBUJyAQGoQ7cWTzV/A.OOBu.YSM4v5jsXO.O1/aRts72rNfDtOfa",
       "full_name": "Priya Patel",
       "role": "student",
       "department": "Information Technology",
@@ -66,12 +66,12 @@
         "Technical"
       ],
       "is_active": true,
-      "created_at": "2026-10-06T10:29:13.188428Z"
+      "created_at": "2026-10-06T16:10:05.344715Z"
     }
   },
   "events": {
-    "1cc4098f-b3cf-4994-93a1-0bf5e31f9002": {
-      "id": "1cc4098f-b3cf-4994-93a1-0bf5e31f9002",
+    "3a541dfa-0646-4291-8888-46438020ebd4": {
+      "id": "3a541dfa-0646-4291-8888-46438020ebd4",
       "title": "HackCampus 2026: 24-Hour AI Innovation Challenge",
       "description": "Join 200+ top collegiate developers, designers, and innovators building groundbreaking artificial intelligence solutions. Free swag, mentors from leading tech companies, and $5,000 in prizes!",
       "category": "Technical",
@@ -90,18 +90,18 @@
       "poster_url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Undergraduate and Graduate Students",
       "is_featured": true,
-      "organizer_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+      "organizer_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "organizer_name": "Prof. Alex Rivera",
       "status": "approved",
       "rejection_reason": null,
       "registered_count": 1,
       "waitlist_count": 0,
       "attended_count": 0,
-      "created_at": "2026-10-21T10:29:13.188500Z",
-      "updated_at": "2026-10-22T10:29:13.188500Z"
+      "created_at": "2026-10-21T16:10:05.344824Z",
+      "updated_at": "2026-10-22T16:10:05.344824Z"
     },
-    "d9d9921a-8f38-4536-a9d3-cb9d3b5799f2": {
-      "id": "d9d9921a-8f38-4536-a9d3-cb9d3b5799f2",
+    "247254a9-4f9c-468b-bdf4-c7d475a7d302": {
+      "id": "247254a9-4f9c-468b-bdf4-c7d475a7d302",
       "title": "Annual Inter-College Cultural Fiesta: 'Vibrance 2026'",
       "description": "Celebrate music, street theater, choreography, and culinary arts at the flagship annual cultural spectacle. Live concerts featuring guest indie artists in the open arena.",
       "category": "Cultural",
@@ -120,18 +120,18 @@
       "poster_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "All enrolled college students & alumni guests",
       "is_featured": true,
-      "organizer_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+      "organizer_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "organizer_name": "Prof. Alex Rivera",
       "status": "approved",
       "rejection_reason": null,
       "registered_count": 1,
       "waitlist_count": 0,
       "attended_count": 0,
-      "created_at": "2026-10-23T10:29:13.188500Z",
-      "updated_at": "2026-10-24T10:29:13.188500Z"
+      "created_at": "2026-10-23T16:10:05.344824Z",
+      "updated_at": "2026-10-24T16:10:05.344824Z"
     },
-    "194d0206-9792-4c3b-875a-346c1f74d7b1": {
-      "id": "194d0206-9792-4c3b-875a-346c1f74d7b1",
+    "de674e05-a700-4f4d-8a01-12d26890cc10": {
+      "id": "de674e05-a700-4f4d-8a01-12d26890cc10",
       "title": "Deep Learning & Neural Systems Hands-on Workshop",
       "description": "An intensive 4-hour lab on training Transformers, optimizing inference pipelines on PyTorch, and deploying models to production clusters with Docker.",
       "category": "Workshop",
@@ -150,18 +150,18 @@
       "poster_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Pre-requisite: Python Basics",
       "is_featured": false,
-      "organizer_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+      "organizer_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "organizer_name": "Prof. Alex Rivera",
       "status": "approved",
       "rejection_reason": null,
       "registered_count": 2,
       "waitlist_count": 0,
       "attended_count": 0,
-      "created_at": "2026-10-27T10:29:13.188500Z",
-      "updated_at": "2026-10-28T10:29:13.188500Z"
+      "created_at": "2026-10-27T16:10:05.344824Z",
+      "updated_at": "2026-10-28T16:10:05.344824Z"
     },
-    "5b74d1a1-a554-4d22-b664-27131fbe00ac": {
-      "id": "5b74d1a1-a554-4d22-b664-27131fbe00ac",
+    "4dbc8ab7-91fd-4c63-97bc-dcdbeb1a1e4f": {
+      "id": "4dbc8ab7-91fd-4c63-97bc-dcdbeb1a1e4f",
       "title": "Campus Cricket Super League Finals",
       "description": "The culminating championship face-off between Titans CSE and Mech Warriors. Trophies, medals, and live sports commentary.",
       "category": "Sports",
@@ -179,18 +179,18 @@
       "poster_url": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "All students & faculty",
       "is_featured": false,
-      "organizer_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+      "organizer_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "organizer_name": "Prof. Alex Rivera",
       "status": "completed",
       "rejection_reason": null,
       "registered_count": 1,
       "waitlist_count": 0,
       "attended_count": 1,
-      "created_at": "2026-10-11T10:29:13.188500Z",
-      "updated_at": "2026-10-26T10:29:13.188500Z"
+      "created_at": "2026-10-11T16:10:05.344824Z",
+      "updated_at": "2026-10-26T16:10:05.344824Z"
     },
-    "478e603b-6cb7-493e-8f01-97e41e545094": {
-      "id": "478e603b-6cb7-493e-8f01-97e41e545094",
+    "b55bca34-be0a-4fd7-83ee-fa3efaa406c9": {
+      "id": "b55bca34-be0a-4fd7-83ee-fa3efaa406c9",
       "title": "Quantum Computing & Cryptography Symposium",
       "description": "A research talk by visiting CERN fellows exploring post-quantum lattice cryptography and quantum key distribution.",
       "category": "Seminar",
@@ -208,79 +208,79 @@
       "poster_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Physics & Engineering students",
       "is_featured": false,
-      "organizer_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+      "organizer_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "organizer_name": "Prof. Alex Rivera",
       "status": "pending",
       "rejection_reason": null,
       "registered_count": 0,
       "waitlist_count": 0,
       "attended_count": 0,
-      "created_at": "2026-10-30T10:29:13.188500Z",
-      "updated_at": "2026-10-30T10:29:13.188500Z"
+      "created_at": "2026-10-30T16:10:05.344824Z",
+      "updated_at": "2026-10-30T16:10:05.344824Z"
     }
   },
   "registrations": {
-    "8be069eb-51c3-40b8-bd54-5f5c7eb5308b": {
-      "id": "8be069eb-51c3-40b8-bd54-5f5c7eb5308b",
-      "event_id": "1cc4098f-b3cf-4994-93a1-0bf5e31f9002",
+    "c4df4420-bd2f-435e-8a2c-9c52ad496dcd": {
+      "id": "c4df4420-bd2f-435e-8a2c-9c52ad496dcd",
+      "event_id": "3a541dfa-0646-4291-8888-46438020ebd4",
       "event_title": "HackCampus 2026: 24-Hour AI Innovation Challenge",
       "event_date": "2026-11-07",
       "event_time": "09:00",
       "event_venue": "Turing Main Auditorium & Innovation Hub",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "user_name": "Rohan Sharma",
       "user_email": "student@campus.edu",
       "status": "confirmed",
-      "ticket_code": "TKT-HACK-8BE069EB",
-      "registered_at": "2026-10-26T10:29:13.188500Z",
+      "ticket_code": "TKT-HACK-C4DF4420",
+      "registered_at": "2026-10-26T16:10:05.344824Z",
       "attended_at": null,
       "certificate_id": null
     },
-    "a3af2866-6402-46e2-9219-c86c7e17a7df": {
-      "id": "a3af2866-6402-46e2-9219-c86c7e17a7df",
-      "event_id": "194d0206-9792-4c3b-875a-346c1f74d7b1",
+    "a6615e6b-0cfd-4026-b008-1c9773de89e8": {
+      "id": "a6615e6b-0cfd-4026-b008-1c9773de89e8",
+      "event_id": "de674e05-a700-4f4d-8a01-12d26890cc10",
       "event_title": "Deep Learning & Neural Systems Hands-on Workshop",
       "event_date": "2026-11-03",
       "event_time": "14:00",
       "event_venue": "CS Lab Complex - Room 304",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "user_name": "Rohan Sharma",
       "user_email": "student@campus.edu",
       "status": "confirmed",
-      "ticket_code": "TKT-DL-A3AF2866",
-      "registered_at": "2026-10-28T10:29:13.188500Z",
+      "ticket_code": "TKT-DL-A6615E6B",
+      "registered_at": "2026-10-28T16:10:05.344824Z",
       "attended_at": null,
       "certificate_id": null
     },
-    "cd56c19f-d7ea-418c-bbf2-14270d3847c3": {
-      "id": "cd56c19f-d7ea-418c-bbf2-14270d3847c3",
-      "event_id": "5b74d1a1-a554-4d22-b664-27131fbe00ac",
+    "c115e8d7-fe16-45cc-a18f-872e5a9249ba": {
+      "id": "c115e8d7-fe16-45cc-a18f-872e5a9249ba",
+      "event_id": "4dbc8ab7-91fd-4c63-97bc-dcdbeb1a1e4f",
       "event_title": "Campus Cricket Super League Finals",
       "event_date": "2026-10-26",
       "event_time": "10:00",
       "event_venue": "University Sports Pavilion",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "user_name": "Rohan Sharma",
       "user_email": "student@campus.edu",
       "status": "attended",
-      "ticket_code": "TKT-SPORTS-CD56C19F",
-      "registered_at": "2026-10-16T10:29:13.188500Z",
-      "attended_at": "2026-10-26T06:29:13.188500Z",
-      "certificate_id": "d1d4cc80-b473-4c82-a6db-636f218f6909"
+      "ticket_code": "TKT-SPORTS-C115E8D7",
+      "registered_at": "2026-10-16T16:10:05.344824Z",
+      "attended_at": "2026-10-26T12:10:05.344824Z",
+      "certificate_id": "fbf76e9d-34e2-4c68-a98b-72607bbc55b1"
     },
-    "61176693-bafd-44d3-a56d-65bb5313758d": {
-      "id": "61176693-bafd-44d3-a56d-65bb5313758d",
-      "event_id": "194d0206-9792-4c3b-875a-346c1f74d7b1",
+    "e8b89d1f-e1a3-4349-929f-31f9032a3ce3": {
+      "id": "e8b89d1f-e1a3-4349-929f-31f9032a3ce3",
+      "event_id": "de674e05-a700-4f4d-8a01-12d26890cc10",
       "event_title": "Deep Learning & Neural Systems Hands-on Workshop",
       "event_date": "2026-11-03",
       "event_time": "14:00",
       "event_venue": "CS Lab Complex - Room 304",
-      "user_id": "82c4767b-b5d0-4949-b291-fb94b8cd3bb1",
+      "user_id": "c39ef6f8-ef91-4417-a378-477c43d36b2f",
       "user_name": "Priya Patel",
       "user_email": "priya.patel@campus.edu",
       "status": "confirmed",
-      "ticket_code": "TKT-DL-61176693",
-      "registered_at": "2026-10-29T10:29:13.188500Z",
+      "ticket_code": "TKT-DL-E8B89D1F",
+      "registered_at": "2026-10-29T16:10:05.344824Z",
       "attended_at": null,
       "certificate_id": null
     }
@@ -1016,245 +1016,245 @@
       "is_read": false,
       "created_at": "2026-10-31T09:32:33.637541Z"
     },
-    "16f206b3-8199-4fc1-82d5-88b6e9901108": {
-      "id": "16f206b3-8199-4fc1-82d5-88b6e9901108",
-      "user_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+    "79e8feac-e3f0-4693-9131-e12d235ae30a": {
+      "id": "79e8feac-e3f0-4693-9131-e12d235ae30a",
+      "user_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/0147d3b7-7f1f-4bf8-9f7d-881789cfa2cd",
+      "link": "/events/5da120f5-817f-49ba-bb57-5246c7816971",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:01.711959Z"
+      "created_at": "2026-10-31T16:09:53.912768Z"
     },
-    "64b4bed8-a0ea-4f5c-a196-a6e47f30c71e": {
-      "id": "64b4bed8-a0ea-4f5c-a196-a6e47f30c71e",
-      "user_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+    "7895536a-08dd-449b-a3d5-dfe55dced011": {
+      "id": "7895536a-08dd-449b-a3d5-dfe55dced011",
+      "user_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:01.715034Z"
+      "created_at": "2026-10-31T16:09:53.916645Z"
     },
-    "ef431bd0-175f-46f3-9f84-294b452fff89": {
-      "id": "ef431bd0-175f-46f3-9f84-294b452fff89",
-      "user_id": "5ce82def-d989-4019-9c86-0e3425ccc96c",
+    "d62e0edd-6fe3-4680-a0bc-e5292a8a9b1e": {
+      "id": "d62e0edd-6fe3-4680-a0bc-e5292a8a9b1e",
+      "user_id": "0ea402be-db67-4f8f-86c4-0b416902b5a4",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:01.718021Z"
+      "created_at": "2026-10-31T16:09:53.919343Z"
     },
-    "88f49104-eb27-4523-aa77-183027ef3a8d": {
-      "id": "88f49104-eb27-4523-aa77-183027ef3a8d",
-      "user_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+    "06483e18-b48e-4462-b956-1ec4fdfcfdd4": {
+      "id": "06483e18-b48e-4462-b956-1ec4fdfcfdd4",
+      "user_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/417be2e1-cebb-41ec-94e4-6ac0de67de37",
+      "link": "/events/aa806ec9-f0d7-4000-b975-c1dac0773b7a",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:04.091084Z"
+      "created_at": "2026-10-31T16:09:56.284993Z"
     },
-    "deeb5e33-36a9-4bbd-bdf4-948ccc7d4972": {
-      "id": "deeb5e33-36a9-4bbd-bdf4-948ccc7d4972",
-      "user_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+    "69d1b6ed-2c70-40a9-b4e8-7ad7d358c618": {
+      "id": "69d1b6ed-2c70-40a9-b4e8-7ad7d358c618",
+      "user_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:04.094103Z"
+      "created_at": "2026-10-31T16:09:56.288178Z"
     },
-    "1c5ebf1e-6df2-4f2b-bd86-da457d89456b": {
-      "id": "1c5ebf1e-6df2-4f2b-bd86-da457d89456b",
-      "user_id": "dbf25f41-74bb-47da-86fd-975aa6bce390",
+    "563a176f-5d89-4ac5-8a56-faec986dc864": {
+      "id": "563a176f-5d89-4ac5-8a56-faec986dc864",
+      "user_id": "f955b1c1-558c-418c-a29d-75530451c324",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:04.097249Z"
+      "created_at": "2026-10-31T16:09:56.291309Z"
     },
-    "27689228-56c5-4b45-ac1f-d6b30498f138": {
-      "id": "27689228-56c5-4b45-ac1f-d6b30498f138",
-      "user_id": "b1ca6e4a-5a88-4a36-9300-88c8ffd00214",
+    "a3492c57-0f76-45b8-8c69-996eec146546": {
+      "id": "a3492c57-0f76-45b8-8c69-996eec146546",
+      "user_id": "c22b2fa3-3cd7-4d8d-9d75-d02c3b9f53f2",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/d69a62b0-ae79-447e-b6a1-9ba6812f8507",
+      "link": "/events/1cf98527-87bd-4414-a506-ba61d8bd0567",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:06.041575Z"
+      "created_at": "2026-10-31T16:09:58.273070Z"
     },
-    "9edb0018-5cce-4258-be97-5ce1c72f8b77": {
-      "id": "9edb0018-5cce-4258-be97-5ce1c72f8b77",
-      "user_id": "b1ca6e4a-5a88-4a36-9300-88c8ffd00214",
+    "689e16e9-b979-4774-9611-208edb84be90": {
+      "id": "689e16e9-b979-4774-9611-208edb84be90",
+      "user_id": "c22b2fa3-3cd7-4d8d-9d75-d02c3b9f53f2",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:06.044778Z"
+      "created_at": "2026-10-31T16:09:58.276300Z"
     },
-    "268253ce-fa58-42d1-a5f2-07084459e11a": {
-      "id": "268253ce-fa58-42d1-a5f2-07084459e11a",
-      "user_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+    "45a7b6f8-bd63-4c58-ba9e-001751c942a6": {
+      "id": "45a7b6f8-bd63-4c58-ba9e-001751c942a6",
+      "user_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:06.047795Z"
+      "created_at": "2026-10-31T16:09:58.279507Z"
     },
-    "d42f9706-c51d-44dd-b644-d3ac45c75c71": {
-      "id": "d42f9706-c51d-44dd-b644-d3ac45c75c71",
-      "user_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+    "1be097df-d1ef-4079-a1e2-e862949a3a07": {
+      "id": "1be097df-d1ef-4079-a1e2-e862949a3a07",
+      "user_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "title": "New Event Submission",
       "message": "Prof. Alex Rivera submitted 'Quantum AI Workshop 2026' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:06.455418Z"
+      "created_at": "2026-10-31T16:09:58.687572Z"
     },
-    "8a33cd5e-4005-44a6-b9dc-6ab822c9412e": {
-      "id": "8a33cd5e-4005-44a6-b9dc-6ab822c9412e",
-      "user_id": "767dfdba-d0ca-48c8-bfbd-b97a31a0a094",
+    "0473bb54-9851-4715-97cf-a4ac9832f823": {
+      "id": "0473bb54-9851-4715-97cf-a4ac9832f823",
+      "user_id": "620bca0a-1ce5-42c6-a66f-8de6e8ff5ae8",
       "title": "Event Approved!",
       "message": "Your event 'Quantum AI Workshop 2026' has been officially approved and published to students.",
       "type": "success",
-      "link": "/events/d9a7b1e5-e5ae-4656-a5c9-7d8dfb2378b6",
+      "link": "/events/31321171-598c-475c-9481-3c1425bb76fa",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:06.864341Z"
+      "created_at": "2026-10-31T16:09:59.089661Z"
     },
-    "e277a4c3-3478-41b1-a41e-4d438b555992": {
-      "id": "e277a4c3-3478-41b1-a41e-4d438b555992",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "29963a1f-8fac-48b3-87ed-85280dbeb20f": {
+      "id": "29963a1f-8fac-48b3-87ed-85280dbeb20f",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/852faa80-05d9-4d24-a9b6-09fe2ff1a3f1",
+      "link": "/events/02165850-9d18-4102-af07-7fb5feb5d9f6",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:08.399453Z"
+      "created_at": "2026-10-31T16:10:00.621911Z"
     },
-    "388c62b1-4044-4e3a-a7e8-728f90dc237b": {
-      "id": "388c62b1-4044-4e3a-a7e8-728f90dc237b",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "47e6b20e-4e84-42f3-8350-7803a48ea643": {
+      "id": "47e6b20e-4e84-42f3-8350-7803a48ea643",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:08.402748Z"
+      "created_at": "2026-10-31T16:10:00.625252Z"
     },
-    "be802c4b-a7ee-4a8c-ada5-ac614ca53dc1": {
-      "id": "be802c4b-a7ee-4a8c-ada5-ac614ca53dc1",
-      "user_id": "473a8fcf-9fc8-4c04-9051-a719805335d8",
+    "aa080a43-f3b7-44b0-b321-8813b9445b24": {
+      "id": "aa080a43-f3b7-44b0-b321-8813b9445b24",
+      "user_id": "4cee0a76-f674-4123-a8ae-3859900a1629",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:08.405975Z"
+      "created_at": "2026-10-31T16:10:00.628537Z"
     },
-    "7718186e-16a9-4e50-8395-c129cc16c0e2": {
-      "id": "7718186e-16a9-4e50-8395-c129cc16c0e2",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "8d6a17f6-79bd-4163-b7b6-ff162c44b568": {
+      "id": "8d6a17f6-79bd-4163-b7b6-ff162c44b568",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "title": "Registration Update",
       "message": "Successfully registered for 'Micro Capacity Masterclass'! Your ticket is confirmed.",
       "type": "success",
-      "link": "/events/cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+      "link": "/events/ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:09.212497Z"
+      "created_at": "2026-10-31T16:10:01.434105Z"
     },
-    "bb0957ef-bb22-4d8c-b377-699f8383d0a9": {
-      "id": "bb0957ef-bb22-4d8c-b377-699f8383d0a9",
-      "user_id": "a6a93602-8dcd-400c-93d1-3b7edf81fa83",
+    "028be92f-de96-4926-897e-73492530663a": {
+      "id": "028be92f-de96-4926-897e-73492530663a",
+      "user_id": "06153fc8-2797-48b5-aa8c-ba5434ef4e99",
       "title": "Registration Update",
       "message": "Event capacity reached. You have been placed on the waitlist (Position #1).",
       "type": "warning",
-      "link": "/events/cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+      "link": "/events/ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:09.614534Z"
+      "created_at": "2026-10-31T16:10:01.835238Z"
     },
-    "cb003352-8ca6-42e7-9639-41d2c8c9d524": {
-      "id": "cb003352-8ca6-42e7-9639-41d2c8c9d524",
-      "user_id": "a6a93602-8dcd-400c-93d1-3b7edf81fa83",
+    "b1c838e0-a80a-4472-b2bf-bb2ace6eb4c0": {
+      "id": "b1c838e0-a80a-4472-b2bf-bb2ace6eb4c0",
+      "user_id": "06153fc8-2797-48b5-aa8c-ba5434ef4e99",
       "title": "Good News! Waitlist Promotion",
       "message": "A seat opened up for 'Micro Capacity Masterclass'! Your registration is now CONFIRMED.",
       "type": "success",
-      "link": "/events/cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+      "link": "/events/ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:09.624072Z"
+      "created_at": "2026-10-31T16:10:01.844138Z"
     },
-    "f562b3a8-1070-44e7-9026-ccad3745e608": {
-      "id": "f562b3a8-1070-44e7-9026-ccad3745e608",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+    "981a002b-0556-4548-a92c-b4890fa809ee": {
+      "id": "981a002b-0556-4548-a92c-b4890fa809ee",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/0f0c3c86-7cd7-4869-9b68-35f95cfcd2ae",
+      "link": "/events/198869b6-6000-47ff-93d1-5424c736b403",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:11.199835Z"
+      "created_at": "2026-10-31T16:10:03.383667Z"
     },
-    "1ee71564-a49a-42b0-a8da-abb04a097981": {
-      "id": "1ee71564-a49a-42b0-a8da-abb04a097981",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+    "671e492d-c685-4050-8a48-3216b3d29690": {
+      "id": "671e492d-c685-4050-8a48-3216b3d29690",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:11.203255Z"
+      "created_at": "2026-10-31T16:10:03.387248Z"
     },
-    "28c47292-0cff-40af-9a23-7e791827b5fd": {
-      "id": "28c47292-0cff-40af-9a23-7e791827b5fd",
-      "user_id": "fc324e28-9912-473d-8f24-284603b64168",
+    "20bde94b-bdcc-42b6-a6e2-71a2093b39b3": {
+      "id": "20bde94b-bdcc-42b6-a6e2-71a2093b39b3",
+      "user_id": "7b392807-5026-4c90-b7db-5d174d87b078",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:11.206757Z"
+      "created_at": "2026-10-31T16:10:03.390851Z"
     },
-    "8cf3845b-2776-43df-b11b-85f1d12befcc": {
-      "id": "8cf3845b-2776-43df-b11b-85f1d12befcc",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+    "b5587c0b-25a0-408d-91f3-c18f7827ee6f": {
+      "id": "b5587c0b-25a0-408d-91f3-c18f7827ee6f",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "title": "Attendance Verified & Certificate Ready!",
       "message": "You have been checked in for 'HackCampus 2026: 24-Hour AI Innovation Challenge'. Your official Certificate of Participation is now available in your portal.",
       "type": "success",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:11.640432Z"
+      "created_at": "2026-10-31T16:10:03.802437Z"
     },
-    "589d070b-d419-494c-bdf3-5bf5d019d4d1": {
-      "id": "589d070b-d419-494c-bdf3-5bf5d019d4d1",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+    "21ec6193-2ea3-4296-b05a-c05a6e5cdf6f": {
+      "id": "21ec6193-2ea3-4296-b05a-c05a6e5cdf6f",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "title": "Registration Confirmed",
       "message": "You are registered for HackCampus 2026. Your QR ticket is ready in your dashboard.",
       "type": "success",
-      "link": "/events/1cc4098f-b3cf-4994-93a1-0bf5e31f9002",
+      "link": "/events/3a541dfa-0646-4291-8888-46438020ebd4",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:13.188622Z"
+      "created_at": "2026-10-31T16:10:05.344959Z"
     },
-    "1d394b40-358d-45ac-b2df-111ab0bbfc16": {
-      "id": "1d394b40-358d-45ac-b2df-111ab0bbfc16",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+    "7670620b-9542-447a-bfd8-f32036135be0": {
+      "id": "7670620b-9542-447a-bfd8-f32036135be0",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "title": "Certificate Available",
       "message": "Your participation certificate for Campus Cricket Super League is now ready to download.",
       "type": "info",
       "link": "/certificates",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:13.192044Z"
+      "created_at": "2026-10-31T16:10:05.348579Z"
     },
-    "3ecbf42a-0824-442c-ab17-b9e7245aa275": {
-      "id": "3ecbf42a-0824-442c-ab17-b9e7245aa275",
-      "user_id": "ded9d423-285e-4641-bd4a-cfa2a565d31f",
+    "5c55bdb2-5af6-4e52-89dd-97abd1644e10": {
+      "id": "5c55bdb2-5af6-4e52-89dd-97abd1644e10",
+      "user_id": "11c897e2-e1d8-4dfe-9db2-9ea8ff14fb7a",
       "title": "New Event Submitted for Review",
       "message": "Prof. Alex Rivera submitted 'Quantum Computing & Cryptography Symposium' for approval.",
       "type": "warning",
       "link": "/admin/events",
       "is_read": false,
-      "created_at": "2026-10-31T10:29:13.195484Z"
+      "created_at": "2026-10-31T16:10:05.352536Z"
     }
   },
   "feedback": {
@@ -1467,71 +1467,71 @@
       "comment": "Phenomenal robotics symposium! Hands-on labs were top tier.",
       "created_at": "2026-10-31T09:32:33.650304Z"
     },
-    "de6aced9-d570-4c1c-83c3-cf83359a9fba": {
-      "id": "de6aced9-d570-4c1c-83c3-cf83359a9fba",
-      "event_id": "789b7f7f-e8fe-4867-89ca-f7335c93349f",
-      "user_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+    "ce642786-178c-4d2d-99a1-e25379a539cf": {
+      "id": "ce642786-178c-4d2d-99a1-e25379a539cf",
+      "event_id": "f49421e9-aad3-4819-a712-21b9081372ec",
+      "user_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:01.711814Z"
+      "created_at": "2026-10-27T16:09:53.912591Z"
     },
-    "3e2faeae-a461-414d-9f5a-5cda7123d908": {
-      "id": "3e2faeae-a461-414d-9f5a-5cda7123d908",
-      "event_id": "2eb1ab13-b664-4e34-93fa-8c8790026139",
-      "user_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+    "bfb6f8ce-dc1c-4d24-bc30-c08c66b3b36e": {
+      "id": "bfb6f8ce-dc1c-4d24-bc30-c08c66b3b36e",
+      "event_id": "1f99b5b1-7bb7-437e-8192-f31baf78cd77",
+      "user_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:04.090944Z"
+      "created_at": "2026-10-27T16:09:56.284797Z"
     },
-    "30237019-1a10-4483-bb89-48cf70502161": {
-      "id": "30237019-1a10-4483-bb89-48cf70502161",
-      "event_id": "b85707a7-879d-45a0-a5b4-e4b021fc096d",
-      "user_id": "b1ca6e4a-5a88-4a36-9300-88c8ffd00214",
+    "3e5c13d4-afeb-4cb8-a55f-ceda3c3bede3": {
+      "id": "3e5c13d4-afeb-4cb8-a55f-ceda3c3bede3",
+      "event_id": "d12ccd6e-936b-4276-826c-c6d181765034",
+      "user_id": "c22b2fa3-3cd7-4d8d-9d75-d02c3b9f53f2",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:06.041434Z"
+      "created_at": "2026-10-27T16:09:58.272928Z"
     },
-    "72e3e0a1-c14c-4eee-92d6-acd4bf1c3df3": {
-      "id": "72e3e0a1-c14c-4eee-92d6-acd4bf1c3df3",
-      "event_id": "e6010177-2259-4e82-ad18-46781dc4f524",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "2f0e3d69-e4ab-4d2e-9f67-99eeae8144da": {
+      "id": "2f0e3d69-e4ab-4d2e-9f67-99eeae8144da",
+      "event_id": "8e630091-958a-4f4e-b035-76a0d2700138",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:08.399327Z"
+      "created_at": "2026-10-27T16:10:00.621753Z"
     },
-    "c21076f0-1cd5-4fcd-ad4c-9d90334fe76a": {
-      "id": "c21076f0-1cd5-4fcd-ad4c-9d90334fe76a",
-      "event_id": "1c5ea985-61c7-4881-b246-a164298e8d8a",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+    "8f02a212-f3d0-40a1-a6bf-d1cc3e1d946f": {
+      "id": "8f02a212-f3d0-40a1-a6bf-d1cc3e1d946f",
+      "event_id": "e84dd4ee-9e2b-4534-8956-8a5b37474c31",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:11.199703Z"
+      "created_at": "2026-10-27T16:10:03.383512Z"
     },
-    "a1ed13f5-93a5-42f3-a4fc-631c23b00f77": {
-      "id": "a1ed13f5-93a5-42f3-a4fc-631c23b00f77",
-      "event_id": "5b74d1a1-a554-4d22-b664-27131fbe00ac",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+    "88512c17-feac-4858-b1fb-496df3796f7f": {
+      "id": "88512c17-feac-4858-b1fb-496df3796f7f",
+      "event_id": "4dbc8ab7-91fd-4c63-97bc-dcdbeb1a1e4f",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "user_name": "Rohan Sharma",
       "rating": 5,
       "organization_rating": 5,
       "content_rating": 5,
       "comment": "Outstanding organization! Ground facilities, scoreboards, and crowd management were top notch.",
-      "created_at": "2026-10-27T10:29:13.188500Z"
+      "created_at": "2026-10-27T16:10:05.344824Z"
     }
   },
   "certificates": {
@@ -1745,72 +1745,72 @@
       "issue_date": "2026-10-31",
       "verified": true
     },
-    "c4a524b1-83ff-43ac-8ade-f93ee016a85a": {
-      "id": "c4a524b1-83ff-43ac-8ade-f93ee016a85a",
-      "certificate_number": "CERT-2026-C4A524B1",
-      "event_id": "789b7f7f-e8fe-4867-89ca-f7335c93349f",
+    "48750d67-88a9-44a4-96fb-b5c228d7f4d7": {
+      "id": "48750d67-88a9-44a4-96fb-b5c228d7f4d7",
+      "certificate_number": "CERT-2026-48750D67",
+      "event_id": "f49421e9-aad3-4819-a712-21b9081372ec",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+      "user_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
     },
-    "47b1b536-1ee6-410e-8312-3a3ea53e0e62": {
-      "id": "47b1b536-1ee6-410e-8312-3a3ea53e0e62",
-      "certificate_number": "CERT-2026-47B1B536",
-      "event_id": "2eb1ab13-b664-4e34-93fa-8c8790026139",
+    "39ccd5fb-de24-48a4-9779-d28c659baafc": {
+      "id": "39ccd5fb-de24-48a4-9779-d28c659baafc",
+      "certificate_number": "CERT-2026-39CCD5FB",
+      "event_id": "1f99b5b1-7bb7-437e-8192-f31baf78cd77",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+      "user_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
     },
-    "2e8135ed-17ba-4637-8ca8-be431446b451": {
-      "id": "2e8135ed-17ba-4637-8ca8-be431446b451",
-      "certificate_number": "CERT-2026-2E8135ED",
-      "event_id": "b85707a7-879d-45a0-a5b4-e4b021fc096d",
+    "5f9636fa-a356-42d9-a4b5-06e86fcfabcf": {
+      "id": "5f9636fa-a356-42d9-a4b5-06e86fcfabcf",
+      "certificate_number": "CERT-2026-5F9636FA",
+      "event_id": "d12ccd6e-936b-4276-826c-c6d181765034",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "b1ca6e4a-5a88-4a36-9300-88c8ffd00214",
+      "user_id": "c22b2fa3-3cd7-4d8d-9d75-d02c3b9f53f2",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
     },
-    "907616d2-75a2-49c7-abd9-14a10e953779": {
-      "id": "907616d2-75a2-49c7-abd9-14a10e953779",
-      "certificate_number": "CERT-2026-907616D2",
-      "event_id": "e6010177-2259-4e82-ad18-46781dc4f524",
+    "c15ba640-b513-40ae-81dc-0b00992d95c1": {
+      "id": "c15ba640-b513-40ae-81dc-0b00992d95c1",
+      "certificate_number": "CERT-2026-C15BA640",
+      "event_id": "8e630091-958a-4f4e-b035-76a0d2700138",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
     },
-    "d2184889-9176-4644-8136-4dceec0eb52d": {
-      "id": "d2184889-9176-4644-8136-4dceec0eb52d",
-      "certificate_number": "CERT-2026-D2184889",
-      "event_id": "1c5ea985-61c7-4881-b246-a164298e8d8a",
+    "b6d4460a-2e33-4b0e-bc97-3d82a50429ca": {
+      "id": "b6d4460a-2e33-4b0e-bc97-3d82a50429ca",
+      "certificate_number": "CERT-2026-B6D4460A",
+      "event_id": "e84dd4ee-9e2b-4534-8956-8a5b37474c31",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
     },
-    "59327e9f-e16d-4d1f-a3e4-3578b9ade624": {
-      "id": "59327e9f-e16d-4d1f-a3e4-3578b9ade624",
-      "certificate_number": "CERT-2026-59327E9F",
-      "event_id": "0f0c3c86-7cd7-4869-9b68-35f95cfcd2ae",
+    "309e1f00-605d-4c8d-ae25-04f25ec7bbea": {
+      "id": "309e1f00-605d-4c8d-ae25-04f25ec7bbea",
+      "certificate_number": "CERT-2026-309E1F00",
+      "event_id": "198869b6-6000-47ff-93d1-5424c736b403",
       "event_title": "HackCampus 2026: 24-Hour AI Innovation Challenge",
-      "user_id": "8d711bb2-edc3-4d73-a62c-e9e72be18fdf",
+      "user_id": "7cef15f7-b742-4c59-a719-14ac9df06fce",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-31",
       "verified": true
     },
-    "d1d4cc80-b473-4c82-a6db-636f218f6909": {
-      "id": "d1d4cc80-b473-4c82-a6db-636f218f6909",
-      "certificate_number": "CERT-2026-D1D4CC80",
-      "event_id": "5b74d1a1-a554-4d22-b664-27131fbe00ac",
+    "fbf76e9d-34e2-4c68-a98b-72607bbc55b1": {
+      "id": "fbf76e9d-34e2-4c68-a98b-72607bbc55b1",
+      "certificate_number": "CERT-2026-FBF76E9D",
+      "event_id": "4dbc8ab7-91fd-4c63-97bc-dcdbeb1a1e4f",
       "event_title": "Campus Cricket Super League Finals",
-      "user_id": "2bcbeb06-c9a0-4216-ac09-9ad2ce9fdc36",
+      "user_id": "7a5c4473-b2e7-4df2-acf1-fa04c184a726",
       "user_name": "Rohan Sharma",
       "issue_date": "2026-10-26",
       "verified": true
@@ -3255,346 +3255,368 @@
       },
       "timestamp": "2026-10-31T10:27:50.729568Z"
     },
-    "162229b9-2f3a-42f6-895f-463afe6a9de3": {
-      "id": "162229b9-2f3a-42f6-895f-463afe6a9de3",
-      "user_id": "1117f0f4-89d5-4af3-92f4-6400df31beda",
+    "4f3ac2c4-d289-4947-92a1-ff5b6cabbbdf": {
+      "id": "4f3ac2c4-d289-4947-92a1-ff5b6cabbbdf",
+      "user_id": "5f892b1c-9a1f-4d69-bae2-c3ab051c777c",
+      "user_name": "Prof. Alex Rivera",
+      "user_role": "organizer",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "5f892b1c-9a1f-4d69-bae2-c3ab051c777c",
+      "details": {},
+      "timestamp": "2026-10-31T15:56:59.572554Z"
+    },
+    "50760fb2-47c7-4c65-bb04-8680e6e2599f": {
+      "id": "50760fb2-47c7-4c65-bb04-8680e6e2599f",
+      "user_id": "3817d224-623d-42b3-bf14-b4896c0c03e1",
+      "user_name": "Dr. Sarah Jenkins",
+      "user_role": "admin",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "3817d224-623d-42b3-bf14-b4896c0c03e1",
+      "details": {},
+      "timestamp": "2026-10-31T15:57:21.417077Z"
+    },
+    "526c9efb-1dcc-477f-af5f-cd933a895bef": {
+      "id": "526c9efb-1dcc-477f-af5f-cd933a895bef",
+      "user_id": "2354ddcc-bb96-472b-9578-0ba72cb969c8",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "0d823bc9-50fa-4c60-b3f3-6dde5250ceca",
+      "resource_id": "ee4d5591-4573-40d1-a16b-9928d3b3d434",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:01.720847Z"
+      "timestamp": "2026-10-31T16:09:53.921975Z"
     },
-    "3b1335f1-707a-4bea-b849-83aa62908aa1": {
-      "id": "3b1335f1-707a-4bea-b849-83aa62908aa1",
-      "user_id": "5ce82def-d989-4019-9c86-0e3425ccc96c",
+    "d296df11-9762-496c-b302-e790ef9a8607": {
+      "id": "d296df11-9762-496c-b302-e790ef9a8607",
+      "user_id": "0ea402be-db67-4f8f-86c4-0b416902b5a4",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "0147d3b7-7f1f-4bf8-9f7d-881789cfa2cd",
+      "resource_id": "5da120f5-817f-49ba-bb57-5246c7816971",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:01.723466Z"
+      "timestamp": "2026-10-31T16:09:53.924623Z"
     },
-    "0ad3af8e-7bcd-4097-b0d0-47677f226cd4": {
-      "id": "0ad3af8e-7bcd-4097-b0d0-47677f226cd4",
-      "user_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+    "cb902710-3d1b-4911-bcb8-e4939d9157ca": {
+      "id": "cb902710-3d1b-4911-bcb8-e4939d9157ca",
+      "user_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "user_name": "Rohan Sharma",
       "user_role": "student",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "78911a4c-0245-4bdf-8fb0-1ebad6bd242d",
+      "resource_id": "638cf000-5f12-461d-b5e9-9e48c91db500",
       "details": {},
-      "timestamp": "2026-10-31T10:29:02.168221Z"
+      "timestamp": "2026-10-31T16:09:54.361443Z"
     },
-    "a0a03117-62f0-4e7b-a7c8-4679306d8b4f": {
-      "id": "a0a03117-62f0-4e7b-a7c8-4679306d8b4f",
-      "user_id": "012be8c1-79da-499b-8cb1-480ffc8752bb",
+    "c2d14592-d5cf-4a9f-ba9a-607577351736": {
+      "id": "c2d14592-d5cf-4a9f-ba9a-607577351736",
+      "user_id": "9aae5ca3-92d4-4943-8534-7b6969b65969",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "b9057c0a-ccf4-49d6-a2d5-fbbfceba78f7",
+      "resource_id": "8d4d694c-4b71-49a4-80a5-36f859a551f1",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:04.100082Z"
+      "timestamp": "2026-10-31T16:09:56.294059Z"
     },
-    "55e12050-dbbb-4169-8bfb-9d0f84ac2d14": {
-      "id": "55e12050-dbbb-4169-8bfb-9d0f84ac2d14",
-      "user_id": "dbf25f41-74bb-47da-86fd-975aa6bce390",
+    "cac7f182-c9b9-43a7-a992-319f7f212685": {
+      "id": "cac7f182-c9b9-43a7-a992-319f7f212685",
+      "user_id": "f955b1c1-558c-418c-a29d-75530451c324",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "417be2e1-cebb-41ec-94e4-6ac0de67de37",
+      "resource_id": "aa806ec9-f0d7-4000-b975-c1dac0773b7a",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:04.102879Z"
+      "timestamp": "2026-10-31T16:09:56.296840Z"
     },
-    "f9299060-4747-47e2-9511-f465d1b030ad": {
-      "id": "f9299060-4747-47e2-9511-f465d1b030ad",
-      "user_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+    "11a1d6d1-c426-4b41-bc56-abd73fcc94dd": {
+      "id": "11a1d6d1-c426-4b41-bc56-abd73fcc94dd",
+      "user_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "user_name": "Rohan Sharma",
       "user_role": "student",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "e658f365-4faf-4114-b1f3-7919b1497335",
+      "resource_id": "555a6843-8033-44ab-b77c-fd68a33a95bb",
       "details": {},
-      "timestamp": "2026-10-31T10:29:04.492878Z"
+      "timestamp": "2026-10-31T16:09:56.687136Z"
     },
-    "0244f8b0-2f61-4cd1-b4be-810459c564f6": {
-      "id": "0244f8b0-2f61-4cd1-b4be-810459c564f6",
-      "user_id": "767dfdba-d0ca-48c8-bfbd-b97a31a0a094",
+    "c52f5f0a-7d7e-4f10-8be2-cb6ebe40c3ed": {
+      "id": "c52f5f0a-7d7e-4f10-8be2-cb6ebe40c3ed",
+      "user_id": "620bca0a-1ce5-42c6-a66f-8de6e8ff5ae8",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "c7744be2-ffe6-486e-b14a-1a363b5b7456",
+      "resource_id": "6f8a79cf-f5aa-4a3a-b350-4a7347d6b999",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:06.050557Z"
+      "timestamp": "2026-10-31T16:09:58.282406Z"
     },
-    "b35054a7-8f1d-4aca-8924-962fd519519f": {
-      "id": "b35054a7-8f1d-4aca-8924-962fd519519f",
-      "user_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+    "63eb0750-9b2a-48ee-867d-4149475e19a4": {
+      "id": "63eb0750-9b2a-48ee-867d-4149475e19a4",
+      "user_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "d69a62b0-ae79-447e-b6a1-9ba6812f8507",
+      "resource_id": "1cf98527-87bd-4414-a506-ba61d8bd0567",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:06.053495Z"
+      "timestamp": "2026-10-31T16:09:58.285190Z"
     },
-    "e6d2669a-633a-4d99-944c-f52378c2e78c": {
-      "id": "e6d2669a-633a-4d99-944c-f52378c2e78c",
-      "user_id": "767dfdba-d0ca-48c8-bfbd-b97a31a0a094",
+    "c9b08545-674c-49f2-96ff-2e1f8e2a4615": {
+      "id": "c9b08545-674c-49f2-96ff-2e1f8e2a4615",
+      "user_id": "620bca0a-1ce5-42c6-a66f-8de6e8ff5ae8",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "767dfdba-d0ca-48c8-bfbd-b97a31a0a094",
+      "resource_id": "620bca0a-1ce5-42c6-a66f-8de6e8ff5ae8",
       "details": {},
-      "timestamp": "2026-10-31T10:29:06.442087Z"
+      "timestamp": "2026-10-31T16:09:58.674500Z"
     },
-    "880cfe48-eba4-469a-966d-08c16e4a5b64": {
-      "id": "880cfe48-eba4-469a-966d-08c16e4a5b64",
-      "user_id": "767dfdba-d0ca-48c8-bfbd-b97a31a0a094",
+    "13089aa2-9f5b-4a79-95a3-d67c532f33c8": {
+      "id": "13089aa2-9f5b-4a79-95a3-d67c532f33c8",
+      "user_id": "620bca0a-1ce5-42c6-a66f-8de6e8ff5ae8",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "CREATE_EVENT",
       "resource_type": "event",
-      "resource_id": "d9a7b1e5-e5ae-4656-a5c9-7d8dfb2378b6",
+      "resource_id": "31321171-598c-475c-9481-3c1425bb76fa",
       "details": {
         "title": "Quantum AI Workshop 2026",
         "status": "pending"
       },
-      "timestamp": "2026-10-31T10:29:06.452505Z"
+      "timestamp": "2026-10-31T16:09:58.684774Z"
     },
-    "55e9b471-02ca-4a7e-a584-e12f713130ac": {
-      "id": "55e9b471-02ca-4a7e-a584-e12f713130ac",
-      "user_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+    "bf380209-0fe7-4b91-a1b8-478c4ba56710": {
+      "id": "bf380209-0fe7-4b91-a1b8-478c4ba56710",
+      "user_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+      "resource_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "details": {},
-      "timestamp": "2026-10-31T10:29:06.851730Z"
+      "timestamp": "2026-10-31T16:09:59.076160Z"
     },
-    "75117f0c-fd81-4302-821c-21f103013ac3": {
-      "id": "75117f0c-fd81-4302-821c-21f103013ac3",
-      "user_id": "51da8448-8d30-4824-aace-4c56765aeb13",
+    "ba320ad6-051b-4417-a491-d561dc728c0d": {
+      "id": "ba320ad6-051b-4417-a491-d561dc728c0d",
+      "user_id": "0e00a851-b890-44c5-8374-b198bbeb0d82",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "APPROVE_EVENT",
       "resource_type": "event",
-      "resource_id": "d9a7b1e5-e5ae-4656-a5c9-7d8dfb2378b6",
+      "resource_id": "31321171-598c-475c-9481-3c1425bb76fa",
       "details": {
         "title": "Quantum AI Workshop 2026"
       },
-      "timestamp": "2026-10-31T10:29:06.861492Z"
+      "timestamp": "2026-10-31T16:09:59.086695Z"
     },
-    "1d83d292-75e4-4f1f-ac44-17df08a400d1": {
-      "id": "1d83d292-75e4-4f1f-ac44-17df08a400d1",
-      "user_id": "5588c20f-5bc4-49b9-96d6-55c8c71158a4",
+    "4a5381c5-3d7d-4b04-8a9c-3b9616c23347": {
+      "id": "4a5381c5-3d7d-4b04-8a9c-3b9616c23347",
+      "user_id": "6ce0eb57-8662-4863-8267-fc5175150715",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "68103ee1-11f2-47de-8d56-26187125f1d3",
+      "resource_id": "7413a5d7-3765-4b07-890c-246b3e0bc2db",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:08.408869Z"
+      "timestamp": "2026-10-31T16:10:00.631415Z"
     },
-    "c123a536-3e23-4b8f-a201-46f7a2e67167": {
-      "id": "c123a536-3e23-4b8f-a201-46f7a2e67167",
-      "user_id": "473a8fcf-9fc8-4c04-9051-a719805335d8",
+    "8527b10b-ae8f-47a6-a54b-dda87c8e177c": {
+      "id": "8527b10b-ae8f-47a6-a54b-dda87c8e177c",
+      "user_id": "4cee0a76-f674-4123-a8ae-3859900a1629",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "852faa80-05d9-4d24-a9b6-09fe2ff1a3f1",
+      "resource_id": "02165850-9d18-4102-af07-7fb5feb5d9f6",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:08.411759Z"
+      "timestamp": "2026-10-31T16:10:00.634280Z"
     },
-    "5f21ea23-4ad0-4ac3-aba4-600a62481720": {
-      "id": "5f21ea23-4ad0-4ac3-aba4-600a62481720",
-      "user_id": "473a8fcf-9fc8-4c04-9051-a719805335d8",
+    "db2e676c-bb6c-44c3-a7d2-bf7dfd8e7fbd": {
+      "id": "db2e676c-bb6c-44c3-a7d2-bf7dfd8e7fbd",
+      "user_id": "4cee0a76-f674-4123-a8ae-3859900a1629",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "473a8fcf-9fc8-4c04-9051-a719805335d8",
+      "resource_id": "4cee0a76-f674-4123-a8ae-3859900a1629",
       "details": {},
-      "timestamp": "2026-10-31T10:29:08.801980Z"
+      "timestamp": "2026-10-31T16:10:01.023970Z"
     },
-    "2baeb9ab-7249-4bac-9584-79889bf7a6b2": {
-      "id": "2baeb9ab-7249-4bac-9584-79889bf7a6b2",
-      "user_id": "473a8fcf-9fc8-4c04-9051-a719805335d8",
+    "6e99f561-6604-4633-ba6a-00c55983cf89": {
+      "id": "6e99f561-6604-4633-ba6a-00c55983cf89",
+      "user_id": "4cee0a76-f674-4123-a8ae-3859900a1629",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "CREATE_EVENT",
       "resource_type": "event",
-      "resource_id": "cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+      "resource_id": "ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
       "details": {
         "title": "Micro Capacity Masterclass",
         "status": "approved"
       },
-      "timestamp": "2026-10-31T10:29:08.811335Z"
+      "timestamp": "2026-10-31T16:10:01.033486Z"
     },
-    "0686324a-ea91-4736-9c5d-dc66d0668d41": {
-      "id": "0686324a-ea91-4736-9c5d-dc66d0668d41",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "69133e9f-2173-4594-ba2f-0e5e3bc37db5": {
+      "id": "69133e9f-2173-4594-ba2f-0e5e3bc37db5",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "user_name": "Rohan Sharma",
       "user_role": "student",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+      "resource_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "details": {},
-      "timestamp": "2026-10-31T10:29:09.198289Z"
+      "timestamp": "2026-10-31T16:10:01.420290Z"
     },
-    "53edabdb-88e2-4688-95b1-f122f3b1ecb7": {
-      "id": "53edabdb-88e2-4688-95b1-f122f3b1ecb7",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "45b577b6-0d2b-4a9a-9c46-0ad8b305f219": {
+      "id": "45b577b6-0d2b-4a9a-9c46-0ad8b305f219",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "user_name": "Rohan Sharma",
       "user_role": "student",
       "action": "EVENT_REGISTRATION",
       "resource_type": "registration",
-      "resource_id": "70b1e865-56f5-43f3-ba9e-55221330901b",
+      "resource_id": "3c517a8e-38d3-432a-b52c-24ad2e26fc98",
       "details": {
-        "event_id": "cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+        "event_id": "ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
         "status": "confirmed"
       },
-      "timestamp": "2026-10-31T10:29:09.209405Z"
+      "timestamp": "2026-10-31T16:10:01.430924Z"
     },
-    "f901df61-4d16-4fbd-b915-ed99bfcebc3c": {
-      "id": "f901df61-4d16-4fbd-b915-ed99bfcebc3c",
-      "user_id": "a6a93602-8dcd-400c-93d1-3b7edf81fa83",
+    "8b25eb75-c68e-4590-b66b-c0a29bc66543": {
+      "id": "8b25eb75-c68e-4590-b66b-c0a29bc66543",
+      "user_id": "06153fc8-2797-48b5-aa8c-ba5434ef4e99",
       "user_name": "Priya Patel",
       "user_role": "student",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "a6a93602-8dcd-400c-93d1-3b7edf81fa83",
+      "resource_id": "06153fc8-2797-48b5-aa8c-ba5434ef4e99",
       "details": {},
-      "timestamp": "2026-10-31T10:29:09.601500Z"
+      "timestamp": "2026-10-31T16:10:01.823100Z"
     },
-    "6dfc6428-c946-49dc-976b-ee7a5fb1f7e0": {
-      "id": "6dfc6428-c946-49dc-976b-ee7a5fb1f7e0",
-      "user_id": "a6a93602-8dcd-400c-93d1-3b7edf81fa83",
+    "0f66b703-e0d5-41f3-b914-8cc2f1597aca": {
+      "id": "0f66b703-e0d5-41f3-b914-8cc2f1597aca",
+      "user_id": "06153fc8-2797-48b5-aa8c-ba5434ef4e99",
       "user_name": "Priya Patel",
       "user_role": "student",
       "action": "EVENT_REGISTRATION",
       "resource_type": "registration",
-      "resource_id": "f77a841b-8505-4d2b-90a3-af279247612c",
+      "resource_id": "74f7acc1-98ca-49e4-bbd2-0587a55250e3",
       "details": {
-        "event_id": "cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788",
+        "event_id": "ea652f9f-7f0a-4484-b885-f4bdc27b5a8d",
         "status": "waitlisted"
       },
-      "timestamp": "2026-10-31T10:29:09.611489Z"
+      "timestamp": "2026-10-31T16:10:01.832216Z"
     },
-    "924ea98b-a43b-43bb-a869-d7dd4ee4da5f": {
-      "id": "924ea98b-a43b-43bb-a869-d7dd4ee4da5f",
-      "user_id": "ea5b9491-5396-47c5-9e83-c60930eedd58",
+    "5740357e-76b6-4a4c-971b-4e10bf9deccf": {
+      "id": "5740357e-76b6-4a4c-971b-4e10bf9deccf",
+      "user_id": "32bdf480-1c1b-4191-b000-4c07f863b28f",
       "user_name": "Rohan Sharma",
       "user_role": "student",
       "action": "CANCEL_REGISTRATION",
       "resource_type": "registration",
-      "resource_id": "70b1e865-56f5-43f3-ba9e-55221330901b",
+      "resource_id": "3c517a8e-38d3-432a-b52c-24ad2e26fc98",
       "details": {
-        "event_id": "cfdaaf1c-09ff-43b2-81fb-ab57d5d5f788"
+        "event_id": "ea652f9f-7f0a-4484-b885-f4bdc27b5a8d"
       },
-      "timestamp": "2026-10-31T10:29:09.627198Z"
+      "timestamp": "2026-10-31T16:10:01.847209Z"
     },
-    "05cdc6f6-70f9-4080-ab14-70720aa96bed": {
-      "id": "05cdc6f6-70f9-4080-ab14-70720aa96bed",
-      "user_id": "83a1a6e7-810d-41fd-8a28-61f776dffd78",
+    "d17a1a56-9f66-476a-b3d8-85440a770bd7": {
+      "id": "d17a1a56-9f66-476a-b3d8-85440a770bd7",
+      "user_id": "743e7a9e-c334-42d4-8a31-b19a4dd5a632",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "2cda6cf1-de2f-47d3-8f3c-601ecf9ac7d1",
+      "resource_id": "f8399d36-fb12-43d2-80d9-d1f06d7d0b0d",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:11.209861Z"
+      "timestamp": "2026-10-31T16:10:03.393913Z"
     },
-    "374d1d45-38c3-4f46-b08f-63e0c99a02de": {
-      "id": "374d1d45-38c3-4f46-b08f-63e0c99a02de",
-      "user_id": "fc324e28-9912-473d-8f24-284603b64168",
+    "979a64e9-4a95-4127-b09e-e7de0bc93465": {
+      "id": "979a64e9-4a95-4127-b09e-e7de0bc93465",
+      "user_id": "7b392807-5026-4c90-b7db-5d174d87b078",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "0f0c3c86-7cd7-4869-9b68-35f95cfcd2ae",
+      "resource_id": "198869b6-6000-47ff-93d1-5424c736b403",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:11.212962Z"
+      "timestamp": "2026-10-31T16:10:03.396989Z"
     },
-    "a62f05f9-df81-474f-b1d1-1b4dd2763483": {
-      "id": "a62f05f9-df81-474f-b1d1-1b4dd2763483",
-      "user_id": "83a1a6e7-810d-41fd-8a28-61f776dffd78",
+    "353c8d54-7add-45bd-bd81-051010454414": {
+      "id": "353c8d54-7add-45bd-bd81-051010454414",
+      "user_id": "743e7a9e-c334-42d4-8a31-b19a4dd5a632",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "USER_LOGIN",
       "resource_type": "auth",
-      "resource_id": "83a1a6e7-810d-41fd-8a28-61f776dffd78",
+      "resource_id": "743e7a9e-c334-42d4-8a31-b19a4dd5a632",
       "details": {},
-      "timestamp": "2026-10-31T10:29:11.626020Z"
+      "timestamp": "2026-10-31T16:10:03.787751Z"
     },
-    "3904c7cd-e396-489a-809d-e09085c08ccc": {
-      "id": "3904c7cd-e396-489a-809d-e09085c08ccc",
-      "user_id": "83a1a6e7-810d-41fd-8a28-61f776dffd78",
+    "d0b657b3-94b2-42d6-8e74-42efe71f4bfc": {
+      "id": "d0b657b3-94b2-42d6-8e74-42efe71f4bfc",
+      "user_id": "743e7a9e-c334-42d4-8a31-b19a4dd5a632",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "CHECK_IN_ATTENDEE",
       "resource_type": "attendance",
-      "resource_id": "4b78e889-58e9-47b8-ba17-f393ff9c4a46",
+      "resource_id": "77738f89-032d-4849-b842-6c8d8cbdef1b",
       "details": {
-        "ticket": "TKT-HACK-4B78E889",
+        "ticket": "TKT-HACK-77738F89",
         "student": "Rohan Sharma",
         "event": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:11.637150Z"
+      "timestamp": "2026-10-31T16:10:03.799255Z"
     },
-    "96299915-72c0-48ea-90a6-9dba2ef75459": {
-      "id": "96299915-72c0-48ea-90a6-9dba2ef75459",
-      "user_id": "e3da2cf2-0486-4624-9db8-c3ae0d0f2542",
+    "cb1ccc55-2c85-46f2-8006-423b857c699b": {
+      "id": "cb1ccc55-2c85-46f2-8006-423b857c699b",
+      "user_id": "e5718ee1-2233-4070-8ba7-b81b3acd2a3a",
       "user_name": "Prof. Alex Rivera",
       "user_role": "organizer",
       "action": "EVENT_SUBMITTED",
       "resource_type": "event",
-      "resource_id": "478e603b-6cb7-493e-8f01-97e41e545094",
+      "resource_id": "b55bca34-be0a-4fd7-83ee-fa3efaa406c9",
       "details": {
         "title": "Quantum Computing & Cryptography Symposium"
       },
-      "timestamp": "2026-10-31T10:29:13.198570Z"
+      "timestamp": "2026-10-31T16:10:05.356534Z"
     },
-    "885aae48-e9fe-4bb5-a756-57c3729ba4ee": {
-      "id": "885aae48-e9fe-4bb5-a756-57c3729ba4ee",
-      "user_id": "ded9d423-285e-4641-bd4a-cfa2a565d31f",
+    "e1efd9fc-1f75-4fc8-923c-ab5c5e944d13": {
+      "id": "e1efd9fc-1f75-4fc8-923c-ab5c5e944d13",
+      "user_id": "11c897e2-e1d8-4dfe-9db2-9ea8ff14fb7a",
       "user_name": "Dr. Sarah Jenkins",
       "user_role": "admin",
       "action": "EVENT_APPROVED",
       "resource_type": "event",
-      "resource_id": "1cc4098f-b3cf-4994-93a1-0bf5e31f9002",
+      "resource_id": "3a541dfa-0646-4291-8888-46438020ebd4",
       "details": {
         "title": "HackCampus 2026: 24-Hour AI Innovation Challenge"
       },
-      "timestamp": "2026-10-31T10:29:13.201894Z"
+      "timestamp": "2026-10-31T16:10:05.359809Z"
     }
   },
   "categories": [
