@@ -61,14 +61,19 @@ export default function SignupPage() {
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-lg space-y-7 bg-white p-8 sm:p-10 rounded-2xl border border-orange-100 shadow-2xs">
         
-        <div className="text-center">
-          <div className="w-12 h-12 rounded-xl bg-orange-600 mx-auto flex items-center justify-center text-white shadow-xs">
-            <GraduationCap className="w-6 h-6" />
+        <div className="text-center space-y-1.5">
+          <div className="inline-flex items-center gap-2 mb-2">
+            <span className="px-2.5 py-1 rounded-xl bg-orange-600 text-white font-black text-xs tracking-tight shadow-xs">
+              vitap
+            </span>
+            <span className="text-2xl font-black tracking-tight text-slate-900">
+              eve<span className="text-orange-600">Reg</span>
+            </span>
           </div>
-          <h2 className="mt-4 text-2xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">
             Campus Registration
           </h2>
-          <p className="mt-1 text-xs text-slate-500">
+          <p className="text-xs text-slate-500">
             VIT-AP University Student & Faculty Chapter Enrollment
           </p>
         </div>

@@ -75,7 +75,7 @@ export default function StudentDashboard() {
       const ics = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//VIT-AP University//NexEvent Portal//EN',
+        'PRODID:-//VIT-AP University//eveReg Portal//EN',
         'BEGIN:VEVENT',
         `SUMMARY:${reg.event_title}`,
         `DESCRIPTION:Ticket Pass: ${reg.ticket_code}\\nVenue: ${reg.event_venue}\\nStudent: ${user?.full_name}`,

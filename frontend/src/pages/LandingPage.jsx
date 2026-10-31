@@ -55,7 +55,7 @@ export default function LandingPage() {
     },
     {
       q: "What happens if a high-demand workshop reaches full capacity?",
-      a: "NexEvent operates an automated fair-queue waitlist. When maximum seating is reached, students are queued in the order they applied. If an enrolled student cancels their registration, the backend atomic transaction immediately promotes the next student in line and issues their confirmed digital pass."
+      a: "eveReg operates an automated fair-queue waitlist. When maximum seating is reached, students are queued in the order they applied. If an enrolled student cancels their registration, the backend atomic transaction immediately promotes the next student in line and issues their confirmed digital pass."
     },
     {
       q: "Can registered student clubs and faculty propose events?",
@@ -67,7 +67,7 @@ export default function LandingPage() {
     },
     {
       q: "Are these event certificates recognized for academic activity credits?",
-      a: "Yes. Every certificate generated through NexEvent carries the official VIT-AP University seal, authorized faculty signature, and a unique certificate ID that can be independently audited via the public Certificate Verification portal."
+      a: "Yes. Every certificate generated through eveReg carries the official VIT-AP University seal, authorized faculty signature, and a unique certificate ID that can be independently audited via the public Certificate Verification portal."
     }
   ];
 
@@ -243,7 +243,7 @@ export default function LandingPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-            Official Chapters & Student Bodies Operating On NexEvent
+            Official Chapters & Student Bodies Operating On eveReg
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-500 font-semibold text-xs sm:text-sm">
