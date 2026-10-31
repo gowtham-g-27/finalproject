@@ -3,7 +3,7 @@
     "usr-venkatramana": {
       "id": "usr-venkatramana",
       "email": "venkatramana@campus.edu",
-      "password_hash": "$2b$12$kWVquCE7bihqXk/.OBDYweC8ndIZCIYKsudc4kJgyFAFMIC1YTQTe",
+      "password_hash": "$2b$12$Tjg1Lh.juV.1S04Q65GmFu0fih4I8OUaHbFNuzauefOmgniC6hLjq",
       "full_name": "Dr. Venkatramana",
       "role": "admin",
       "department": "Dean of Academic & Campus Affairs",
@@ -20,7 +20,7 @@
     "usr-admin-alias": {
       "id": "usr-admin-alias",
       "email": "admin@campus.edu",
-      "password_hash": "$2b$12$qnp/DV7W0jkXVIxGH/FvUepQ.iGKAqOzkvx1Xi5O7SKSD8NiXvOJa",
+      "password_hash": "$2b$12$RUxMkLbZ1ToOh/0g.mw0KeRsG9D1Xk12MuGzd6MfszgR/Yuxmu.Fq",
       "full_name": "Dr. Venkatramana (Director)",
       "role": "admin",
       "department": "Dean of Academic & Campus Affairs",
@@ -36,7 +36,7 @@
     "usr-vyshnavi": {
       "id": "usr-vyshnavi",
       "email": "vyshnavi@campus.edu",
-      "password_hash": "$2b$12$Tq/zy7nEVWganj.bGFXJVuebA5MR7gjeBqVizz6JJ6DhWWOQFPc3e",
+      "password_hash": "$2b$12$TEUw7xPGh7fl.zP3lju2lOWnDH.o5up8TxYbi4.MT5Px.gVrH9AX.",
       "full_name": "Vyshnavi",
       "role": "organizer",
       "department": "School of Computer Science & Engineering",
@@ -53,7 +53,7 @@
     "usr-navya": {
       "id": "usr-navya",
       "email": "navya@campus.edu",
-      "password_hash": "$2b$12$4x5.9reSKLGXSdYSoyuPweE7bI52e1RDl8OyAnq8Llhpi6RTKEBJW",
+      "password_hash": "$2b$12$A0v4Aa4HwzD3Ty//zmsefOqcYLWJMOvFQhU9vYgdio8Mi35k4.KiO",
       "full_name": "Navya",
       "role": "organizer",
       "department": "Department of Electronics & Communication",
@@ -70,7 +70,7 @@
     "usr-suhana": {
       "id": "usr-suhana",
       "email": "suhana@campus.edu",
-      "password_hash": "$2b$12$wsrTzfGC5s0NM9DGB.W.r.0yajtP.5X9z1Bl1Rkpo1/0ZivyFBnGi",
+      "password_hash": "$2b$12$1x.7Tn2QI9mzWs68bnC09eWm0mZAA9/7/uiQA.moczS6hTN1sCc5u",
       "full_name": "Suhana",
       "role": "organizer",
       "department": "School of Management & Humanities",
@@ -87,7 +87,7 @@
     "usr-organizer-alias": {
       "id": "usr-organizer-alias",
       "email": "organizer@campus.edu",
-      "password_hash": "$2b$12$9kn.FVb/POiHFBCy2sz08O7pKzug6lW8vp/q4iiWSAHEU2hqthCWS",
+      "password_hash": "$2b$12$jg7EbWj54X0IWD264fQrf.4AV9qCq4bcYSmlYL9vGBDaYrkMq8pjy",
       "full_name": "Vyshnavi (Head Coordinator)",
       "role": "organizer",
       "department": "School of Computer Science & Engineering",
@@ -103,7 +103,7 @@
     "usr-geetha-gowtham": {
       "id": "usr-geetha-gowtham",
       "email": "gowtham@campus.edu",
-      "password_hash": "$2b$12$AW1xE.QMdXIzOUjD5LcNPu2N5UhzSAZowwENhn8cy6fCGziOMCNe6",
+      "password_hash": "$2b$12$bClcYkGc.HnhRGMF7egy8.AIgFBzwH/BOkhwT8W6v1QxEqAx.Bly6",
       "full_name": "Geetha Gowtham",
       "role": "student",
       "department": "Computer Science & Engineering",
@@ -120,7 +120,7 @@
     "usr-student-alias": {
       "id": "usr-student-alias",
       "email": "student@campus.edu",
-      "password_hash": "$2b$12$O/GKblglQoqlkUoWPRmN5.KbhxZgmQERNOwvulK5Z3v4kt4MdVJvi",
+      "password_hash": "$2b$12$4yr0fenIC0JokjQ2WI2z8e/K6h.FhXvTrE43DzJLcBIkLsfKLe4Iq",
       "full_name": "Geetha Gowtham",
       "role": "student",
       "department": "Computer Science & Engineering",
@@ -136,7 +136,7 @@
     "usr-ramya": {
       "id": "usr-ramya",
       "email": "ramya@campus.edu",
-      "password_hash": "$2b$12$ys/XcBTP0du8yK1Od2Xt8uDhkJv.zpfWKIbm9N3Vjd7.zq.wb7Mby",
+      "password_hash": "$2b$12$H2bCf1S4IWPxsdfbVcFGBuqmaXQ8W4TlTTVbboTTnxJSQKQCDV7/m",
       "full_name": "Ramya",
       "role": "student",
       "department": "Information Technology",
@@ -153,7 +153,7 @@
     "usr-prasanna-reddy": {
       "id": "usr-prasanna-reddy",
       "email": "prasanna@campus.edu",
-      "password_hash": "$2b$12$qUndJl9ANznWY1jRZbvA7uXa1VdVmt9TPWZ66C1hv1xGU6Jt.pNPu",
+      "password_hash": "$2b$12$k6wH7WyrLw0Zpw9BhDOSsul75AgIATl59GEWM70clbcnkrhknDOli",
       "full_name": "Prasanna Reddy",
       "role": "student",
       "department": "Data Science & AI",
@@ -170,7 +170,7 @@
     "usr-daram-vijay": {
       "id": "usr-daram-vijay",
       "email": "vijay@campus.edu",
-      "password_hash": "$2b$12$hmDUbnnaXDLnoKZTQuRqqusqLzd8/ZApZgeE.GSr2.V2MqAbSvcYa",
+      "password_hash": "$2b$12$X8qbhsRSotcOFrQ1QPNgDegtbDdf5j/D3nD8pHQq7RU/EYVtEpZPG",
       "full_name": "Daram Vijay",
       "role": "student",
       "department": "Mechanical Engineering & Robotics",
@@ -211,8 +211,8 @@
       "poster_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all enrolled B.Tech & M.Tech students.",
       "registration_deadline": "2026-11-14T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584870Z",
-      "updated_at": "2026-10-11T18:08:50.584870Z"
+      "created_at": "2026-10-11T18:51:19.604535Z",
+      "updated_at": "2026-10-11T18:51:19.604535Z"
     },
     "evt-tech-02": {
       "id": "evt-tech-02",
@@ -239,8 +239,8 @@
       "poster_url": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all university departments.",
       "registration_deadline": "2026-11-21T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584892Z",
-      "updated_at": "2026-10-11T18:08:50.584892Z"
+      "created_at": "2026-10-11T18:51:19.604555Z",
+      "updated_at": "2026-10-11T18:51:19.604555Z"
     },
     "evt-tech-03": {
       "id": "evt-tech-03",
@@ -267,8 +267,8 @@
       "poster_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Completed for registered participants.",
       "registration_deadline": "2026-10-09T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584900Z",
-      "updated_at": "2026-10-11T18:08:50.584900Z"
+      "created_at": "2026-10-11T18:51:19.604562Z",
+      "updated_at": "2026-10-11T18:51:19.604562Z"
     },
     "evt-cult-01": {
       "id": "evt-cult-01",
@@ -295,8 +295,8 @@
       "poster_url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all university students and alumni.",
       "registration_deadline": "2026-12-03T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584906Z",
-      "updated_at": "2026-10-31T18:43:44.918123Z"
+      "created_at": "2026-10-11T18:51:19.604568Z",
+      "updated_at": "2026-10-11T18:51:19.604568Z"
     },
     "evt-cult-02": {
       "id": "evt-cult-02",
@@ -323,8 +323,8 @@
       "poster_url": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "University student badge required.",
       "registration_deadline": "2026-10-17T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584913Z",
-      "updated_at": "2026-10-11T18:08:50.584913Z"
+      "created_at": "2026-10-11T18:51:19.604574Z",
+      "updated_at": "2026-10-11T18:51:19.604574Z"
     },
     "evt-sport-01": {
       "id": "evt-sport-01",
@@ -351,8 +351,8 @@
       "poster_url": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Registered student athletes with sports clearance.",
       "registration_deadline": "2026-11-17T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584919Z",
-      "updated_at": "2026-10-11T18:08:50.584919Z"
+      "created_at": "2026-10-11T18:51:19.604581Z",
+      "updated_at": "2026-10-11T18:51:19.604581Z"
     },
     "evt-sport-02": {
       "id": "evt-sport-02",
@@ -379,8 +379,8 @@
       "poster_url": "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all students and faculty.",
       "registration_deadline": "2026-11-27T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584925Z",
-      "updated_at": "2026-10-11T18:08:50.584925Z"
+      "created_at": "2026-10-11T18:51:19.604587Z",
+      "updated_at": "2026-10-11T18:51:19.604587Z"
     },
     "evt-sport-03": {
       "id": "evt-sport-03",
@@ -407,8 +407,8 @@
       "poster_url": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "University players.",
       "registration_deadline": "2026-10-04T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584931Z",
-      "updated_at": "2026-10-11T18:08:50.584931Z"
+      "created_at": "2026-10-11T18:51:19.604593Z",
+      "updated_at": "2026-10-11T18:51:19.604593Z"
     },
     "evt-acad-01": {
       "id": "evt-acad-01",
@@ -435,8 +435,8 @@
       "poster_url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Undergraduate, Postgraduate and Ph.D. scholars.",
       "registration_deadline": "2026-11-30T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584937Z",
-      "updated_at": "2026-10-11T18:08:50.584937Z"
+      "created_at": "2026-10-11T18:51:19.604599Z",
+      "updated_at": "2026-10-11T18:51:19.604599Z"
     },
     "evt-acad-02": {
       "id": "evt-acad-02",
@@ -463,8 +463,8 @@
       "poster_url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Final & Pre-final year students.",
       "registration_deadline": "2026-10-21T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584942Z",
-      "updated_at": "2026-10-11T18:08:50.584942Z"
+      "created_at": "2026-10-11T18:51:19.604605Z",
+      "updated_at": "2026-10-11T18:51:19.604605Z"
     },
     "evt-work-01": {
       "id": "evt-work-01",
@@ -491,8 +491,8 @@
       "poster_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Students with personal laptops and Kali Linux VM.",
       "registration_deadline": "2026-11-18T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584948Z",
-      "updated_at": "2026-10-11T18:08:50.584948Z"
+      "created_at": "2026-10-11T18:51:19.604610Z",
+      "updated_at": "2026-10-11T18:51:19.604610Z"
     },
     "evt-work-02": {
       "id": "evt-work-02",
@@ -519,8 +519,8 @@
       "poster_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Basic Python familiarity required.",
       "registration_deadline": "2026-11-25T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584954Z",
-      "updated_at": "2026-10-11T18:08:50.584954Z"
+      "created_at": "2026-10-11T18:51:19.604616Z",
+      "updated_at": "2026-10-11T18:51:19.604616Z"
     },
     "evt-work-03": {
       "id": "evt-work-03",
@@ -547,8 +547,8 @@
       "poster_url": "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all enthusiasts.",
       "registration_deadline": "2026-10-13T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584960Z",
-      "updated_at": "2026-10-11T18:08:50.584960Z"
+      "created_at": "2026-10-11T18:51:19.604622Z",
+      "updated_at": "2026-10-11T18:51:19.604622Z"
     },
     "evt-sem-01": {
       "id": "evt-sem-01",
@@ -575,8 +575,8 @@
       "poster_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "ECE, EEE and CSE students.",
       "registration_deadline": "2026-11-23T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584966Z",
-      "updated_at": "2026-10-11T18:08:50.584966Z"
+      "created_at": "2026-10-11T18:51:19.604628Z",
+      "updated_at": "2026-10-11T18:51:19.604628Z"
     },
     "evt-sem-02": {
       "id": "evt-sem-02",
@@ -603,8 +603,8 @@
       "poster_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "University students & faculty.",
       "registration_deadline": "2026-10-26T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584972Z",
-      "updated_at": "2026-10-11T18:08:50.584972Z"
+      "created_at": "2026-10-11T18:51:19.604634Z",
+      "updated_at": "2026-10-11T18:51:19.604634Z"
     },
     "evt-comp-01": {
       "id": "evt-comp-01",
@@ -631,8 +631,8 @@
       "poster_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Individual participation.",
       "registration_deadline": "2026-11-16T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584978Z",
-      "updated_at": "2026-10-11T18:08:50.584978Z"
+      "created_at": "2026-10-11T18:51:19.604640Z",
+      "updated_at": "2026-10-11T18:51:19.604640Z"
     },
     "evt-comp-02": {
       "id": "evt-comp-02",
@@ -659,8 +659,8 @@
       "poster_url": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Teams of 3 students.",
       "registration_deadline": "2026-11-28T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584983Z",
-      "updated_at": "2026-10-11T18:08:50.584983Z"
+      "created_at": "2026-10-11T18:51:19.604646Z",
+      "updated_at": "2026-10-11T18:51:19.604646Z"
     },
     "evt-comp-03": {
       "id": "evt-comp-03",
@@ -686,8 +686,8 @@
       "poster_url": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "All enrolled chess players.",
       "registration_deadline": "2026-10-11T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584989Z",
-      "updated_at": "2026-10-11T18:08:50.584989Z"
+      "created_at": "2026-10-11T18:51:19.604652Z",
+      "updated_at": "2026-10-11T18:51:19.604652Z"
     },
     "evt-oth-01": {
       "id": "evt-oth-01",
@@ -714,8 +714,8 @@
       "poster_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Open to all students, staff and faculty.",
       "registration_deadline": "2026-11-20T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.584995Z",
-      "updated_at": "2026-10-11T18:08:50.584995Z"
+      "created_at": "2026-10-11T18:51:19.604657Z",
+      "updated_at": "2026-10-11T18:51:19.604657Z"
     },
     "evt-oth-02": {
       "id": "evt-oth-02",
@@ -742,8 +742,8 @@
       "poster_url": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1200&q=80",
       "eligibility": "Donors aged 18+.",
       "registration_deadline": "2026-10-01T23:59:59Z",
-      "created_at": "2026-10-11T18:08:50.585001Z",
-      "updated_at": "2026-10-11T18:08:50.585001Z"
+      "created_at": "2026-10-11T18:51:19.604663Z",
+      "updated_at": "2026-10-11T18:51:19.604663Z"
     }
   },
   "registrations": {
