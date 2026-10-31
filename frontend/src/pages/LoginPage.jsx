@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GraduationCap, Lock, Mail, ArrowRight, UserCheck, ShieldCheck, Briefcase } from 'lucide-react';
+import { Lock, Mail, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 
@@ -35,16 +35,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleDemoFill = (role) => {
-    const demos = {
-      student: { email: 'gowtham@campus.edu', pass: 'student123' },
-      organizer: { email: 'vyshnavi@campus.edu', pass: 'organizer123' },
-      admin: { email: 'venkatramana@campus.edu', pass: 'admin123' },
-    };
-    setEmail(demos[role].email);
-    setPassword(demos[role].pass);
-  };
-
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-2xs">
@@ -65,36 +55,6 @@ export default function LoginPage() {
           <p className="text-xs text-slate-400">
             VIT-AP University Student, Faculty & Board Access
           </p>
-        </div>
-
-        {/* Demo Quick-Fill Bar (Viva demonstration helper) */}
-        <div className="p-3.5 bg-[#F8F9FA] rounded-2xl border border-slate-100">
-          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center mb-2.5">
-            Quick-Fill Role Credentials
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            <button
-              type="button"
-              onClick={() => handleDemoFill('student')}
-              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
-            >
-              <UserCheck className="w-3.5 h-3.5 text-slate-500" /> Student
-            </button>
-            <button
-              type="button"
-              onClick={() => handleDemoFill('organizer')}
-              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
-            >
-              <Briefcase className="w-3.5 h-3.5 text-slate-500" /> Organiser
-            </button>
-            <button
-              type="button"
-              onClick={() => handleDemoFill('admin')}
-              className="py-2 px-2 rounded-xl text-xs font-medium bg-white text-slate-700 hover:text-slate-900 hover:border-slate-400 border border-slate-200/70 transition-colors shadow-2xs flex items-center justify-center gap-1"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-slate-500" /> Admin
-            </button>
-          </div>
         </div>
 
         {/* Login Form */}
