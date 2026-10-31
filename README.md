@@ -190,3 +190,4 @@ All scenarios outlined in Section 11 of the project specification have been impl
 - [x] Dynamic ReportLab PDF certificate generation
 - [x] Public certificate verification portal
 - [x] Real-time Recharts analytics and CSV export
+

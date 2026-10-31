@@ -17,3 +17,4 @@ class NotificationCreate(BaseModel):
     message: str
     type: str = "info"
     link: Optional[str] = None
+

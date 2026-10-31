@@ -14,3 +14,4 @@ class CheckInResponse(BaseModel):
     ticket_code: str
     attended_at: str
     already_checked_in: bool = False
+

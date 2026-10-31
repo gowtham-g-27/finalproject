@@ -299,3 +299,4 @@ END:VCALENDAR"""
         media_type="text/calendar",
         headers={"Content-Disposition": f"attachment; filename=event_{event_id}.ics"}
     )
+

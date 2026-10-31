@@ -33,3 +33,4 @@ export default function StatusBadge({ status, type = 'event' }) {
     </span>
   );
 }
+

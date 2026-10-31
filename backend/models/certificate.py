@@ -9,3 +9,4 @@ class CertificateResponse(BaseModel):
     user_name: str
     issue_date: str
     verified: bool = True
+

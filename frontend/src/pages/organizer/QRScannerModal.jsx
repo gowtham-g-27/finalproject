@@ -155,3 +155,4 @@ export default function QRScannerModal({ isOpen, onClose, event, onCheckInSucces
     </Modal>
   );
 }
+

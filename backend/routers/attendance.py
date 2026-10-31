@@ -132,3 +132,4 @@ def check_in_attendee(
 def uuid_val():
     import uuid
     return str(uuid.uuid4())
+

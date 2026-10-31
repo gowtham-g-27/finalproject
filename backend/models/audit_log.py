@@ -11,3 +11,4 @@ class AuditLogResponse(BaseModel):
     resource_id: str
     details: Optional[Dict[str, Any]] = None
     timestamp: str
+

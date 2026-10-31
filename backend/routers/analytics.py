@@ -112,3 +112,4 @@ def export_reports_csv(current_user: dict = Depends(require_role(["organizer", "
         media_type="text/csv",
         headers={"Content-Disposition": f"attachment; filename={filename}"}
     )
+

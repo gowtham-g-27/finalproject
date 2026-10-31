@@ -26,3 +26,4 @@ class RegistrationResponse(BaseModel):
     registered_at: str
     attended_at: Optional[str] = None
     certificate_id: Optional[str] = None
+

@@ -19,3 +19,4 @@ class FeedbackResponse(BaseModel):
     content_rating: int
     comment: str
     created_at: str
+

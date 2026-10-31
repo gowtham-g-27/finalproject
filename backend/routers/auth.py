@@ -144,3 +144,4 @@ def update_profile(profile_data: dict, current_user: dict = Depends(get_current_
             db.data["users"][uid][k] = profile_data[k]
     db.save()
     return db.data["users"][uid]
+

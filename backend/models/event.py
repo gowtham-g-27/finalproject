@@ -65,3 +65,4 @@ class EventResponse(EventBase):
     attended_count: int = 0
     created_at: str
     updated_at: str
+

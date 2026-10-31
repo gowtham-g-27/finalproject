@@ -203,3 +203,4 @@ def get_event_participants(
         raise HTTPException(status_code=403, detail="You can only view participants for your own events")
         
     return [r for r in db.data["registrations"].values() if r["event_id"] == event_id]
+

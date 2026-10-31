@@ -133,3 +133,4 @@ def get_audit_logs(current_user: dict = Depends(require_role(["admin"]))):
 @router.get("/categories")
 def get_categories():
     return db.data.get("categories", [])
+

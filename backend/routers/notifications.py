@@ -31,3 +31,4 @@ def mark_all_notifications_read(current_user: dict = Depends(get_current_user)):
             note["is_read"] = True
     db.save()
     return {"message": "All notifications marked as read"}
+

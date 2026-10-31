@@ -13,3 +13,4 @@ class Settings:
     USE_FIREBASE: bool = os.getenv("USE_FIREBASE", "false").lower() in ("true", "1", "yes")
 
 settings = Settings()
+

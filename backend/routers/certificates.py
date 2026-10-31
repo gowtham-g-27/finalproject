@@ -141,3 +141,4 @@ def download_certificate_pdf(certificate_id: str):
         media_type="application/pdf",
         headers={"Content-Disposition": f"attachment; filename={cert['certificate_number']}.pdf"}
     )
+

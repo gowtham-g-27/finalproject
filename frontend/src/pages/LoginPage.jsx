@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sparkles, Lock, Mail, ArrowRight, UserCheck, ShieldCheck, Briefcase } from 'lucide-react';
+import { GraduationCap, Lock, Mail, ArrowRight, UserCheck, ShieldCheck, Briefcase } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 
@@ -47,18 +47,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 shadow-xl shadow-orange-500/5">
+      <div className="w-full max-w-md space-y-7 bg-white p-8 sm:p-10 rounded-2xl border border-orange-100 shadow-2xs">
         
         {/* Header */}
         <div className="text-center">
-          <div className="w-12 h-12 rounded-2xl bg-orange-600 mx-auto flex items-center justify-center text-white shadow-md shadow-orange-500/30">
-            <Sparkles className="w-6 h-6" />
+          <div className="w-12 h-12 rounded-xl bg-orange-600 mx-auto flex items-center justify-center text-white shadow-xs">
+            <GraduationCap className="w-6 h-6" />
           </div>
           <h2 className="mt-4 text-2xl font-extrabold text-slate-900 tracking-tight">
-            Log in to NexEvent
+            Campus Sign In
           </h2>
           <p className="mt-1 text-xs text-slate-500">
-            Access your registrations, organize events, or manage platform approvals
+            Apex University Student, Faculty & Board Access
           </p>
         </div>
 
@@ -149,3 +149,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
