@@ -4,7 +4,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 
 // Components
-import Sidebar from './components/Sidebar';
+import FloatingNav from './components/FloatingNav';
 import Footer from './components/Footer';
 
 // Pages
@@ -46,59 +46,58 @@ export default function App() {
     <Router>
       <AuthProvider>
         <ToastProvider>
-          <div className="min-h-screen flex flex-col lg:flex-row bg-white text-slate-900 font-sans selection:bg-orange-100 selection:text-orange-950">
-            <Sidebar />
+          <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-100 selection:text-orange-950">
+            {/* Floating Pill Nav Bar (Exact match to User Reference Image 1) */}
+            <FloatingNav />
             
-            <div className="flex-1 min-w-0 flex flex-col min-h-screen">
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route path="/events" element={<EventsPage />} />
-                  <Route path="/events/:id" element={<EventDetailPage />} />
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/signup" element={<SignupPage />} />
-                  <Route path="/certificates" element={<CertificatesPage />} />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/events" element={<EventsPage />} />
+                <Route path="/events/:id" element={<EventDetailPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/certificates" element={<CertificatesPage />} />
 
-                  {/* Protected Student Portal */}
-                  <Route
-                    path="/dashboard"
-                    element={
-                      <ProtectedRoute allowedRoles={['student', 'organizer', 'admin']}>
-                        <StudentDashboard />
-                      </ProtectedRoute>
-                    }
-                  />
+                {/* Protected Student Portal */}
+                <Route
+                  path="/dashboard"
+                  element={
+                    <ProtectedRoute allowedRoles={['student', 'organizer', 'admin']}>
+                      <StudentDashboard />
+                    </ProtectedRoute>
+                  }
+                />
 
-                  {/* Protected Organizer Studio */}
-                  <Route
-                    path="/organizer"
-                    element={
-                      <ProtectedRoute allowedRoles={['organizer', 'admin']}>
-                        <OrganizerDashboard />
-                      </ProtectedRoute>
-                    }
-                  />
+                {/* Protected Organizer Studio */}
+                <Route
+                  path="/organizer"
+                  element={
+                    <ProtectedRoute allowedRoles={['organizer', 'admin']}>
+                      <OrganizerDashboard />
+                    </ProtectedRoute>
+                  }
+                />
 
-                  {/* Protected Admin Console */}
-                  <Route
-                    path="/admin"
-                    element={
-                      <ProtectedRoute allowedRoles={['admin']}>
-                        <AdminDashboard />
-                      </ProtectedRoute>
-                    }
-                  />
+                {/* Protected Admin Console */}
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute allowedRoles={['admin']}>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
 
-                  <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-              </main>
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
 
-              <Footer />
-            </div>
+            {/* Minimalist Footer (Exact match to User Reference Image 2) */}
+            <Footer />
           </div>
         </ToastProvider>
       </AuthProvider>
     </Router>
   );
 }
-

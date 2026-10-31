@@ -1,79 +1,32 @@
 import React from 'react';
-import { GraduationCap, Building2, ShieldCheck, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-orange-100 bg-orange-50/40 text-slate-600 mt-20 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          
-          {/* Col 1: University Brand */}
-          <div className="space-y-3 md:col-span-1">
-            <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-              <div className="px-2 py-0.5 rounded-lg bg-orange-600 text-white font-black text-xs tracking-tight shadow-2xs">
-                vitap
-              </div>
-              <span className="text-base font-black tracking-tight text-slate-900">
-                eve<span className="text-orange-600">Reg</span>
-              </span>
-            </div>
-            <p className="text-slate-500 text-[11px] leading-relaxed">
-              Office of Student Welfare & Campus Engagement. Official central platform for inter-collegiate symposiums, workshops, varsity sports, and cultural festivals.
-            </p>
-          </div>
-
-          {/* Col 2: Campus Portals */}
-          <div className="space-y-2">
-            <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">Portals & Navigation</div>
-            <ul className="space-y-1.5 text-slate-600">
-              <li><Link to="/events" className="hover:text-orange-600">Event Schedule & Catalog</Link></li>
-              <li><Link to="/dashboard" className="hover:text-orange-600">Student Entry Passes (Tickets)</Link></li>
-              <li><Link to="/organizer" className="hover:text-orange-600">Faculty Coordinator Studio</Link></li>
-              <li><Link to="/admin" className="hover:text-orange-600">Board Review Console</Link></li>
-            </ul>
-          </div>
-
-          {/* Col 3: Student Verification & Credentials */}
-          <div className="space-y-2">
-            <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">Academic Records</div>
-            <ul className="space-y-1.5 text-slate-600">
-              <li><Link to="/certificates" className="hover:text-orange-600">Certificate Verification Portal</Link></li>
-              <li><span className="text-slate-400">Activity Credit Eligibility Guidelines</span></li>
-              <li><span className="text-slate-400">Student Attendance Policies</span></li>
-              <li><span className="text-slate-400">Fair-Queue Waitlist Regulations</span></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Contact & Helpdesk */}
-          <div className="space-y-2">
-            <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">Campus Life Helpdesk</div>
-            <div className="space-y-1 text-slate-500 text-[11px]">
-              <div className="flex items-center gap-1.5">
-                <Building2 className="w-3.5 h-3.5 text-orange-600" />
-                <span>Student Affairs Complex, Room 204</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-orange-600" />
-                <span>studentwelfare@vitap.ac.in</span>
-              </div>
-              <div className="pt-2 text-[10px] text-slate-400">
-                Official Academic Term 2025–2026
-              </div>
-            </div>
-          </div>
-
+    <footer className="border-t border-slate-100 bg-white text-slate-500 text-xs py-12 mt-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6 text-center">
+        
+        {/* Minimalist Horizontal Nav Links (Matching User Reference Image 2) */}
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-[11px] font-bold uppercase tracking-wider text-slate-600">
+          <Link to="/" className="hover:text-orange-600 transition-colors">About Campus</Link>
+          <Link to="/events" className="hover:text-orange-600 transition-colors">Event Schedule</Link>
+          <Link to="/certificates" className="hover:text-orange-600 transition-colors">Certificate Verification</Link>
+          <span className="text-slate-400">Activity Credits</span>
+          <span className="text-slate-400">Attendance Policy</span>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-orange-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+        {/* Minimalist Bottom Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-100 text-[11px] text-slate-400">
           <div>
-            © 2026 VIT-AP University. Smart College Event Management System (eveReg). All rights reserved.
+            © 2026 <strong className="text-slate-700">vitap eveReg</strong>. All rights reserved • VIT-AP University Directorate of Student Welfare.
           </div>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1 text-slate-600">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              Accreditation & Audit Compliant
+
+          <div className="flex items-center gap-3 font-semibold text-slate-500 text-[10px] uppercase tracking-wider">
+            <span className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">NAAC A++</span>
+            <span className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">UGC ACCREDITED</span>
+            <span className="flex items-center gap-1 text-emerald-700 font-bold">
+              <ShieldCheck className="w-3.5 h-3.5" /> Verifiable PDF
             </span>
           </div>
         </div>
