@@ -38,6 +38,7 @@ def verify_certificate(certificate_number: str):
     }
 
 @router.get("/download/{certificate_id}")
+@router.get("/{certificate_id}/pdf")
 def download_certificate_pdf(certificate_id: str):
     cert = db.data["certificates"].get(certificate_id)
     if not cert:
