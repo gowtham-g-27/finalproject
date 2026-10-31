@@ -1394,6 +1394,50 @@
       "resource_id": "usr-venkatramana",
       "details": {},
       "timestamp": "2026-10-31T17:54:38.378732Z"
+    },
+    "34f18baa-5255-4cce-bc67-b4b3b0b8c27a": {
+      "id": "34f18baa-5255-4cce-bc67-b4b3b0b8c27a",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-student-alias",
+      "details": {},
+      "timestamp": "2026-10-31T18:03:47.380797Z"
+    },
+    "713a0517-6a8c-4e69-b868-432ee80eb61b": {
+      "id": "713a0517-6a8c-4e69-b868-432ee80eb61b",
+      "user_id": "usr-student-alias",
+      "user_name": "Geetha Gowtham",
+      "user_role": "student",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-student-alias",
+      "details": {},
+      "timestamp": "2026-10-31T18:03:52.142614Z"
+    },
+    "f268f3e9-a88c-4461-8f62-63c7d6420557": {
+      "id": "f268f3e9-a88c-4461-8f62-63c7d6420557",
+      "user_id": "usr-organizer-alias",
+      "user_name": "Vyshnavi (Head Coordinator)",
+      "user_role": "organizer",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-organizer-alias",
+      "details": {},
+      "timestamp": "2026-10-31T18:03:55.971231Z"
+    },
+    "8488cd8d-c9ac-4d60-a360-36f3f4306ffe": {
+      "id": "8488cd8d-c9ac-4d60-a360-36f3f4306ffe",
+      "user_id": "usr-admin-alias",
+      "user_name": "Dr. Venkatramana (Director)",
+      "user_role": "admin",
+      "action": "USER_LOGIN",
+      "resource_type": "auth",
+      "resource_id": "usr-admin-alias",
+      "details": {},
+      "timestamp": "2026-10-31T18:03:56.693396Z"
     }
   },
   "categories": [
