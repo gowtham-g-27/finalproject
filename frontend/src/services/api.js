@@ -1,3 +1,12 @@
+const ensureApiV1 = (url) => {
+  let cleaned = (url || '').trim().replace(/\/+$/, '');
+  if (!cleaned) return 'https://finalproject-ajle.onrender.com/api/v1';
+  if (!cleaned.endsWith('/api/v1')) {
+    cleaned += '/api/v1';
+  }
+  return cleaned;
+};
+
 const getApiBase = () => {
   const envUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -7,14 +16,16 @@ const getApiBase = () => {
 
     // Local development: use local port 8000 or custom local env
     if (isLocal) {
-      if (envUrl) return envUrl.replace(/\/+$/, '');
+      if (envUrl && (envUrl.includes('localhost') || envUrl.includes('127.0.0.1'))) {
+        return ensureApiV1(envUrl);
+      }
       return `${window.location.protocol}//${host}:8000/api/v1`;
     }
 
     // Deployed production environment (HTTPS):
-    // If Vercel env has a valid https remote URL, use it; otherwise fallback to Render backend
+    // If Vercel env has a remote URL, sanitize and guarantee /api/v1 is appended
     if (envUrl && !envUrl.includes('localhost') && !envUrl.includes('127.0.0.1')) {
-      return envUrl.replace(/\/+$/, '');
+      return ensureApiV1(envUrl);
     }
 
     // Default live production Render backend
