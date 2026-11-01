@@ -1,16 +1,26 @@
 const getApiBase = () => {
-  if (import.meta.env.VITE_API_BASE_URL) {
-    return import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '');
-  }
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+
   if (typeof window !== 'undefined') {
     const host = window.location.hostname;
-    // Local development
-    if (host === 'localhost' || host === '127.0.0.1') {
+    const isLocal = host === 'localhost' || host === '127.0.0.1';
+
+    // Local development: use local port 8000 or custom local env
+    if (isLocal) {
+      if (envUrl) return envUrl.replace(/\/+$/, '');
       return `${window.location.protocol}//${host}:8000/api/v1`;
     }
-    // Deployed production environment: connect directly to live Render backend
+
+    // Deployed production environment (HTTPS):
+    // If Vercel env has a valid https remote URL, use it; otherwise fallback to Render backend
+    if (envUrl && !envUrl.includes('localhost') && !envUrl.includes('127.0.0.1')) {
+      return envUrl.replace(/\/+$/, '');
+    }
+
+    // Default live production Render backend
     return 'https://finalproject-ajle.onrender.com/api/v1';
   }
+
   return 'https://finalproject-ajle.onrender.com/api/v1';
 };
 
